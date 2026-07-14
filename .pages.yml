@@ -1,36 +1,58 @@
-backend:
-  name: github
-  repo: fabiopietrisinger-droid/cmacessorios18
-  branch: main
+media:
+  input: imagens/uploads
+  output: /imagens/uploads
 
-media_folder: "imagens/uploads"
-public_folder: "/imagens/uploads"
-
-collections:
-  - name: "produtos"
-    label: "Produtos (Loja)"
-    folder: "content/produtos"
-    create: true
-    slug: "{{slug}}"
-    format: "json"
+content:
+  - name: produtos
+    label: Produtos (Loja)
+    type: collection
+    path: content/produtos
+    format: json
     fields:
-      - {label: "Título", name: "title", widget: "string"}
-      - {label: "Categoria", name: "categoria", widget: "select", options: ["Braceletes", "Colares", "Colares Decorativos", "Japamala", "Pulseiras"]}
-      - {label: "Valor", name: "valor", widget: "string"}
-      - {label: "Imagem Principal", name: "image", widget: "image"}
-      - {label: "Galeria", name: "galeria", widget: "list", fields: [{label: "Foto", name: "foto", widget: "image"}]}
-      - {label: "Descrição", name: "body", widget: "markdown"}
-
-  - name: "configuracoes"
-    label: "Página Inicial"
-    files:
-      - label: "Editar Home"
-        name: "home"
-        file: "content/home.json"
+      - name: title
+        label: Título
+        type: string
+      - name: categoria
+        label: Categoria
+        type: select
+        options:
+          - Braceletes
+          - Colares
+          - Colares Decorativos
+          - Japamala
+          - Pulseiras
+      - name: valor
+        label: Valor (Ex: 149,90)
+        type: string
+      - name: image
+        label: Imagem Principal
+        type: image
+      - name: galeria
+        label: Galeria de Fotos
+        type: object
+        list: true
         fields:
-          - label: "Banner"
-            name: "banners"
-            widget: "list"
-            fields:
-              - {label: "Título", name: "titulo", widget: "string"}
-              - {label: "Imagem", name: "imagem", widget: "image"}
+          - name: foto
+            label: Foto
+            type: image
+      - name: body
+        label: Descrição
+        type: rich-text
+
+  - name: configuracoes
+    label: Página Inicial
+    type: file
+    path: content/home.json
+    format: json
+    fields:
+      - name: banners
+        label: Banner Principal
+        type: object
+        list: true
+        fields:
+          - name: titulo
+            label: Título
+            type: string
+          - name: imagem
+            label: Imagem de Fundo
+            type: image
