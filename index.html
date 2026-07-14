@@ -20,11 +20,11 @@
        UX/UI DESIGN SYSTEM & ESTILIZAÇÃO E-COMMERCE CLEAN
        ========================================================================== */
     :root {
-      --bg-primary: #ffffff; /* Fundo totalmente branco */
-      --bg-secondary: #f8f9fa; /* Cinza super leve para contraste de seções */
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8f9fa;
       --bg-card: #ffffff;
-      --accent: #77c1d8; /* Azul claro para acentos e interações */
-      --primary-dark: #222d43; /* Azul escuro para hierarquia forte */
+      --accent: #77c1d8;
+      --primary-dark: #222d43;
       --text-main: #333333;
       --text-muted: #666666;
       --border-color: #eaeaea;
@@ -254,7 +254,7 @@
         <h2 id="modal-nome">Nome do Produto</h2>
         <span class="modal-price" id="modal-valor">R$ 0,00</span>
         
-        <!-- Local onde a descrição convertida do Markdown será injetada -->
+        <!-- Local onde a descrição será injetada -->
         <div class="desc-content" id="modal-tabela-specs"></div>
         
         <a id="modal-btn-wa" href="#" target="_blank" class="modal-btn">Comprar no WhatsApp</a>
@@ -298,7 +298,7 @@
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <!-- SCRIPT INTEGRADO E MOTOR CMS (AGORA PROCESSANDO ARQUIVOS .md) -->
+  <!-- SCRIPT INTEGRADO: MOTOR HÍBRIDO -->
   <script>
     const GITHUB_USER = 'fabiopietrisinger-droid';
     const GITHUB_REPO = 'cmacessorios18';
@@ -307,7 +307,6 @@
     let fotoAtivaIndex = 0;
     let produtoAtivo = null;
 
-    // Função antibloqueio de cache
     function urlSemCache(urlBase) {
       if (!urlBase) return '';
       const separador = urlBase.includes('?') ? '&' : '?';
@@ -319,7 +318,7 @@
 
     async function inicializarSite() {
       try {
-        // Carrega a lista da pasta produtos no repositório
+        // 1. Busca os arquivos na pasta
         const resLista = await fetch(urlSemCache(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/content/produtos`));
         
         if(resLista.ok) {
@@ -328,46 +327,46 @@
           grid.innerHTML = ''; 
           
           for (const arquivo of arquivos) {
-            // Nova trava de segurança: Agora lê exclusivamente arquivos Markdown (.md)
-            if (arquivo.name.endsWith('.md') && arquivo.download_url) {
+            // TRAVA HÍBRIDA: Aceita tanto .md quanto .json automaticamente
+            if ((arquivo.name.endsWith('.md') || arquivo.name.endsWith('.json')) && arquivo.download_url) {
               try {
                 const resItem = await fetch(urlSemCache(arquivo.download_url));
                 const txtProd = await resItem.text();
-                
-                // Remove espaços fantasmas e quebras de linha sujas
                 const cleanTxtP = txtProd.replace(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/, "").trim();
                 
-                // Expressão regular para separar o YAML Frontmatter do texto da descrição (corpo Markdown)
-                const frontmatterRegex = /^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/;
-                const match = cleanTxtP.match(frontmatterRegex);
-                
-                if (match) {
-                  // O jsyaml processa as variáveis do topo do arquivo (título, preço, galeria)
-                  const yamlData = jsyaml.load(match[1]);
-                  // O corpo recebe todo o conteúdo de texto livre que sobrou após as linhas '---'
-                  const markdownBody = match[2];
-                  
-                  // Monta o objeto do produto convertendo o markdown da descrição para HTML
-                  const produto = {
-                    ...yamlData,
-                    body: marked.parse(markdownBody) // Transforma em tags <p>, <strong>, etc.
-                  };
+                let produto = null;
 
-                  if (produto.title) {
-                    todosOsProdutos.push(produto);
+                // Se for Markdown (.md)
+                if (arquivo.name.endsWith('.md')) {
+                  const frontmatterRegex = /^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/;
+                  const match = cleanTxtP.match(frontmatterRegex);
+                  if (match) {
+                    const yamlData = jsyaml.load(match[1]);
+                    produto = { ...yamlData, body: marked.parse(match[2]) };
+                  } else {
+                    console.warn(`Arquivo ${arquivo.name} ignorado: formato Frontmatter (---) não encontrado.`);
                   }
+                } 
+                // Se for JSON (.json)
+                else if (arquivo.name.endsWith('.json')) {
+                  produto = JSON.parse(cleanTxtP);
+                }
+
+                // Se o produto foi montado com sucesso, envia para a vitrine
+                if (produto && (produto.title || produto.nome)) {
+                  todosOsProdutos.push(produto);
                 }
               } catch (e) {
-                console.error("Erro na leitura estrutural do arquivo .md:", arquivo.name, e);
+                console.error(`Erro ao processar o arquivo ${arquivo.name}:`, e);
               }
             }
           }
           renderizarProdutos(todosOsProdutos);
         } else {
-          document.getElementById('grid-produtos').innerHTML = '<p class="loading" style="grid-column: 1/-1;">Sua coleção aparecerá aqui após o primeiro cadastro de produto no painel.</p>';
+          document.getElementById('grid-produtos').innerHTML = '<p class="loading" style="grid-column: 1/-1; text-align:center;">Sua coleção aparecerá aqui após o primeiro cadastro.</p>';
         }
 
-        // Home continua operando em formato .json normalmente conforme a sua configuração
+        // 2. Carrega a Home
         const resHome = await fetch(urlSemCache(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/content/home.json`));
         if(resHome.ok) {
           const dataHomeRaw = await resHome.json();
@@ -383,7 +382,7 @@
           }
         }
       } catch (error) {
-        console.error("Conectando ao banco de dados visual...", error);
+        console.error("Erro de conexão com o repositório:", error);
       }
     }
 
@@ -465,7 +464,6 @@
 
       const boxDesc = document.getElementById('modal-tabela-specs');
       if(produtoAtivo.body) {
-        // Agora recebe a string convertida pelo marked.js com máxima fidelidade ao que foi digitado no painel
         boxDesc.innerHTML = produtoAtivo.body;
       } else {
         boxDesc.innerHTML = "<p>Detalhes e especificações deste produto em breve.</p>";
@@ -503,7 +501,6 @@
       if(e.target == modal) fecharModal(); 
     }
 
-    // Inicialização do ambiente de alta performance
     document.addEventListener('DOMContentLoaded', inicializarSite);
   </script>
 </body>
