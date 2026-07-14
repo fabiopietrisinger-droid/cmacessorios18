@@ -1,58 +1,58 @@
 media:
-  input: imagens/uploads
-  output: /imagens/uploads
+  input: "imagens/uploads"
+  output: "/imagens/uploads"
 
 content:
-  - name: produtos
-    label: Produtos (Loja)
-    type: collection
-    path: content/produtos
-    format: json
+  - name: "produtos"
+    label: "Produtos (Loja)"
+    type: "collection"
+    path: "content/produtos"
+    format: "json"
     fields:
-      - name: title
-        label: Título
-        type: string
-      - name: categoria
-        label: Categoria
-        type: select
+      - name: "title"
+        label: "Título"
+        type: "string"
+      - name: "categoria"
+        label: "Categoria"
+        type: "select"
         options:
-          - Braceletes
-          - Colares
-          - Colares Decorativos
-          - Japamala
-          - Pulseiras
-      - name: valor
-        label: Valor (Ex: 149,90)
-        type: string
-      - name: image
-        label: Imagem Principal
-        type: image
-      - name: galeria
-        label: Galeria de Fotos
-        type: object
+          - "Braceletes"
+          - "Colares"
+          - "Colares Decorativos"
+          - "Japamala"
+          - "Pulseiras"
+      - name: "valor"
+        label: "Valor (Ex: 149,90)"
+        type: "string"
+      - name: "image"
+        label: "Imagem Principal"
+        type: "image"
+      - name: "galeria"
+        label: "Galeria de Fotos"
+        type: "object"
         list: true
         fields:
-          - name: foto
-            label: Foto
-            type: image
-      - name: body
-        label: Descrição
-        type: rich-text
+          - name: "foto"
+            label: "Foto"
+            type: "image"
+      - name: "body"
+        label: "Descrição"
+        type: "rich-text"
 
-  - name: configuracoes
-    label: Página Inicial
-    type: file
-    path: content/home.json
-    format: json
+  - name: "configuracoes"
+    label: "Página Inicial"
+    type: "file"
+    path: "content/home.json"
+    format: "json"
     fields:
-      - name: banners
-        label: Banner Principal
-        type: object
+      - name: "banners"
+        label: "Banner Principal"
+        type: "object"
         list: true
         fields:
-          - name: titulo
-            label: Título
-            type: string
-          - name: imagem
-            label: Imagem de Fundo
-            type: image
+          - name: "titulo"
+            label: "Título"
+            type: "string"
+          - name: "imagem"
+            label: "Imagem de Fundo"
+            type: "image"
