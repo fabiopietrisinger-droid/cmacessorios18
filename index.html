@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[NOME DA MARCA] – Joias e Personalizados</title>
+  <title>CM Acessórios 18 – Joias e Personalizados</title>
   
-  <!-- Fonte Arrojada e Clean -->
+  <!-- Tipografia Poppins: Clean e Arrojada -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -16,16 +16,14 @@
        UX/UI DESIGN SYSTEM & ESTILIZAÇÃO E-COMMERCE CLEAN
        ========================================================================== */
     :root {
-      --bg-primary: #ffffff;
-      --bg-secondary: #f8f9fa;
+      --bg-primary: #ffffff; /* Fundo totalmente branco */
+      --bg-secondary: #f8f9fa; /* Cinza super leve para contraste de seções */
       --bg-card: #ffffff;
-      --accent: #77c1d8; /* Azul claro */
-      --primary-dark: #222d43; /* Azul escuro */
+      --accent: #77c1d8; /* Azul claro para acentos e interações */
+      --primary-dark: #222d43; /* Azul escuro para hierarquia forte */
       --text-main: #333333;
       --text-muted: #666666;
       --border-color: #eaeaea;
-      --status-sold: #cf6679;
-      --status-avail: #222d43;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -39,8 +37,7 @@
     .header-main { background-color: rgba(255, 255, 255, 0.98); border-bottom: 1px solid var(--border-color); position: fixed; top: 0; width: 100%; z-index: 1000; padding: 15px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
     .header-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; width: 100%; }
     
-    .logo { font-size: 24px; font-weight: 700; color: var(--primary-dark); text-transform: uppercase; letter-spacing: 1px; }
-    /* Caso use imagem: .logo img { height: 80px; width: auto; object-fit: contain; } */
+    .logo { font-size: 22px; font-weight: 700; color: var(--primary-dark); text-transform: uppercase; letter-spacing: 1px; }
     
     .menu-toggle { display: none; font-size: 24px; color: var(--primary-dark); cursor: pointer; }
     
@@ -60,7 +57,7 @@
     }
 
     /* HERO */
-    .hero-slider { height: 70vh; min-height: 500px; background-image: linear-gradient(rgba(34, 45, 67, 0.4), rgba(34, 45, 67, 0.6)), url('https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1920'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 80px; }
+    .hero-slider { height: 70vh; min-height: 500px; background-image: linear-gradient(rgba(34, 45, 67, 0.5), rgba(34, 45, 67, 0.7)), url('https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1920'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 80px; }
     .hero-content h1 { font-size: 40pt; color: #fff; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; text-shadow: 0 2px 10px rgba(0,0,0,0.2); }
 
     /* SHOWROOM / LOJA */
@@ -97,13 +94,13 @@
       .card-info { padding: 15px 10px; }
       .card-info h3 { font-size: 11pt; margin-bottom: 5px; }
       .card-info .price { font-size: 12pt; margin-bottom: 10px; }
-      .card-info p { display: none; /* Esconde a descrição no mobile para ficar clean */ }
+      .card-info p { display: none; }
       .btn-action { padding: 8px 12px; font-size: 8pt; }
     }
 
-    /* BOXES DE INFORMAÇÃO / SOBRE */
+    /* INFO SECTION / SOBRE */
     .info-section { padding: 100px 0; background-color: var(--bg-primary); }
-    .split-info-card { display: flex; border-radius: 12px; overflow: hidden; margin-bottom: 60px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); background-color: var(--bg-card); }
+    .split-info-card { display: flex; border-radius: 12px; overflow: hidden; margin-bottom: 60px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); background-color: var(--bg-card); border: 1px solid var(--border-color); }
     .split-info-content { flex: 1.2; padding: 60px; display: flex; flex-direction: column; justify-content: center; }
     .split-info-content h3 { font-size: 22pt; color: var(--primary-dark); margin-bottom: 15px; font-weight: 700; }
     .split-info-content h4 { font-size: 12pt; color: var(--accent); margin-bottom: 25px; font-weight: 600; text-transform: uppercase; }
@@ -116,21 +113,16 @@
       .split-info-image { min-height: 250px; }
     }
 
-    /* MODAL DE DETALHES (RESPONSIVO) */
-    .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow-y: auto; background-color: rgba(34, 45, 67, 0.9); padding: 50px 15px; align-items: flex-start; justify-content: center; }
-    .modal-content { margin: auto; background-color: var(--bg-card); border-radius: 12px; width: 100%; max-width: 1000px; display: flex; flex-direction: row; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.3); overflow: hidden; }
+    /* MODAL DE DETALHES */
+    .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow-y: auto; background-color: rgba(34, 45, 67, 0.95); padding: 50px 15px; align-items: flex-start; justify-content: center; }
+    .modal-content { margin: auto; background-color: var(--bg-card); border-radius: 12px; width: 100%; max-width: 1000px; display: flex; flex-direction: row; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.4); overflow: hidden; }
     
     .close-modal { position: absolute; top: 15px; right: 20px; color: var(--text-main); font-size: 30px; font-weight: 400; cursor: pointer; z-index: 10; transition: color 0.2s; }
     .close-modal:hover { color: var(--accent); }
     
     .modal-gallery-pane { width: 50%; position: relative; background-color: #f8f9fa; display: flex; flex-direction: column; }
     .modal-slider-main { width: 100%; flex-grow: 1; min-height: 500px; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 20px; }
-    .modal-slider-main img { width: 100%; height: 100%; object-fit: contain; }
-    
-    .slider-nav { position: absolute; top: 50%; transform: translateY(-50%); background-color: #fff; border: 1px solid var(--border-color); color: var(--primary-dark); font-size: 20px; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    .slider-nav:hover { background-color: var(--primary-dark); color: #fff; border-color: var(--primary-dark); }
-    .slider-nav.prev { left: 15px; }
-    .slider-nav.next { right: 15px; }
+    .modal-slider-main img { width: 100%; max-height: 460px; object-fit: contain; }
     
     .modal-slider-thumbnails { display: flex; gap: 10px; padding: 15px; background-color: #fff; overflow-x: auto; border-top: 1px solid var(--border-color); }
     .thumb-img { width: 70px; height: 70px; object-fit: cover; border: 2px solid transparent; border-radius: 6px; cursor: pointer; opacity: 0.6; transition: all 0.2s; }
@@ -178,7 +170,7 @@
   <header class="header-main">
     <div class="header-container">
       <div class="logo">
-        [MARCA]
+        CM Acessórios 18
       </div>
       
       <div class="menu-toggle" onclick="toggleMenu()">
@@ -197,7 +189,7 @@
   <!-- HERO -->
   <section id="hero" class="hero-slider">
     <div class="hero-content">
-      <h1 id="hero-titulo">[Título Placeholder Principal]</h1>
+      <h1 id="hero-titulo">Exclusividade em Detalhes</h1>
     </div>
   </section>
 
@@ -206,7 +198,7 @@
     <div class="container">
       <h2 class="section-title">Nossa Coleção</h2>
       
-      <!-- Filtros Fixos Conforme Solicitado -->
+      <!-- Filtros Fixos -->
       <div class="filter-wrapper">
         <button class="filter-btn active" onclick="filtrarCategoria('todas')">Todos</button>
         <button class="filter-btn" onclick="filtrarCategoria('braceletes')">Braceletes</button>
@@ -214,11 +206,9 @@
         <button class="filter-btn" onclick="filtrarCategoria('colares decorativos')">Colares Decorativos</button>
         <button class="filter-btn" onclick="filtrarCategoria('japamala')">Japamala</button>
         <button class="filter-btn" onclick="filtrarCategoria('pulseiras')">Pulseiras</button>
-        <!-- Filtros Dinâmicos via JS caso existam outras no painel -->
-        <div id="botoes-filtros" style="display: none;"></div>
       </div>
 
-      <!-- Grid de Produtos -->
+      <!-- Grid de Produtos Dinâmicos -->
       <div id="grid-produtos" class="grid-instruments">
         <p class="loading" style="text-align: center; width: 100%;">Carregando coleção exclusiva...</p>
       </div>
@@ -228,10 +218,9 @@
   <!-- INFO SECTION / SOBRE -->
   <section id="sobre" class="info-section">
     <div class="container">
-      
       <div class="split-info-card">
         <div class="split-info-content">
-          <h3>[Título Sobre a Marca / Qualidade]</h3>
+          <h3>Sobre a CM Acessórios 18</h3>
           <h4>Materiais Premium</h4>
           <p>
             [Placeholder Text] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Nossos braceletes, colares e japamalas são produzidos com extrema atenção aos detalhes, garantindo uma peça única e de alta durabilidade para o seu dia a dia.
@@ -239,7 +228,6 @@
         </div>
         <div class="split-info-image" style="background-image: url('https://images.unsplash.com/photo-1599643478514-4a11018593de?q=80&w=800');"></div>
       </div>
-
     </div>
   </section>
 
@@ -251,8 +239,6 @@
       <div class="modal-gallery-pane">
         <div class="modal-slider-main">
           <img id="modal-imagem-principal" src="" alt="Imagem Principal">
-          <button class="slider-nav prev" onclick="mudarFoto(-1)">‹</button>
-          <button class="slider-nav next" onclick="mudarFoto(1)">›</button>
         </div>
         <div id="modal-thumbnails" class="modal-slider-thumbnails"></div>
       </div>
@@ -262,9 +248,7 @@
         <h2 id="modal-nome">Nome do Produto</h2>
         <span class="modal-price" id="modal-valor">R$ 0,00</span>
         
-        <div class="desc-content" id="modal-tabela-specs">
-            <!-- Descrição entra aqui -->
-        </div>
+        <div class="desc-content" id="modal-tabela-specs"></div>
         
         <a id="modal-btn-wa" href="#" target="_blank" class="modal-btn">Comprar no WhatsApp</a>
       </div>
@@ -289,7 +273,7 @@
         <h4>Contato</h4>
         <ul class="contact-list">
           <li><a href="https://wa.me/5511000000000" target="_blank"><i class="fa-brands fa-whatsapp"></i> (11) 00000-0000</a></li>
-          <li><a href="#" target="_blank"><i class="fa-solid fa-envelope"></i> contato@marca.com.br</a></li>
+          <li><a href="#" target="_blank"><i class="fa-solid fa-envelope"></i> contato@cmacessorios18.com.br</a></li>
         </ul>
       </div>
     </div>
@@ -299,48 +283,51 @@
         <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
         <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
       </div>
-      <p>© 2026 [NOME DA MARCA]. Todos os direitos reservados.</p>
+      <p>© 2026 CM Acessórios 18. Todos os direitos reservados.</p>
     </div>
   </footer>
 
-  <a href="https://wa.me/5511000000000?text=Ol%C3%A1%2C%20estou%20no%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es." target="_blank" class="wpp-float" aria-label="Falar no WhatsApp">
+  <a href="https://wa.me/5511000000000?text=Ol%C3%A1%2C%20estou%20no%20site%20da%20CM%20Acess%C3%B3rios%2018%20e%20gostaria%20de%20informa%C3%A7%C3%B5es." target="_blank" class="wpp-float" aria-label="Falar no WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <!-- SCRIPT INTEGRADO E PREPARADO PARA O NOVO CMS -->
+  <!-- SCRIPT INTEGRADO E MOTOR CMS -->
   <script>
-    // PARÂMETROS DO GITHUB A SEREM SUBSTITUÍDOS POSTERIORMENTE
-    const GITHUB_USER = 'SEU_USUARIO_GITHUB';
-    const GITHUB_REPO = 'SEU_REPOSITORIO';
-
+    const GITHUB_USER = 'fabiopietrisinger-droid';
+    const GITHUB_REPO = 'cmacessorios18';
+    
     let todosOsProdutos = [];
-    let produtoAtivo = null;
     let fotoAtivaIndex = 0;
+    let produtoAtivo = null;
 
-    function toggleMenu() { document.getElementById("nav-menu").classList.toggle("active"); }
-    function closeMenu() { document.getElementById("nav-menu").classList.remove("active"); }
-
+    // Função para evitar o cache do navegador nas chamadas à API
     function urlSemCache(urlBase) {
       if (!urlBase) return '';
       const separador = urlBase.includes('?') ? '&' : '?';
       return urlBase + separador + 't=' + new Date().getTime();
     }
 
+    function toggleMenu() { document.getElementById("nav-menu").classList.toggle("active"); }
+    function closeMenu() { document.getElementById("nav-menu").classList.remove("active"); }
+
     async function inicializarSite() {
       try {
-        // Renderiza Produtos (Mapeado para nova pasta "produtos" ou a que for configurada no CMS)
+        // Carrega produtos
         const resLista = await fetch(urlSemCache(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/content/produtos`));
+        
         if(resLista.ok) {
           const arquivos = await resLista.json();
           const grid = document.getElementById('grid-produtos');
           grid.innerHTML = ''; 
           
           for (const arquivo of arquivos) {
-            if ((arquivo.name.endsWith('.json') || arquivo.name.endsWith('.md')) && arquivo.download_url) {
+            // Trava de segurança: ignorar .gitkeep e ler apenas .json
+            if (arquivo.name.endsWith('.json') && arquivo.download_url) {
               try {
                 const resItem = await fetch(urlSemCache(arquivo.download_url));
                 const txtProd = await resItem.text();
                 
+                // Limpeza de caracteres fantasmas do encoding
                 const cleanTxtP = txtProd.replace(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/, "").trim();
                 const produto = JSON.parse(cleanTxtP);
 
@@ -348,7 +335,7 @@
                   todosOsProdutos.push(produto);
                 }
               } catch (e) {
-                console.error("Erro no produto", arquivo.name, e);
+                console.error("Erro na leitura do produto", arquivo.name, e);
               }
             }
           }
@@ -357,7 +344,7 @@
           document.getElementById('grid-produtos').innerHTML = '<p class="loading" style="grid-column: 1/-1;">Os produtos aparecerão aqui após o primeiro cadastro no painel.</p>';
         }
 
-        // Home Institucional
+        // Carrega configurações da Home
         const resHome = await fetch(urlSemCache(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/content/home.json`));
         if(resHome.ok) {
           const dataHomeRaw = await resHome.json();
@@ -366,7 +353,7 @@
           
           if(homeData.banners && homeData.banners.length > 0) {
              const hero = document.getElementById('hero');
-             if (hero) hero.style.backgroundImage = `linear-gradient(rgba(34, 45, 67, 0.4), rgba(34, 45, 67, 0.6)), url('${homeData.banners[0].imagem}')`;
+             if (hero) hero.style.backgroundImage = `linear-gradient(rgba(34, 45, 67, 0.5), rgba(34, 45, 67, 0.7)), url('${homeData.banners[0].imagem}')`;
              
              const heroTitulo = document.getElementById('hero-titulo');
              if(heroTitulo && homeData.banners[0].titulo) heroTitulo.innerText = homeData.banners[0].titulo;
@@ -383,16 +370,17 @@
       grid.innerHTML = '';
 
       if(lista.length === 0) {
-        grid.innerHTML = '<p class="loading" style="grid-column: 1/-1;">Nenhum item listado nesta categoria.</p>';
+        grid.innerHTML = '<p class="loading" style="grid-column: 1/-1; text-align: center;">Nenhum item listado nesta categoria.</p>';
         return;
       }
 
       lista.forEach((produto) => {
+        // Encontra a posição verdadeira do produto na lista global para o modal não falhar
         const originalIdx = todosOsProdutos.indexOf(produto);
         
         const imgSrc = produto.image ? produto.image : 'https://placehold.co/600x600/f0f0f0/222d43?text=Sem+Foto';
-        const descText = produto.body ? produto.body.replace(/(<([^>]+)>)/gi, "").substring(0, 70) + '...' : 'Veja mais detalhes.';
         const valorFormatado = produto.valor ? `R$ ${produto.valor}` : 'Consulte';
+        const catText = produto.categoria ? produto.categoria : 'Geral';
 
         const card = document.createElement('div');
         card.className = 'card-instrumento';
@@ -401,10 +389,9 @@
             <img src="${imgSrc}" alt="${produto.title || 'Produto'}">
           </div>
           <div class="card-info">
-            <span class="category-tag">${produto.categoria || 'Geral'}</span>
+            <span class="category-tag">${catText}</span>
             <h3 onclick="abrirModal(${originalIdx})">${produto.title || 'Produto Exclusivo'}</h3>
             <span class="price">${valorFormatado}</span>
-            <p>${descText}</p>
             <a href="javascript:void(0)" onclick="abrirModal(${originalIdx})" class="btn-action">Detalhes</a>
           </div>
         `;
@@ -444,11 +431,15 @@
       if(produtoAtivo.galeria && produtoAtivo.galeria.length > 0) {
         produtoAtivo.galeria.forEach((imgObj, fIdx) => {
           const thumb = document.createElement('img');
+          // Tratamento para ler tanto strings quanto o formato de objetos gerados pelo widget de lista do CMS
           const urlImg = typeof imgObj === 'string' ? imgObj : imgObj.foto; 
-          thumb.src = urlImg;
-          thumb.className = `thumb-img ${fIdx === 0 ? 'active' : ''}`;
-          thumb.onclick = () => alternarFoto(fIdx);
-          thumbsContainer.appendChild(thumb);
+          
+          if(urlImg) {
+            thumb.src = urlImg;
+            thumb.className = `thumb-img ${fIdx === 0 ? 'active' : ''}`;
+            thumb.onclick = () => alternarFoto(fIdx);
+            thumbsContainer.appendChild(thumb);
+          }
         });
       }
 
@@ -459,7 +450,7 @@
         boxDesc.innerHTML = "<p>Detalhes e especificações em breve.</p>";
       }
 
-      const wppLink = `https://wa.me/5511000000000?text=Olá, tenho interesse no produto ${encodeURIComponent(produtoAtivo.title || 'que vi no site')}.`;
+      const wppLink = `https://wa.me/5511000000000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20produto%20${encodeURIComponent(produtoAtivo.title || 'que vi no site')}.`;
       document.getElementById('modal-btn-wa').href = wppLink;
 
       document.getElementById('modal-detalhes').style.display = 'flex';
@@ -472,22 +463,18 @@
     }
     
     function alternarFoto(index) {
+      if(!produtoAtivo || !produtoAtivo.galeria) return;
+      
       fotoAtivaIndex = index;
-      if(produtoAtivo.galeria && produtoAtivo.galeria.length > 0) {
-        const urlImg = typeof produtoAtivo.galeria[index] === 'string' ? produtoAtivo.galeria[index] : produtoAtivo.galeria[index].foto;
+      const urlImg = typeof produtoAtivo.galeria[index] === 'string' ? produtoAtivo.galeria[index] : produtoAtivo.galeria[index].foto;
+      
+      if(urlImg) {
         document.getElementById('modal-imagem-principal').src = urlImg;
       }
+      
       document.querySelectorAll('.thumb-img').forEach((th, tIdx) => {
         tIdx === index ? th.classList.add('active') : th.classList.remove('active');
       });
-    }
-
-    function mudarFoto(direcao) {
-      if(!produtoAtivo || !produtoAtivo.galeria || produtoAtivo.galeria.length === 0) return;
-      let novoIndex = fotoAtivaIndex + direcao;
-      if(novoIndex < 0) novoIndex = produtoAtivo.galeria.length - 1;
-      if(novoIndex >= produtoAtivo.galeria.length) novoIndex = 0;
-      alternarFoto(novoIndex);
     }
 
     window.onclick = function(e) { 
@@ -495,6 +482,7 @@
       if(e.target == modal) fecharModal(); 
     }
 
+    // Dispara a leitura no momento que o site carrega
     document.addEventListener('DOMContentLoaded', inicializarSite);
   </script>
 </body>
