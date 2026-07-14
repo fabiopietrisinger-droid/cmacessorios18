@@ -1,0 +1,43 @@
+backend:
+  name: github
+  repo: fabiopietrisinger-droid/cmacessorios18
+  branch: main
+
+media_folder: "imagens/uploads"
+public_folder: "/imagens/uploads"
+
+collections:
+  - name: "produtos"
+    label: "Produtos (Loja)"
+    folder: "content/produtos"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
+    fields:
+      - {label: "Título", name: "title", widget: "string"}
+      - label: "Categoria"
+        name: "categoria"
+        widget: "select"
+        options: ["Braceletes", "Colares", "Colares Decorativos", "Japamala", "Pulseiras"]
+      - {label: "Valor", name: "valor", widget: "string"}
+      - {label: "Imagem Principal", name: "image", widget: "image"}
+      - label: "Galeria"
+        name: "galeria"
+        widget: "list"
+        fields:
+          - {label: "Foto", name: "foto", widget: "image"}
+      - {label: "Descrição", name: "body", widget: "markdown"}
+
+  - name: "configuracoes"
+    label: "Página Inicial"
+    files:
+      - label: "Editar Home"
+        name: "home"
+        file: "content/home.json"
+        fields:
+          - label: "Banner"
+            name: "banners"
+            widget: "list"
+            fields:
+              - {label: "Título", name: "titulo", widget: "string"}
+              - {label: "Imagem", name: "imagem", widget: "image"}
