@@ -15,17 +15,10 @@ collections:
     format: "json"
     fields:
       - {label: "Título", name: "title", widget: "string"}
-      - label: "Categoria"
-        name: "categoria"
-        widget: "select"
-        options: ["Braceletes", "Colares", "Colares Decorativos", "Japamala", "Pulseiras"]
+      - {label: "Categoria", name: "categoria", widget: "select", options: ["Braceletes", "Colares", "Colares Decorativos", "Japamala", "Pulseiras"]}
       - {label: "Valor", name: "valor", widget: "string"}
       - {label: "Imagem Principal", name: "image", widget: "image"}
-      - label: "Galeria"
-        name: "galeria"
-        widget: "list"
-        fields:
-          - {label: "Foto", name: "foto", widget: "image"}
+      - {label: "Galeria", name: "galeria", widget: "list", fields: [{label: "Foto", name: "foto", widget: "image"}]}
       - {label: "Descrição", name: "body", widget: "markdown"}
 
   - name: "configuracoes"
