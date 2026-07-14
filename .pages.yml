@@ -16,16 +16,7 @@ content:
         label: "Categoria"
         type: "select"
         options:
-          - label: "Braceletes"
-            value: "Braceletes"
-          - label: "Colares"
-            value: "Colares"
-          - label: "Colares Decorativos"
-            value: "Colares Decorativos"
-          - label: "Japamala"
-            value: "Japamala"
-          - label: "Pulseiras"
-            value: "Pulseiras"
+          values: ["Braceletes", "Colares", "Colares Decorativos", "Japamala", "Pulseiras"]
       - name: "valor"
         label: "Valor (Ex: 149,90)"
         type: "string"
