@@ -11,6 +11,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
+  <!-- Bibliotecas de Alta Performance para Leitura de Markdown (.md) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
   <style>
     /* ==========================================================================
        UX/UI DESIGN SYSTEM & ESTILIZAÇÃO E-COMMERCE CLEAN
@@ -134,6 +138,8 @@
     .modal-specs-pane .modal-price { font-size: 20pt; font-weight: 700; color: var(--accent); margin-bottom: 25px; display: block; }
     
     .desc-content { font-size: 10.5pt; color: var(--text-muted); line-height: 1.8; margin-bottom: 30px; }
+    .desc-content p { margin-bottom: 15px; }
+    .desc-content ul, .desc-content ol { margin-left: 20px; margin-bottom: 15px; }
     
     .modal-btn { display: block; width: 100%; text-align: center; background-color: var(--primary-dark); color: #fff; padding: 16px; border-radius: 30px; font-weight: 600; text-transform: uppercase; margin-top: auto; letter-spacing: 1px; font-size: 10pt; transition: background 0.3s; }
     .modal-btn:hover { background-color: var(--accent); color: #fff; }
@@ -210,7 +216,7 @@
 
       <!-- Grid de Produtos Dinâmicos -->
       <div id="grid-produtos" class="grid-instruments">
-        <p class="loading" style="text-align: center; width: 100%;">Carregando coleção exclusiva...</p>
+        <p class="loading" style="text-align: center; width: 100%;">Sincronizando com o catálogo...</p>
       </div>
     </div>
   </section>
@@ -248,6 +254,7 @@
         <h2 id="modal-nome">Nome do Produto</h2>
         <span class="modal-price" id="modal-valor">R$ 0,00</span>
         
+        <!-- Local onde a descrição convertida do Markdown será injetada -->
         <div class="desc-content" id="modal-tabela-specs"></div>
         
         <a id="modal-btn-wa" href="#" target="_blank" class="modal-btn">Comprar no WhatsApp</a>
@@ -291,7 +298,7 @@
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <!-- SCRIPT INTEGRADO E MOTOR CMS -->
+  <!-- SCRIPT INTEGRADO E MOTOR CMS (AGORA PROCESSANDO ARQUIVOS .md) -->
   <script>
     const GITHUB_USER = 'fabiopietrisinger-droid';
     const GITHUB_REPO = 'cmacessorios18';
@@ -300,7 +307,7 @@
     let fotoAtivaIndex = 0;
     let produtoAtivo = null;
 
-    // Função para evitar o cache do navegador nas chamadas à API
+    // Função antibloqueio de cache
     function urlSemCache(urlBase) {
       if (!urlBase) return '';
       const separador = urlBase.includes('?') ? '&' : '?';
@@ -312,7 +319,7 @@
 
     async function inicializarSite() {
       try {
-        // Carrega produtos
+        // Carrega a lista da pasta produtos no repositório
         const resLista = await fetch(urlSemCache(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/content/produtos`));
         
         if(resLista.ok) {
@@ -321,30 +328,46 @@
           grid.innerHTML = ''; 
           
           for (const arquivo of arquivos) {
-            // Trava de segurança: ignorar .gitkeep e ler apenas .json
-            if (arquivo.name.endsWith('.json') && arquivo.download_url) {
+            // Nova trava de segurança: Agora lê exclusivamente arquivos Markdown (.md)
+            if (arquivo.name.endsWith('.md') && arquivo.download_url) {
               try {
                 const resItem = await fetch(urlSemCache(arquivo.download_url));
                 const txtProd = await resItem.text();
                 
-                // Limpeza de caracteres fantasmas do encoding
+                // Remove espaços fantasmas e quebras de linha sujas
                 const cleanTxtP = txtProd.replace(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/, "").trim();
-                const produto = JSON.parse(cleanTxtP);
+                
+                // Expressão regular para separar o YAML Frontmatter do texto da descrição (corpo Markdown)
+                const frontmatterRegex = /^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/;
+                const match = cleanTxtP.match(frontmatterRegex);
+                
+                if (match) {
+                  // O jsyaml processa as variáveis do topo do arquivo (título, preço, galeria)
+                  const yamlData = jsyaml.load(match[1]);
+                  // O corpo recebe todo o conteúdo de texto livre que sobrou após as linhas '---'
+                  const markdownBody = match[2];
+                  
+                  // Monta o objeto do produto convertendo o markdown da descrição para HTML
+                  const produto = {
+                    ...yamlData,
+                    body: marked.parse(markdownBody) // Transforma em tags <p>, <strong>, etc.
+                  };
 
-                if (produto && produto.title) {
-                  todosOsProdutos.push(produto);
+                  if (produto.title) {
+                    todosOsProdutos.push(produto);
+                  }
                 }
               } catch (e) {
-                console.error("Erro na leitura do produto", arquivo.name, e);
+                console.error("Erro na leitura estrutural do arquivo .md:", arquivo.name, e);
               }
             }
           }
           renderizarProdutos(todosOsProdutos);
         } else {
-          document.getElementById('grid-produtos').innerHTML = '<p class="loading" style="grid-column: 1/-1;">Os produtos aparecerão aqui após o primeiro cadastro no painel.</p>';
+          document.getElementById('grid-produtos').innerHTML = '<p class="loading" style="grid-column: 1/-1;">Sua coleção aparecerá aqui após o primeiro cadastro de produto no painel.</p>';
         }
 
-        // Carrega configurações da Home
+        // Home continua operando em formato .json normalmente conforme a sua configuração
         const resHome = await fetch(urlSemCache(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/content/home.json`));
         if(resHome.ok) {
           const dataHomeRaw = await resHome.json();
@@ -360,7 +383,7 @@
           }
         }
       } catch (error) {
-        console.error("Aguardando configuração do GitHub...", error);
+        console.error("Conectando ao banco de dados visual...", error);
       }
     }
 
@@ -375,9 +398,7 @@
       }
 
       lista.forEach((produto) => {
-        // Encontra a posição verdadeira do produto na lista global para o modal não falhar
         const originalIdx = todosOsProdutos.indexOf(produto);
-        
         const imgSrc = produto.image ? produto.image : 'https://placehold.co/600x600/f0f0f0/222d43?text=Sem+Foto';
         const valorFormatado = produto.valor ? `R$ ${produto.valor}` : 'Consulte';
         const catText = produto.categoria ? produto.categoria : 'Geral';
@@ -431,7 +452,6 @@
       if(produtoAtivo.galeria && produtoAtivo.galeria.length > 0) {
         produtoAtivo.galeria.forEach((imgObj, fIdx) => {
           const thumb = document.createElement('img');
-          // Tratamento para ler tanto strings quanto o formato de objetos gerados pelo widget de lista do CMS
           const urlImg = typeof imgObj === 'string' ? imgObj : imgObj.foto; 
           
           if(urlImg) {
@@ -445,9 +465,10 @@
 
       const boxDesc = document.getElementById('modal-tabela-specs');
       if(produtoAtivo.body) {
+        // Agora recebe a string convertida pelo marked.js com máxima fidelidade ao que foi digitado no painel
         boxDesc.innerHTML = produtoAtivo.body;
       } else {
-        boxDesc.innerHTML = "<p>Detalhes e especificações em breve.</p>";
+        boxDesc.innerHTML = "<p>Detalhes e especificações deste produto em breve.</p>";
       }
 
       const wppLink = `https://wa.me/5511000000000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20produto%20${encodeURIComponent(produtoAtivo.title || 'que vi no site')}.`;
@@ -482,7 +503,7 @@
       if(e.target == modal) fecharModal(); 
     }
 
-    // Dispara a leitura no momento que o site carrega
+    // Inicialização do ambiente de alta performance
     document.addEventListener('DOMContentLoaded', inicializarSite);
   </script>
 </body>
