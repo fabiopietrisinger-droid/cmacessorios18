@@ -5,20 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CM Acessórios 18 – Joias e Personalizados</title>
   
-  <!-- Tipografia Poppins: Clean e Arrojada -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <!-- Bibliotecas de Alta Performance para Leitura de Markdown (.md) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
   <style>
-    /* ==========================================================================
-       UX/UI DESIGN SYSTEM & ESTILIZAÇÃO E-COMMERCE CLEAN
-       ========================================================================== */
     :root {
       --bg-primary: #ffffff;
       --bg-secondary: #f8f9fa;
@@ -37,22 +29,17 @@
     ul { list-style: none; }
     .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-    /* NAVBAR & HAMBÚRGUER */
     .header-main { background-color: rgba(255, 255, 255, 0.98); border-bottom: 1px solid var(--border-color); position: fixed; top: 0; width: 100%; z-index: 1000; padding: 15px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
     .header-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; width: 100%; }
-    
     .logo { font-size: 22px; font-weight: 700; color: var(--primary-dark); text-transform: uppercase; letter-spacing: 1px; }
-    
     .menu-toggle { display: none; font-size: 24px; color: var(--primary-dark); cursor: pointer; }
     
     .nav-links { display: flex; align-items: center; gap: 30px; }
     .nav-links a { font-size: 10pt; text-transform: uppercase; letter-spacing: 1px; color: var(--text-main); font-weight: 500; }
     .nav-links a:hover { color: var(--accent); }
-    
     .nav-contact { background-color: var(--primary-dark); color: #fff !important; padding: 10px 24px; border-radius: 30px; font-weight: 600; }
     .nav-contact:hover { background-color: var(--accent) !important; color: #fff !important; }
 
-    /* RESPONSIVO NAVBAR */
     @media screen and (max-width: 992px) {
       .menu-toggle { display: block; }
       .nav-links { position: fixed; top: 70px; left: -100%; width: 100%; height: calc(100vh - 70px); background-color: var(--bg-primary); flex-direction: column; align-items: center; justify-content: flex-start; padding-top: 40px; transition: 0.3s; z-index: 999; }
@@ -60,22 +47,18 @@
       .nav-links a { font-size: 14pt; margin-bottom: 25px; }
     }
 
-    /* HERO */
     .hero-slider { height: 70vh; min-height: 500px; background-image: linear-gradient(rgba(34, 45, 67, 0.5), rgba(34, 45, 67, 0.7)), url('https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1920'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 80px; }
     .hero-content h1 { font-size: 40pt; color: #fff; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; text-shadow: 0 2px 10px rgba(0,0,0,0.2); }
 
-    /* SHOWROOM / LOJA */
     .catalog-section { padding: 80px 0; background-color: var(--bg-secondary); }
     .section-title { font-size: 26pt; color: var(--primary-dark); text-align: center; font-weight: 700; margin-bottom: 40px; }
     .section-title::after { content: ''; display: block; width: 80px; height: 3px; background-color: var(--accent); margin: 15px auto 0 auto; }
 
-    /* FILTROS E GRID */
     .filter-wrapper { text-align: center; margin-bottom: 50px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
     .filter-btn { background: #fff; border: 1px solid var(--border-color); color: var(--text-muted); padding: 12px 24px; cursor: pointer; border-radius: 30px; font-size: 9pt; text-transform: uppercase; font-weight: 600; transition: all 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
     .filter-btn:hover, .filter-btn.active { border-color: var(--primary-dark); color: #fff; background-color: var(--primary-dark); }
     
     .grid-instruments { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
-    
     .card-instrumento { background-color: var(--bg-card); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border: 1px solid transparent; }
     .card-instrumento:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: var(--accent); }
     
@@ -86,23 +69,19 @@
     .category-tag { font-size: 8pt; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 10px; letter-spacing: 1px; }
     .card-info h3 { font-size: 14pt; color: var(--primary-dark); margin-bottom: 10px; font-weight: 600; cursor: pointer; }
     .card-info .price { font-size: 16pt; font-weight: 700; color: var(--primary-dark); margin-bottom: 15px; }
-    .card-info p { font-size: 10pt; color: var(--text-muted); margin-bottom: 25px; height: 45px; overflow: hidden; }
     
     .btn-action { display: inline-block; padding: 10px 20px; border: 2px solid var(--primary-dark); border-radius: 30px; color: var(--primary-dark); font-weight: 600; font-size: 9pt; text-transform: uppercase; transition: all 0.3s; }
     .card-instrumento:hover .btn-action { background-color: var(--primary-dark); color: #fff; }
 
-    /* GRID RESPONSIVO */
     @media screen and (max-width: 600px) {
       .grid-instruments { grid-template-columns: repeat(2, 1fr); gap: 15px; }
       .img-wrapper { height: 180px; }
       .card-info { padding: 15px 10px; }
       .card-info h3 { font-size: 11pt; margin-bottom: 5px; }
       .card-info .price { font-size: 12pt; margin-bottom: 10px; }
-      .card-info p { display: none; }
       .btn-action { padding: 8px 12px; font-size: 8pt; }
     }
 
-    /* INFO SECTION / SOBRE */
     .info-section { padding: 100px 0; background-color: var(--bg-primary); }
     .split-info-card { display: flex; border-radius: 12px; overflow: hidden; margin-bottom: 60px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); background-color: var(--bg-card); border: 1px solid var(--border-color); }
     .split-info-content { flex: 1.2; padding: 60px; display: flex; flex-direction: column; justify-content: center; }
@@ -117,10 +96,8 @@
       .split-info-image { min-height: 250px; }
     }
 
-    /* MODAL DE DETALHES */
     .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow-y: auto; background-color: rgba(34, 45, 67, 0.95); padding: 50px 15px; align-items: flex-start; justify-content: center; }
     .modal-content { margin: auto; background-color: var(--bg-card); border-radius: 12px; width: 100%; max-width: 1000px; display: flex; flex-direction: row; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.4); overflow: hidden; }
-    
     .close-modal { position: absolute; top: 15px; right: 20px; color: var(--text-main); font-size: 30px; font-weight: 400; cursor: pointer; z-index: 10; transition: color 0.2s; }
     .close-modal:hover { color: var(--accent); }
     
@@ -139,7 +116,6 @@
     
     .desc-content { font-size: 10.5pt; color: var(--text-muted); line-height: 1.8; margin-bottom: 30px; }
     .desc-content p { margin-bottom: 15px; }
-    .desc-content ul, .desc-content ol { margin-left: 20px; margin-bottom: 15px; }
     
     .modal-btn { display: block; width: 100%; text-align: center; background-color: var(--primary-dark); color: #fff; padding: 16px; border-radius: 30px; font-weight: 600; text-transform: uppercase; margin-top: auto; letter-spacing: 1px; font-size: 10pt; transition: background 0.3s; }
     .modal-btn:hover { background-color: var(--accent); color: #fff; }
@@ -151,38 +127,28 @@
       .modal-specs-pane { padding: 30px 20px; }
     }
 
-    /* FOOTER */
     .footer-main { background-color: var(--primary-dark); padding: 60px 0 30px 0; color: #fff; }
     .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-bottom: 40px; }
     .footer-col h4 { color: var(--accent); text-transform: uppercase; font-size: 12pt; font-weight: 600; margin-bottom: 25px; }
     .footer-col ul li { margin-bottom: 15px; }
     .footer-col ul li a { font-size: 10pt; color: #d0d0d0; display: flex; align-items: center; gap: 10px; }
     .footer-col ul li a:hover { color: #fff; }
-    
     .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; }
     .social-links { margin-bottom: 20px; }
     .social-links a { display: inline-block; margin: 0 10px; font-size: 20pt; color: #d0d0d0; transition: color 0.3s; }
     .social-links a:hover { color: var(--accent); }
     .footer-bottom p { font-size: 9pt; color: #a0a0a0; margin-bottom: 5px; }
 
-    /* WHATSAPP FLOAT */
     .wpp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25D366; color: #fff; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); z-index: 1500; transition: all 0.3s ease; }
     .wpp-float:hover { transform: scale(1.1); color: #fff; background-color: #20b858; }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
   <header class="header-main">
     <div class="header-container">
-      <div class="logo">
-        CM Acessórios 18
-      </div>
-      
-      <div class="menu-toggle" onclick="toggleMenu()">
-        <i class="fa-solid fa-bars"></i>
-      </div>
-
+      <div class="logo">CM Acessórios 18</div>
+      <div class="menu-toggle" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
       <nav class="nav-links" id="nav-menu">
         <a href="#hero" onclick="closeMenu()">Home</a>
         <a href="#loja" onclick="closeMenu()">Coleção</a>
@@ -192,19 +158,15 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <section id="hero" class="hero-slider">
     <div class="hero-content">
       <h1 id="hero-titulo">Exclusividade em Detalhes</h1>
     </div>
   </section>
 
-  <!-- SHOWROOM / LOJA -->
   <section id="loja" class="catalog-section">
     <div class="container">
       <h2 class="section-title">Nossa Coleção</h2>
-      
-      <!-- Filtros Fixos -->
       <div class="filter-wrapper">
         <button class="filter-btn active" onclick="filtrarCategoria('todas')">Todos</button>
         <button class="filter-btn" onclick="filtrarCategoria('braceletes')">Braceletes</button>
@@ -213,56 +175,44 @@
         <button class="filter-btn" onclick="filtrarCategoria('japamala')">Japamala</button>
         <button class="filter-btn" onclick="filtrarCategoria('pulseiras')">Pulseiras</button>
       </div>
-
-      <!-- Grid de Produtos Dinâmicos -->
       <div id="grid-produtos" class="grid-instruments">
-        <p class="loading" style="text-align: center; width: 100%;">Sincronizando com o catálogo...</p>
+        <p class="loading" style="text-align: center; width: 100%;">Carregando coleção...</p>
       </div>
     </div>
   </section>
 
-  <!-- INFO SECTION / SOBRE -->
   <section id="sobre" class="info-section">
     <div class="container">
       <div class="split-info-card">
         <div class="split-info-content">
           <h3>Sobre a CM Acessórios 18</h3>
           <h4>Materiais Premium</h4>
-          <p>
-            [Placeholder Text] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Nossos braceletes, colares e japamalas são produzidos com extrema atenção aos detalhes, garantindo uma peça única e de alta durabilidade para o seu dia a dia.
-          </p>
+          <p>Nossos braceletes, colares e japamalas são produzidos com extrema atenção aos detalhes, garantindo uma peça única e de alta durabilidade para o seu dia a dia.</p>
         </div>
         <div class="split-info-image" style="background-image: url('https://images.unsplash.com/photo-1599643478514-4a11018593de?q=80&w=800');"></div>
       </div>
     </div>
   </section>
 
-  <!-- MODAL DO PRODUTO -->
   <div id="modal-detalhes" class="modal">
     <div class="modal-content">
       <span class="close-modal" onclick="fecharModal()">×</span>
-      
       <div class="modal-gallery-pane">
         <div class="modal-slider-main">
           <img id="modal-imagem-principal" src="" alt="Imagem Principal">
         </div>
         <div id="modal-thumbnails" class="modal-slider-thumbnails"></div>
       </div>
-
       <div class="modal-specs-pane">
         <span class="category-tag" id="modal-categoria">Categoria</span>
         <h2 id="modal-nome">Nome do Produto</h2>
         <span class="modal-price" id="modal-valor">R$ 0,00</span>
-        
-        <!-- Local onde a descrição será injetada -->
         <div class="desc-content" id="modal-tabela-specs"></div>
-        
         <a id="modal-btn-wa" href="#" target="_blank" class="modal-btn">Comprar no WhatsApp</a>
       </div>
     </div>
   </div>
 
-  <!-- RODAPÉ -->
   <footer class="footer-main">
     <div class="container footer-grid">
       <div class="footer-col">
@@ -275,7 +225,6 @@
           <li><a href="#loja" onclick="filtrarCategoria('pulseiras')">Pulseiras</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
         <h4>Contato</h4>
         <ul class="contact-list">
@@ -284,7 +233,6 @@
         </ul>
       </div>
     </div>
-    
     <div class="footer-bottom">
       <div class="social-links">
         <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
@@ -294,23 +242,16 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/5511000000000?text=Ol%C3%A1%2C%20estou%20no%20site%20da%20CM%20Acess%C3%B3rios%2018%20e%20gostaria%20de%20informa%C3%A7%C3%B5es." target="_blank" class="wpp-float" aria-label="Falar no WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
+  <a href="https://wa.me/5511000000000" target="_blank" class="wpp-float"><i class="fa-brands fa-whatsapp"></i></a>
 
-  <!-- SCRIPT INTEGRADO: MOTOR HÍBRIDO -->
   <script>
     const GITHUB_USER = 'fabiopietrisinger-droid';
     const GITHUB_REPO = 'cmacessorios18';
-    
     let todosOsProdutos = [];
-    let fotoAtivaIndex = 0;
-    let produtoAtivo = null;
 
     function urlSemCache(urlBase) {
       if (!urlBase) return '';
-      const separador = urlBase.includes('?') ? '&' : '?';
-      return urlBase + separador + 't=' + new Date().getTime();
+      return urlBase + (urlBase.includes('?') ? '&' : '?') + 't=' + new Date().getTime();
     }
 
     function toggleMenu() { document.getElementById("nav-menu").classList.toggle("active"); }
@@ -318,46 +259,24 @@
 
     async function inicializarSite() {
       try {
-        // 1. Busca os arquivos na pasta
         const resLista = await fetch(urlSemCache(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/content/produtos`));
-        
         if(resLista.ok) {
           const arquivos = await resLista.json();
           const grid = document.getElementById('grid-produtos');
           grid.innerHTML = ''; 
           
           for (const arquivo of arquivos) {
-            // TRAVA HÍBRIDA: Aceita tanto .md quanto .json automaticamente
-            if ((arquivo.name.endsWith('.md') || arquivo.name.endsWith('.json')) && arquivo.download_url) {
+            if (arquivo.name.endsWith('.json') && arquivo.download_url) {
               try {
                 const resItem = await fetch(urlSemCache(arquivo.download_url));
                 const txtProd = await resItem.text();
                 const cleanTxtP = txtProd.replace(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/, "").trim();
-                
-                let produto = null;
-
-                // Se for Markdown (.md)
-                if (arquivo.name.endsWith('.md')) {
-                  const frontmatterRegex = /^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/;
-                  const match = cleanTxtP.match(frontmatterRegex);
-                  if (match) {
-                    const yamlData = jsyaml.load(match[1]);
-                    produto = { ...yamlData, body: marked.parse(match[2]) };
-                  } else {
-                    console.warn(`Arquivo ${arquivo.name} ignorado: formato Frontmatter (---) não encontrado.`);
-                  }
-                } 
-                // Se for JSON (.json)
-                else if (arquivo.name.endsWith('.json')) {
-                  produto = JSON.parse(cleanTxtP);
-                }
-
-                // Se o produto foi montado com sucesso, envia para a vitrine
-                if (produto && (produto.title || produto.nome)) {
+                const produto = JSON.parse(cleanTxtP);
+                if (produto && produto.title) {
                   todosOsProdutos.push(produto);
                 }
               } catch (e) {
-                console.error(`Erro ao processar o arquivo ${arquivo.name}:`, e);
+                console.error(`Erro estrutural no arquivo ${arquivo.name}.`);
               }
             }
           }
@@ -366,23 +285,19 @@
           document.getElementById('grid-produtos').innerHTML = '<p class="loading" style="grid-column: 1/-1; text-align:center;">Sua coleção aparecerá aqui após o primeiro cadastro.</p>';
         }
 
-        // 2. Carrega a Home
         const resHome = await fetch(urlSemCache(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/content/home.json`));
         if(resHome.ok) {
           const dataHomeRaw = await resHome.json();
-          const decodedContent = decodeURIComponent(escape(atob(dataHomeRaw.content)));
-          const homeData = JSON.parse(decodedContent);
-          
+          const homeData = JSON.parse(decodeURIComponent(escape(atob(dataHomeRaw.content))));
           if(homeData.banners && homeData.banners.length > 0) {
              const hero = document.getElementById('hero');
              if (hero) hero.style.backgroundImage = `linear-gradient(rgba(34, 45, 67, 0.5), rgba(34, 45, 67, 0.7)), url('${homeData.banners[0].imagem}')`;
-             
              const heroTitulo = document.getElementById('hero-titulo');
              if(heroTitulo && homeData.banners[0].titulo) heroTitulo.innerText = homeData.banners[0].titulo;
           }
         }
       } catch (error) {
-        console.error("Erro de conexão com o repositório:", error);
+        console.error("Conectando ao banco de dados...");
       }
     }
 
@@ -392,15 +307,15 @@
       grid.innerHTML = '';
 
       if(lista.length === 0) {
-        grid.innerHTML = '<p class="loading" style="grid-column: 1/-1; text-align: center;">Nenhum item listado nesta categoria.</p>';
+        grid.innerHTML = '<p class="loading" style="grid-column: 1/-1; text-align: center;">Nenhum item listado.</p>';
         return;
       }
 
       lista.forEach((produto) => {
         const originalIdx = todosOsProdutos.indexOf(produto);
-        const imgSrc = produto.image ? produto.image : 'https://placehold.co/600x600/f0f0f0/222d43?text=Sem+Foto';
+        const imgSrc = produto.image || 'https://placehold.co/600x600/f0f0f0/222d43?text=Sem+Foto';
         const valorFormatado = produto.valor ? `R$ ${produto.valor}` : 'Consulte';
-        const catText = produto.categoria ? produto.categoria : 'Geral';
+        const catText = produto.categoria || 'Geral';
 
         const card = document.createElement('div');
         card.className = 'card-instrumento';
@@ -420,58 +335,36 @@
     }
 
     function filtrarCategoria(categoria) {
-      const botoes = document.querySelectorAll('.filter-btn');
-      botoes.forEach(btn => {
-        if(btn.innerText.toLowerCase() === categoria.toLowerCase() || (categoria === 'todas' && btn.innerText.toLowerCase() === 'todos')) {
-          btn.classList.add('active');
-        } else {
-          btn.classList.remove('active');
-        }
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.innerText.toLowerCase() === categoria.toLowerCase() || (categoria === 'todas' && btn.innerText.toLowerCase() === 'todos'));
       });
-
-      if(categoria === 'todas') {
-        renderizarProdutos(todosOsProdutos);
-      } else {
-        renderizarProdutos(todosOsProdutos.filter(p => p.categoria && p.categoria.toLowerCase() === categoria.toLowerCase()));
-      }
+      renderizarProdutos(categoria === 'todas' ? todosOsProdutos : todosOsProdutos.filter(p => p.categoria && p.categoria.toLowerCase() === categoria.toLowerCase()));
     }
 
     function abrirModal(index) {
-      produtoAtivo = todosOsProdutos[index];
-      fotoAtivaIndex = 0;
-      
-      document.getElementById('modal-nome').innerText = produtoAtivo.title || 'Produto Exclusivo';
-      document.getElementById('modal-categoria').innerText = produtoAtivo.categoria || 'Geral';
-      document.getElementById('modal-valor').innerText = produtoAtivo.valor ? `R$ ${produtoAtivo.valor}` : 'Preço sob consulta';
-      document.getElementById('modal-imagem-principal').src = produtoAtivo.image || 'https://placehold.co/600x600/f0f0f0/222d43?text=Sem+Foto';
+      const p = todosOsProdutos[index];
+      document.getElementById('modal-nome').innerText = p.title || 'Produto Exclusivo';
+      document.getElementById('modal-categoria').innerText = p.categoria || 'Geral';
+      document.getElementById('modal-valor').innerText = p.valor ? `R$ ${p.valor}` : 'Preço sob consulta';
+      document.getElementById('modal-imagem-principal').src = p.image || 'https://placehold.co/600x600/f0f0f0/222d43?text=Sem+Foto';
       
       const thumbsContainer = document.getElementById('modal-thumbnails');
       thumbsContainer.innerHTML = '';
-      
-      if(produtoAtivo.galeria && produtoAtivo.galeria.length > 0) {
-        produtoAtivo.galeria.forEach((imgObj, fIdx) => {
-          const thumb = document.createElement('img');
+      if(p.galeria && p.galeria.length > 0) {
+        p.galeria.forEach((imgObj, fIdx) => {
           const urlImg = typeof imgObj === 'string' ? imgObj : imgObj.foto; 
-          
           if(urlImg) {
+            const thumb = document.createElement('img');
             thumb.src = urlImg;
             thumb.className = `thumb-img ${fIdx === 0 ? 'active' : ''}`;
-            thumb.onclick = () => alternarFoto(fIdx);
+            thumb.onclick = () => alternarFoto(fIdx, index);
             thumbsContainer.appendChild(thumb);
           }
         });
       }
 
-      const boxDesc = document.getElementById('modal-tabela-specs');
-      if(produtoAtivo.body) {
-        boxDesc.innerHTML = produtoAtivo.body;
-      } else {
-        boxDesc.innerHTML = "<p>Detalhes e especificações deste produto em breve.</p>";
-      }
-
-      const wppLink = `https://wa.me/5511000000000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20produto%20${encodeURIComponent(produtoAtivo.title || 'que vi no site')}.`;
-      document.getElementById('modal-btn-wa').href = wppLink;
-
+      document.getElementById('modal-tabela-specs').innerHTML = p.body || "<p>Detalhes e especificações em breve.</p>";
+      document.getElementById('modal-btn-wa').href = `https://wa.me/5511000000000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20produto%20${encodeURIComponent(p.title || 'que vi no site')}.`;
       document.getElementById('modal-detalhes').style.display = 'flex';
       document.body.style.overflow = 'hidden'; 
     }
@@ -481,26 +374,14 @@
       document.body.style.overflow = 'auto'; 
     }
     
-    function alternarFoto(index) {
-      if(!produtoAtivo || !produtoAtivo.galeria) return;
-      
-      fotoAtivaIndex = index;
-      const urlImg = typeof produtoAtivo.galeria[index] === 'string' ? produtoAtivo.galeria[index] : produtoAtivo.galeria[index].foto;
-      
-      if(urlImg) {
-        document.getElementById('modal-imagem-principal').src = urlImg;
-      }
-      
-      document.querySelectorAll('.thumb-img').forEach((th, tIdx) => {
-        tIdx === index ? th.classList.add('active') : th.classList.remove('active');
-      });
+    function alternarFoto(fIdx, pIdx) {
+      const p = todosOsProdutos[pIdx];
+      const urlImg = typeof p.galeria[fIdx] === 'string' ? p.galeria[fIdx] : p.galeria[fIdx].foto;
+      if(urlImg) document.getElementById('modal-imagem-principal').src = urlImg;
+      document.querySelectorAll('.thumb-img').forEach((th, i) => th.classList.toggle('active', i === fIdx));
     }
 
-    window.onclick = function(e) { 
-      const modal = document.getElementById('modal-detalhes');
-      if(e.target == modal) fecharModal(); 
-    }
-
+    window.onclick = e => { if(e.target == document.getElementById('modal-detalhes')) fecharModal(); }
     document.addEventListener('DOMContentLoaded', inicializarSite);
   </script>
 </body>
