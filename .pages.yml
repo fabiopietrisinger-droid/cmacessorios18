@@ -7,7 +7,6 @@ content:
     label: "Produtos (Loja)"
     type: "collection"
     path: "content/produtos"
-    format: "json"
     fields:
       - name: "title"
         label: "Título"
