@@ -5,12 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CM Acessórios 18 – Joias e Personalizados</title>
   
+  <!-- Tipografia Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
+  <!-- Bibliotecas Definitivas para ler Markdown (.md) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
   <style>
+    /* UX/UI DESIGN SYSTEM & ESTILIZAÇÃO E-COMMERCE CLEAN */
     :root {
       --bg-primary: #ffffff;
       --bg-secondary: #f8f9fa;
@@ -29,6 +35,7 @@
     ul { list-style: none; }
     .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
+    /* NAVBAR & HAMBÚRGUER */
     .header-main { background-color: rgba(255, 255, 255, 0.98); border-bottom: 1px solid var(--border-color); position: fixed; top: 0; width: 100%; z-index: 1000; padding: 15px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
     .header-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; width: 100%; }
     .logo { font-size: 22px; font-weight: 700; color: var(--primary-dark); text-transform: uppercase; letter-spacing: 1px; }
@@ -47,9 +54,11 @@
       .nav-links a { font-size: 14pt; margin-bottom: 25px; }
     }
 
+    /* HERO */
     .hero-slider { height: 70vh; min-height: 500px; background-image: linear-gradient(rgba(34, 45, 67, 0.5), rgba(34, 45, 67, 0.7)), url('https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1920'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 80px; }
     .hero-content h1 { font-size: 40pt; color: #fff; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; text-shadow: 0 2px 10px rgba(0,0,0,0.2); }
 
+    /* SHOWROOM / LOJA */
     .catalog-section { padding: 80px 0; background-color: var(--bg-secondary); }
     .section-title { font-size: 26pt; color: var(--primary-dark); text-align: center; font-weight: 700; margin-bottom: 40px; }
     .section-title::after { content: ''; display: block; width: 80px; height: 3px; background-color: var(--accent); margin: 15px auto 0 auto; }
@@ -82,6 +91,7 @@
       .btn-action { padding: 8px 12px; font-size: 8pt; }
     }
 
+    /* INFO SECTION / SOBRE */
     .info-section { padding: 100px 0; background-color: var(--bg-primary); }
     .split-info-card { display: flex; border-radius: 12px; overflow: hidden; margin-bottom: 60px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); background-color: var(--bg-card); border: 1px solid var(--border-color); }
     .split-info-content { flex: 1.2; padding: 60px; display: flex; flex-direction: column; justify-content: center; }
@@ -96,6 +106,7 @@
       .split-info-image { min-height: 250px; }
     }
 
+    /* MODAL DE DETALHES */
     .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow-y: auto; background-color: rgba(34, 45, 67, 0.95); padding: 50px 15px; align-items: flex-start; justify-content: center; }
     .modal-content { margin: auto; background-color: var(--bg-card); border-radius: 12px; width: 100%; max-width: 1000px; display: flex; flex-direction: row; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.4); overflow: hidden; }
     .close-modal { position: absolute; top: 15px; right: 20px; color: var(--text-main); font-size: 30px; font-weight: 400; cursor: pointer; z-index: 10; transition: color 0.2s; }
@@ -127,6 +138,7 @@
       .modal-specs-pane { padding: 30px 20px; }
     }
 
+    /* FOOTER */
     .footer-main { background-color: var(--primary-dark); padding: 60px 0 30px 0; color: #fff; }
     .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-bottom: 40px; }
     .footer-col h4 { color: var(--accent); text-transform: uppercase; font-size: 12pt; font-weight: 600; margin-bottom: 25px; }
@@ -257,6 +269,33 @@
     function toggleMenu() { document.getElementById("nav-menu").classList.toggle("active"); }
     function closeMenu() { document.getElementById("nav-menu").classList.remove("active"); }
 
+    // Função à prova de falhas para destrinchar o arquivo Markdown
+    function extrairDadosMarkdown(rawText) {
+      const content = rawText.trim();
+      
+      // Verifica se começa com o delimitador do frontmatter
+      if (content.startsWith('---')) {
+        // Encontra onde o frontmatter termina
+        const endIdx = content.indexOf('\n---', 3);
+        if (endIdx !== -1) {
+          const yamlBlock = content.substring(3, endIdx);
+          const mdBody = content.substring(endIdx + 4).trim();
+          
+          try {
+            // Transforma o cabeçalho YAML em variáveis
+            const data = jsyaml.load(yamlBlock) || {};
+            // Transforma o corpo da descrição para HTML
+            data.body = marked.parse(mdBody);
+            return data;
+          } catch (err) {
+            console.error("Erro ao converter o YAML:", err);
+            return null;
+          }
+        }
+      }
+      return null;
+    }
+
     async function inicializarSite() {
       try {
         const resLista = await fetch(urlSemCache(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/content/produtos`));
@@ -266,17 +305,20 @@
           grid.innerHTML = ''; 
           
           for (const arquivo of arquivos) {
-            if (arquivo.name.endsWith('.json') && arquivo.download_url) {
+            // O motor agora procura APENAS por arquivos .md nativos do Pages CMS
+            if (arquivo.name.endsWith('.md') && arquivo.download_url) {
               try {
                 const resItem = await fetch(urlSemCache(arquivo.download_url));
                 const txtProd = await resItem.text();
-                const cleanTxtP = txtProd.replace(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/, "").trim();
-                const produto = JSON.parse(cleanTxtP);
+                
+                // Extrai as variáveis e a descrição
+                const produto = extrairDadosMarkdown(txtProd);
+                
                 if (produto && produto.title) {
                   todosOsProdutos.push(produto);
                 }
               } catch (e) {
-                console.error(`Erro estrutural no arquivo ${arquivo.name}.`);
+                console.error(`Erro ao baixar arquivo ${arquivo.name}.`);
               }
             }
           }
@@ -285,6 +327,7 @@
           document.getElementById('grid-produtos').innerHTML = '<p class="loading" style="grid-column: 1/-1; text-align:center;">Sua coleção aparecerá aqui após o primeiro cadastro.</p>';
         }
 
+        // Home Page ainda é lida pelo .json configurado
         const resHome = await fetch(urlSemCache(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/content/home.json`));
         if(resHome.ok) {
           const dataHomeRaw = await resHome.json();
@@ -297,7 +340,7 @@
           }
         }
       } catch (error) {
-        console.error("Conectando ao banco de dados...");
+        console.error("Erro na conexão com o banco de dados via GitHub.", error);
       }
     }
 
@@ -307,7 +350,7 @@
       grid.innerHTML = '';
 
       if(lista.length === 0) {
-        grid.innerHTML = '<p class="loading" style="grid-column: 1/-1; text-align: center;">Nenhum item listado.</p>';
+        grid.innerHTML = '<p class="loading" style="grid-column: 1/-1; text-align: center;">Nenhum produto encontrado.</p>';
         return;
       }
 
@@ -363,7 +406,7 @@
         });
       }
 
-      document.getElementById('modal-tabela-specs').innerHTML = p.body || "<p>Detalhes e especificações em breve.</p>";
+      document.getElementById('modal-tabela-specs').innerHTML = p.body || "<p>Nenhuma descrição informada.</p>";
       document.getElementById('modal-btn-wa').href = `https://wa.me/5511000000000?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20produto%20${encodeURIComponent(p.title || 'que vi no site')}.`;
       document.getElementById('modal-detalhes').style.display = 'flex';
       document.body.style.overflow = 'hidden'; 
