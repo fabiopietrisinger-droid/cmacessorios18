@@ -599,8 +599,8 @@
           });
       }
 
-      // Mensagem personalizada para o card de "Personalize o Seu"
-      const textoPersonalizado = "Olá, estou no site e tenho interesse nesta peça: Peça Personalizada";
+      // Mensagem personalizada para o card de "Personalize o Seu" com a nova estrutura
+      const textoPersonalizado = "Olá, estou no site e tenho interesse nesta peça: Categoria: Personalizados Produto: Peça Personalizada";
       const linkWaPersonalizado = `https://wa.me/5511994863166?text=${encodeURIComponent(textoPersonalizado)}`;
 
       // Card Fixo de Personalização
@@ -657,8 +657,8 @@
 
       document.getElementById('modal-tabela-specs').innerHTML = p.body || "<p>Chame no WhatsApp para alinhar os detalhes de ajuste desta peça.</p>";
       
-      // Montagem da frase requisitada: "Olá, estou no site e tenho interesse nesta peça: <nome da categoria> <nome da peça>"
-      const textoWaProduto = `Olá, estou no site e tenho interesse nesta peça: ${categoriaFormatada} ${tituloFormatado}`;
+      // Nova estrutura de mensagem WhatsApp
+      const textoWaProduto = `Olá, estou no site e tenho interesse nesta peça: Categoria: ${categoriaFormatada} Produto: ${tituloFormatado}`;
       document.getElementById('modal-btn-wa').href = `https://wa.me/5511994863166?text=${encodeURIComponent(textoWaProduto)}`;
       
       document.getElementById('modal-detalhes').style.display = 'flex';
@@ -673,8 +673,8 @@
         document.getElementById('signo-pedras').innerText = dadosSigno.pedras;
         document.getElementById('signo-desc').innerText = dadosSigno.desc;
         
-        // Montagem da frase requisitada adaptada para os Signos
-        const textoWaSigno = `Olá, estou no site e tenho interesse nesta peça: Pulseira do Signo de ${signo}`;
+        // Nova estrutura de mensagem WhatsApp para os Signos
+        const textoWaSigno = `Olá, estou no site e tenho interesse nesta peça: Categoria: Coleção Zodíaco Produto: Pulseira do Signo de ${signo}`;
         document.getElementById('modal-signo-wa').href = `https://wa.me/5511994863166?text=${encodeURIComponent(textoWaSigno)}`;
         
         document.getElementById('modal-signo').style.display = 'flex';
