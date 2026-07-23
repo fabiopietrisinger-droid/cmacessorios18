@@ -23,6 +23,8 @@
       --bg-card: #ffffff;
       --accent: #77c1d8;
       --primary-dark: #222d43;
+      --wa-green: #25D366; /* Verde Oficial do WhatsApp */
+      --wa-green-hover: #20b858;
       --text-main: #333333;
       --text-muted: #666666;
       --border-color: #eaeaea;
@@ -44,8 +46,12 @@
     .nav-links { display: flex; align-items: center; gap: 20px; }
     .nav-links a { font-size: 10pt; text-transform: uppercase; letter-spacing: 1px; color: var(--text-main); font-weight: 500; }
     .nav-links a:hover { color: var(--accent); }
-    .nav-contact { background-color: var(--primary-dark); color: #fff !important; padding: 10px 24px; border-radius: 30px; font-weight: 600; }
-    .nav-contact:hover { background-color: var(--accent) !important; color: #fff !important; }
+    
+    /* BOTÃO WHATSAPP GLOBAL */
+    .btn-whatsapp { background-color: var(--wa-green) !important; color: #fff !important; border-color: var(--wa-green) !important; }
+    .btn-whatsapp:hover { background-color: var(--wa-green-hover) !important; border-color: var(--wa-green-hover) !important; }
+    
+    .nav-contact { padding: 10px 24px; border-radius: 30px; font-weight: 600; }
 
     @media screen and (max-width: 992px) {
       .menu-toggle { display: block; }
@@ -84,11 +90,10 @@
     .grid-instruments { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
     .card-instrumento { background-color: var(--bg-card); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border: 1px solid transparent; }
     .card-instrumento:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: var(--accent); }
+    
     .personalize-card { background-color: var(--primary-dark); color: #fff; text-align: center; justify-content: center; padding: 40px 20px; border: none; }
     .personalize-card h3 { color: #fff !important; font-size: 18pt; margin-bottom: 15px; }
     .personalize-card p { font-size: 10pt; margin-bottom: 25px; color: #d0d0d0; }
-    .personalize-card .btn-action { border-color: var(--accent); color: var(--accent); }
-    .personalize-card:hover .btn-action { background-color: var(--accent); color: var(--primary-dark); }
     
     .img-wrapper { position: relative; width: 100%; height: 300px; background-color: #f0f0f0; cursor: pointer; }
     .img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
@@ -99,7 +104,7 @@
     .card-info .price { font-size: 16pt; font-weight: 700; color: var(--primary-dark); margin-bottom: 15px; }
     
     .btn-action { display: inline-block; padding: 10px 20px; border: 2px solid var(--primary-dark); border-radius: 30px; color: var(--primary-dark); font-weight: 600; font-size: 9pt; text-transform: uppercase; transition: all 0.3s; cursor: pointer; }
-    .card-instrumento:hover .btn-action:not(.personalize-card .btn-action) { background-color: var(--primary-dark); color: #fff; }
+    .card-instrumento:hover .btn-action:not(.btn-whatsapp) { background-color: var(--primary-dark); color: #fff; }
 
     /* SIGNOS GRID E CONTEÚDO */
     .zodiac-intro-box { max-width: 900px; margin: 0 auto 40px auto; text-align: center; color: var(--text-muted); font-size: 11pt; line-height: 1.8; }
@@ -168,8 +173,7 @@
     .desc-content { font-size: 10.5pt; color: var(--text-muted); line-height: 1.8; margin-bottom: 30px; }
     .desc-content p { margin-bottom: 15px; }
     
-    .modal-btn { display: block; width: 100%; text-align: center; background-color: var(--primary-dark); color: #fff; padding: 16px; border-radius: 30px; font-weight: 600; text-transform: uppercase; margin-top: auto; letter-spacing: 1px; font-size: 10pt; transition: background 0.3s; }
-    .modal-btn:hover { background-color: var(--accent); color: #fff; }
+    .modal-btn { display: block; width: 100%; text-align: center; padding: 16px; border-radius: 30px; font-weight: 600; text-transform: uppercase; margin-top: auto; letter-spacing: 1px; font-size: 10pt; transition: all 0.3s; }
     
     @media(max-width: 900px) { 
       .modal-content:not(.modal-content-simples) { flex-direction: column; } 
@@ -196,8 +200,8 @@
         .footer-col ul li a { justify-content: center; }
     }
 
-    .wpp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25D366; color: #fff; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); z-index: 1500; transition: all 0.3s ease; }
-    .wpp-float:hover { transform: scale(1.1); color: #fff; background-color: #20b858; }
+    .wpp-float { position: fixed; bottom: 30px; right: 30px; background-color: var(--wa-green); color: #fff; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); z-index: 1500; transition: all 0.3s ease; }
+    .wpp-float:hover { transform: scale(1.1); color: #fff; background-color: var(--wa-green-hover); }
   </style>
 </head>
 <body>
@@ -211,7 +215,7 @@
         <a href="#loja" onclick="closeMenu()">Catálogo</a>
         <a href="#signos" onclick="closeMenu()">Signos</a>
         <a href="#como-comprar" onclick="closeMenu()">Envios e Prazos</a>
-        <a href="https://wa.me/5511000000000" target="_blank" class="nav-contact">Falar no WhatsApp</a>
+        <a href="https://wa.me/5511994863166?text=Ol%C3%A1%2C%20estou%20no%20site%20e%20gostaria%20de%20falar%20com%20o%20Cesar." target="_blank" class="nav-contact btn-whatsapp">Falar no WhatsApp</a>
       </nav>
     </div>
   </header>
@@ -378,7 +382,7 @@
         <h2 id="modal-nome">Nome do Produto</h2>
         <span class="modal-price" id="modal-valor">R$ 0,00</span>
         <div class="desc-content" id="modal-tabela-specs"></div>
-        <a id="modal-btn-wa" href="#" target="_blank" class="modal-btn">Falar sobre esta peça no WhatsApp</a>
+        <a id="modal-btn-wa" href="#" target="_blank" class="modal-btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Falar sobre esta peça</a>
       </div>
     </div>
   </div>
@@ -394,7 +398,7 @@
             <p><strong style="color: var(--primary-dark);">Pedras Naturais:</strong> <span id="signo-pedras"></span></p>
             <p id="signo-desc"></p>
         </div>
-        <a id="modal-signo-wa" href="#" target="_blank" class="modal-btn" style="margin-top: 20px;">Encomendar pulseira de <span id="btn-signo-text">Signo</span></a>
+        <a id="modal-signo-wa" href="#" target="_blank" class="modal-btn btn-whatsapp" style="margin-top: 20px;"><i class="fa-brands fa-whatsapp"></i> Encomendar peça de <span id="btn-signo-text">Signo</span></a>
       </div>
     </div>
   </div>
@@ -424,7 +428,7 @@
       <div class="footer-col">
         <h4>Contato Direto</h4>
         <ul class="contact-list">
-          <li><a href="https://wa.me/5511000000000" target="_blank"><i class="fa-brands fa-whatsapp"></i> Fale com o Cesar</a></li>
+          <li><a href="https://wa.me/5511994863166?text=Ol%C3%A1%2C%20estou%20no%20site%20e%20gostaria%20de%20falar%20com%20o%20Cesar." target="_blank"><i class="fa-brands fa-whatsapp"></i> (11) 99486-3166</a></li>
           <li><a href="#" target="_blank"><i class="fa-brands fa-instagram"></i> Acompanhe no Instagram</a></li>
         </ul>
       </div>
@@ -434,7 +438,7 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/5511000000000" target="_blank" class="wpp-float"><i class="fa-brands fa-whatsapp"></i></a>
+  <a href="https://wa.me/5511994863166?text=Ol%C3%A1%2C%20estou%20no%20site%20e%20gostaria%20de%20falar%20com%20o%20Cesar." target="_blank" class="wpp-float"><i class="fa-brands fa-whatsapp"></i></a>
 
   <!-- SCRIPT -->
   <script>
@@ -442,7 +446,6 @@
     const GITHUB_REPO = 'cmacessorios18';
     let todosOsProdutos = [];
 
-    // Banco de Dados Dinâmico dos Signos (Preservação 1:1)
     const signosData = {
       "Áries": {
         pedras: "Jaspe Vermelho, Cornalina e Hematita.",
@@ -596,6 +599,10 @@
           });
       }
 
+      // Mensagem personalizada para o card de "Personalize o Seu"
+      const textoPersonalizado = "Olá, estou no site e tenho interesse nesta peça: Peça Personalizada";
+      const linkWaPersonalizado = `https://wa.me/5511994863166?text=${encodeURIComponent(textoPersonalizado)}`;
+
       // Card Fixo de Personalização
       const personalizeCard = document.createElement('div');
       personalizeCard.className = 'card-instrumento personalize-card';
@@ -603,7 +610,7 @@
         <i class="fa-solid fa-wand-magic-sparkles" style="font-size: 30px; margin-bottom: 15px;"></i>
         <h3>Personalize o Seu</h3>
         <p>Gostou do nosso estilo mas tem uma ideia única? Crie uma peça totalmente sob medida, escolhendo suas próprias pedras, nylons ou cordões com a ajuda do Cesar.</p>
-        <a href="https://wa.me/5511000000000?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20uma%20pe%C3%A7a%20personalizada." target="_blank" class="btn-action">Montar Peça Exclusiva</a>
+        <a href="${linkWaPersonalizado}" target="_blank" class="btn-action btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Montar Peça Exclusiva</a>
       `;
       grid.appendChild(personalizeCard);
     }
@@ -625,8 +632,11 @@
 
     function abrirModal(index) {
       const p = todosOsProdutos[index];
-      document.getElementById('modal-nome').innerText = p.title || 'Peça Exclusiva';
-      document.getElementById('modal-categoria').innerText = p.categoria || 'Geral';
+      const categoriaFormatada = p.categoria || 'Geral';
+      const tituloFormatado = p.title || 'Peça Exclusiva';
+      
+      document.getElementById('modal-nome').innerText = tituloFormatado;
+      document.getElementById('modal-categoria').innerText = categoriaFormatada;
       document.getElementById('modal-valor').innerText = p.valor ? `R$ ${p.valor}` : 'Preço a combinar';
       document.getElementById('modal-imagem-principal').src = p.image || 'https://placehold.co/600x600/f0f0f0/222d43?text=Sem+Foto';
       
@@ -646,7 +656,10 @@
       }
 
       document.getElementById('modal-tabela-specs').innerHTML = p.body || "<p>Chame no WhatsApp para alinhar os detalhes de ajuste desta peça.</p>";
-      document.getElementById('modal-btn-wa').href = `https://wa.me/5511000000000?text=Ol%C3%A1%2C%20tenho%20interesse%20na%20pe%C3%A7a%3A%20${encodeURIComponent(p.title || 'do site')}.`;
+      
+      // Montagem da frase requisitada: "Olá, estou no site e tenho interesse nesta peça: <nome da categoria> <nome da peça>"
+      const textoWaProduto = `Olá, estou no site e tenho interesse nesta peça: ${categoriaFormatada} ${tituloFormatado}`;
+      document.getElementById('modal-btn-wa').href = `https://wa.me/5511994863166?text=${encodeURIComponent(textoWaProduto)}`;
       
       document.getElementById('modal-detalhes').style.display = 'flex';
       document.body.style.overflow = 'hidden'; 
@@ -660,7 +673,10 @@
         document.getElementById('signo-pedras').innerText = dadosSigno.pedras;
         document.getElementById('signo-desc').innerText = dadosSigno.desc;
         
-        document.getElementById('modal-signo-wa').href = `https://wa.me/5511000000000?text=Ol%C3%A1%2C%20gostaria%20de%20encomendar%20uma%20pulseira%20para%20o%20signo%20de%20${encodeURIComponent(signo)}.`;
+        // Montagem da frase requisitada adaptada para os Signos
+        const textoWaSigno = `Olá, estou no site e tenho interesse nesta peça: Pulseira do Signo de ${signo}`;
+        document.getElementById('modal-signo-wa').href = `https://wa.me/5511994863166?text=${encodeURIComponent(textoWaSigno)}`;
+        
         document.getElementById('modal-signo').style.display = 'flex';
         document.body.style.overflow = 'hidden'; 
     }
