@@ -55,7 +55,19 @@
     }
 
     /* HERO */
-    .hero-slider { height: 70vh; min-height: 500px; background-image: linear-gradient(rgba(34, 45, 67, 0.5), rgba(34, 45, 67, 0.7)), url('https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1920'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 80px; }
+    .hero-slider { 
+      height: 70vh; 
+      min-height: 500px; 
+      background-color: var(--primary-dark); /* Azul escuro no carregamento inicial */
+      background-size: cover; 
+      background-position: center; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      text-align: center; 
+      padding-top: 80px;
+      transition: background-image 0.5s ease; /* Efeito suave ao carregar a imagem do CMS */
+    }
     .hero-content h1 { font-size: 40pt; color: #fff; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; text-shadow: 0 2px 10px rgba(0,0,0,0.2); }
 
     /* SHOWROOM / LOJA */
