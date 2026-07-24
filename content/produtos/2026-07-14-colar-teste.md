@@ -1,8 +1,11 @@
 ---
 title: Colar teste
 categoria: Colares
-valor: 33,80
-image: /imagens/uploads/photoroom_20251014_120349-836d0a7299e60474e317604544969454-1024-1024.webp
+valor: 149,99
+galeria:
+  - {}
+  - foto: /imagens/uploads/Screenshot_2026-07-23-21-35-23-669_com.larus.wolf-edit.jpg
+  - foto: /imagens/uploads/Screenshot_2026-07-23-20-18-55-017_com.larus.wolf-edit-1.jpg
 ---
-Explicacao do produto
+Kit Colar e Pulseira em couro legítimo com pedras naturais olho de tigre com hematita.
 
