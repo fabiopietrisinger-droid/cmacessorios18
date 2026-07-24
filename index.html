@@ -772,21 +772,32 @@
       document.getElementById('modal-nome').innerText = tituloFormatado;
       document.getElementById('modal-categoria').innerText = categoriaFormatada;
       document.getElementById('modal-valor').innerText = p.valor ? `R$ ${p.valor}` : 'Preço a combinar';
-      document.getElementById('modal-imagem-principal').src = p.image || 'https://placehold.co/600x600/f0f0f0/222d43?text=Sem+Foto';
+      
+      const imgPrincipal = p.image || 'https://placehold.co/600x600/f0f0f0/222d43?text=Sem+Foto';
+      document.getElementById('modal-imagem-principal').src = imgPrincipal;
       
       const thumbsContainer = document.getElementById('modal-thumbnails');
       thumbsContainer.innerHTML = '';
+      
+      let listaFotos = [imgPrincipal];
+      
       if(p.galeria && p.galeria.length > 0) {
-        p.galeria.forEach((imgObj, fIdx) => {
+        p.galeria.forEach((imgObj) => {
           const urlImg = typeof imgObj === 'string' ? imgObj : imgObj.foto; 
-          if(urlImg) {
-            const thumb = document.createElement('img');
-            thumb.src = urlImg;
-            thumb.className = `thumb-img ${fIdx === 0 ? 'active' : ''}`;
-            thumb.onclick = () => alternarFoto(fIdx, index);
-            thumbsContainer.appendChild(thumb);
+          if(urlImg && !listaFotos.includes(urlImg)) {
+              listaFotos.push(urlImg);
           }
         });
+      }
+
+      if(listaFotos.length > 1) {
+          listaFotos.forEach((url, fIdx) => {
+            const thumb = document.createElement('img');
+            thumb.src = url;
+            thumb.className = `thumb-img ${fIdx === 0 ? 'active' : ''}`;
+            thumb.onclick = () => alternarFotoNova(url, fIdx);
+            thumbsContainer.appendChild(thumb);
+          });
       }
 
       document.getElementById('modal-tabela-specs').innerHTML = p.body || "<p>Chame no WhatsApp para alinhar os detalhes de ajuste desta peça.</p>";
@@ -796,6 +807,11 @@
       
       document.getElementById('modal-detalhes').style.display = 'flex';
       document.body.style.overflow = 'hidden'; 
+    }
+
+    function alternarFotoNova(urlImg, fIdx) {
+      if(urlImg) document.getElementById('modal-imagem-principal').src = urlImg;
+      document.querySelectorAll('.thumb-img').forEach((th, i) => th.classList.toggle('active', i === fIdx));
     }
 
     function abrirModalSigno(signo) {
@@ -818,13 +834,6 @@
       document.body.style.overflow = 'auto'; 
     }
     
-    function alternarFoto(fIdx, pIdx) {
-      const p = todosOsProdutos[pIdx];
-      const urlImg = typeof p.galeria[fIdx] === 'string' ? p.galeria[fIdx] : p.galeria[fIdx].foto;
-      if(urlImg) document.getElementById('modal-imagem-principal').src = urlImg;
-      document.querySelectorAll('.thumb-img').forEach((th, i) => th.classList.toggle('active', i === fIdx));
-    }
-
     window.onclick = e => { 
         if(e.target == document.getElementById('modal-detalhes')) fecharModal('modal-detalhes'); 
         if(e.target == document.getElementById('modal-signo')) fecharModal('modal-signo'); 
