@@ -4,7 +4,7 @@ media:
 
 content:
   - name: "produtos"
-    label: "Produtos (Loja)"
+    label: "Produtos (Catálogo)"
     type: "collection"
     path: "content/produtos"
     fields:
@@ -15,7 +15,7 @@ content:
         label: "Categoria"
         type: "select"
         options:
-          values: ["Braceletes", "Colares", "Colares Decorativos", "Japamala", "Pulseiras"]
+          values: ["Braceletes", "Colares", "Colares Decorativos", "Japamala", "Pulseiras", "Pulseiras Infantis"]
       - name: "valor"
         label: "Valor (Ex: 149,90)"
         type: "string"
