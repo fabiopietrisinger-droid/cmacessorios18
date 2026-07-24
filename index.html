@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>CM Acessórios 18 – Joias e Personalizados</title>
   
   <!-- Tipografia Poppins -->
@@ -23,22 +23,24 @@
       --bg-card: #ffffff;
       --accent: #77c1d8;
       --primary-dark: #222d43;
-      --wa-green: #25D366; /* Verde Oficial do WhatsApp */
+      --wa-green: #25D366; 
       --wa-green-hover: #20b858;
       --text-main: #333333;
       --text-muted: #666666;
       --border-color: #eaeaea;
     }
 
+    /* TRAVA DE RESPONSIVIDADE (Evita estouros laterais) */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { max-width: 100vw; overflow-x: hidden; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Poppins', sans-serif; background-color: var(--bg-primary); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
+    body { font-family: 'Poppins', sans-serif; background-color: var(--bg-primary); color: var(--text-main); line-height: 1.6; }
     a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
     ul { list-style: none; }
     .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
     /* NAVBAR & HAMBÚRGUER */
-    .header-main { background-color: rgba(255, 255, 255, 0.98); border-bottom: 1px solid var(--border-color); position: fixed; top: 0; width: 100%; z-index: 1000; padding: 15px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .header-main { background-color: rgba(255, 255, 255, 0.98); border-bottom: 1px solid var(--border-color); position: fixed; top: 0; width: 100%; z-index: 1000; padding: 10px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
     .header-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; width: 100%; }
     .logo img { max-height: 70px; display: block; width: auto; transition: all 0.3s ease; }
     .menu-toggle { display: none; font-size: 24px; color: var(--primary-dark); cursor: pointer; }
@@ -50,13 +52,12 @@
     /* BOTÃO WHATSAPP GLOBAL */
     .btn-whatsapp { background-color: var(--wa-green) !important; color: #fff !important; border-color: var(--wa-green) !important; }
     .btn-whatsapp:hover { background-color: var(--wa-green-hover) !important; border-color: var(--wa-green-hover) !important; }
-    
     .nav-contact { padding: 10px 24px; border-radius: 30px; font-weight: 600; }
 
     @media screen and (max-width: 992px) {
       .logo img { max-height: 50px; }
       .menu-toggle { display: block; }
-      .nav-links { position: fixed; top: 80px; left: -100%; width: 100%; height: calc(100vh - 80px); background-color: var(--bg-primary); flex-direction: column; align-items: center; justify-content: flex-start; padding-top: 40px; transition: 0.3s; z-index: 999; }
+      .nav-links { position: fixed; top: 70px; left: -100%; width: 100%; height: calc(100vh - 70px); background-color: var(--bg-primary); flex-direction: column; align-items: center; justify-content: flex-start; padding-top: 40px; transition: 0.3s; z-index: 999; overflow-y: auto; }
       .nav-links.active { left: 0; }
       .nav-links a { font-size: 14pt; margin-bottom: 25px; }
     }
@@ -75,26 +76,26 @@
       padding-top: 120px;
       transition: background-image 0.5s ease; 
     }
-    .hero-content h1 { font-size: 45pt; color: #fff; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; text-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+    .hero-content h1 { font-size: 45pt; color: #fff; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; text-shadow: 0 2px 10px rgba(0,0,0,0.2); padding: 0 20px; word-wrap: break-word; }
 
     @media screen and (max-width: 600px) {
       .hero-slider { height: 70vh; min-height: 500px; padding-top: 90px; }
-      .hero-content h1 { font-size: 30pt; }
+      .hero-content h1 { font-size: 26pt; }
     }
 
     /* SEÇÕES GENÉRICAS */
     .catalog-section, .info-section { padding: 80px 0; }
     .catalog-section { background-color: var(--bg-secondary); }
-    .section-title { font-size: 26pt; color: var(--primary-dark); text-align: center; font-weight: 700; margin-bottom: 40px; }
+    .section-title { font-size: 26pt; color: var(--primary-dark); text-align: center; font-weight: 700; margin-bottom: 30px; line-height: 1.2; }
     .section-title::after { content: ''; display: block; width: 80px; height: 3px; background-color: var(--accent); margin: 15px auto 0 auto; }
 
     /* FILTROS E GRID DE PRODUTOS */
     .filter-wrapper { text-align: center; margin-bottom: 50px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-    .filter-btn { background: #fff; border: 1px solid var(--border-color); color: var(--text-muted); padding: 12px 24px; cursor: pointer; border-radius: 30px; font-size: 9pt; text-transform: uppercase; font-weight: 600; transition: all 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+    .filter-btn { background: #fff; border: 1px solid var(--border-color); color: var(--text-muted); padding: 10px 20px; cursor: pointer; border-radius: 30px; font-size: 9pt; text-transform: uppercase; font-weight: 600; transition: all 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
     .filter-btn:hover, .filter-btn.active { border-color: var(--primary-dark); color: #fff; background-color: var(--primary-dark); }
     
     .grid-instruments { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
-    .card-instrumento { background-color: var(--bg-card); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border: 1px solid transparent; }
+    .card-instrumento { background-color: var(--bg-card); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border: 1px solid transparent; width: 100%; }
     .card-instrumento:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: var(--accent); }
     
     .personalize-card { background-color: var(--primary-dark); color: #fff; text-align: center; justify-content: center; padding: 40px 20px; border: none; }
@@ -106,11 +107,64 @@
     
     .card-info { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; align-items: center; text-align: center; }
     .category-tag { font-size: 8pt; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 10px; letter-spacing: 1px; }
-    .card-info h3 { font-size: 14pt; color: var(--primary-dark); margin-bottom: 10px; font-weight: 600; cursor: pointer; }
+    .card-info h3 { font-size: 14pt; color: var(--primary-dark); margin-bottom: 10px; font-weight: 600; cursor: pointer; line-height: 1.3; }
     .card-info .price { font-size: 16pt; font-weight: 700; color: var(--primary-dark); margin-bottom: 15px; }
     
     .btn-action { display: inline-block; padding: 10px 20px; border: 2px solid var(--primary-dark); border-radius: 30px; color: var(--primary-dark); font-weight: 600; font-size: 9pt; text-transform: uppercase; transition: all 0.3s; cursor: pointer; }
     .card-instrumento:hover .btn-action:not(.btn-whatsapp) { background-color: var(--primary-dark); color: #fff; }
+
+    @media screen and (max-width: 600px) {
+      .grid-instruments { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .img-wrapper { height: 180px; }
+      .card-info { padding: 15px 10px; }
+      .card-info h3 { font-size: 11pt; margin-bottom: 5px; }
+      .card-info .price { font-size: 12pt; margin-bottom: 10px; }
+      .btn-action { padding: 8px 10px; font-size: 8pt; }
+      .section-title { font-size: 20pt; }
+    }
+
+    /* BANNER DIVISOR: VÍDEO ZODÍACO */
+    .video-divider {
+      position: relative;
+      width: 100%;
+      height: 120px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--primary-dark);
+    }
+    .video-divider video.desktop-video,
+    .video-divider img.mobile-image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      opacity: 0.4; /* Escurece para o texto branco sobressair */
+    }
+    .video-divider .mobile-image { display: none; }
+    .video-overlay {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #fff;
+      padding: 0 20px;
+      width: 100%;
+    }
+    .video-overlay h2 { font-size: 20pt; font-weight: 700; margin-bottom: 5px; text-shadow: 0 2px 10px rgba(0,0,0,0.8); line-height: 1.2; }
+    .video-overlay p { font-size: 11pt; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+
+    @media screen and (max-width: 768px) {
+      .video-divider { height: auto; min-height: 140px; padding: 25px 0; }
+      .video-divider video.desktop-video { display: none; }
+      .video-divider .mobile-image { display: block; }
+      .video-overlay h2 { font-size: 14pt; }
+      .video-overlay p { font-size: 9pt; }
+    }
 
     /* SIGNOS GRID E CONTEÚDO */
     .zodiac-intro-box { max-width: 900px; margin: 0 auto 40px auto; text-align: center; color: var(--text-muted); font-size: 11pt; line-height: 1.8; }
@@ -119,32 +173,28 @@
     .zodiac-intro-box ul li { margin-bottom: 8px; }
 
     .zodiac-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px; margin-top: 40px; }
-    .zodiac-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.3s; }
+    .zodiac-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px 10px; text-align: center; cursor: pointer; transition: all 0.3s; display: flex; flex-direction: column; align-items: center; }
     .zodiac-card:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
     .zodiac-card i { font-size: 30px; color: var(--primary-dark); margin-bottom: 15px; display: block; }
     .zodiac-card span { font-weight: 600; color: var(--text-main); font-size: 11pt; text-transform: uppercase; }
+    .zodiac-card small { display: block; font-size: 7.5pt; color: var(--accent); margin-top: 8px; font-weight: 600; text-transform: none; transition: color 0.3s; }
+    .zodiac-card:hover small { color: var(--primary-dark); }
+
+    @media screen and (max-width: 600px) {
+      .zodiac-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    }
 
     /* COMO COMPRAR STEPS */
     .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; margin-top: 50px; }
-    .step-item { text-align: center; padding: 20px; }
+    .step-item { text-align: center; padding: 20px 10px; }
     .step-icon { width: 60px; height: 60px; background-color: var(--accent); color: #fff; font-size: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; }
-    .step-item h4 { font-size: 14pt; color: var(--primary-dark); margin-bottom: 10px; }
+    .step-item h4 { font-size: 14pt; color: var(--primary-dark); margin-bottom: 10px; line-height: 1.3;}
     .step-item p { font-size: 10pt; color: var(--text-muted); }
 
-    @media screen and (max-width: 600px) {
-      .grid-instruments { grid-template-columns: repeat(2, 1fr); gap: 15px; }
-      .img-wrapper { height: 180px; }
-      .card-info { padding: 15px 10px; }
-      .card-info h3 { font-size: 11pt; margin-bottom: 5px; }
-      .card-info .price { font-size: 12pt; margin-bottom: 10px; }
-      .btn-action { padding: 8px 12px; font-size: 8pt; }
-      .zodiac-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
-    }
-
     /* INFO SECTION / SOBRE */
-    .split-info-card { display: flex; border-radius: 12px; overflow: hidden; margin-bottom: 60px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); background-color: var(--bg-card); border: 1px solid var(--border-color); }
+    .split-info-card { display: flex; border-radius: 12px; overflow: hidden; margin-bottom: 60px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); background-color: var(--bg-card); border: 1px solid var(--border-color); width: 100%; }
     .split-info-content { flex: 1.2; padding: 60px; display: flex; flex-direction: column; justify-content: center; }
-    .split-info-content h3 { font-size: 22pt; color: var(--primary-dark); margin-bottom: 15px; font-weight: 700; }
+    .split-info-content h3 { font-size: 22pt; color: var(--primary-dark); margin-bottom: 15px; font-weight: 700; line-height: 1.2;}
     .split-info-content h4 { font-size: 12pt; color: var(--accent); margin-bottom: 25px; font-weight: 600; text-transform: uppercase; }
     .split-info-content p { font-size: 10.5pt; line-height: 1.8; color: var(--text-muted); margin-bottom: 15px; }
     .split-info-image { flex: 1; background-size: cover; background-position: top center; min-height: 400px; }
@@ -156,25 +206,25 @@
     }
 
     /* MODAL DE DETALHES E SIGNOS */
-    .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow-y: auto; background-color: rgba(34, 45, 67, 0.95); padding: 50px 15px; align-items: flex-start; justify-content: center; }
-    .modal-content { margin: auto; background-color: var(--bg-card); border-radius: 12px; width: 100%; max-width: 1000px; display: flex; flex-direction: row; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.4); overflow: hidden; }
+    .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow-y: auto; background-color: rgba(34, 45, 67, 0.95); padding: 20px; align-items: flex-start; justify-content: center; -webkit-overflow-scrolling: touch; }
+    .modal-content { margin: 30px auto; background-color: var(--bg-card); border-radius: 12px; width: 100%; max-width: 1000px; display: flex; flex-direction: row; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.4); overflow: hidden; }
     .modal-content-simples { max-width: 600px; flex-direction: column; padding: 40px; }
-    .close-modal { position: absolute; top: 15px; right: 20px; color: var(--text-main); font-size: 30px; font-weight: 400; cursor: pointer; z-index: 10; transition: color 0.2s; }
+    .close-modal { position: absolute; top: 10px; right: 15px; color: var(--text-main); font-size: 30px; font-weight: 400; cursor: pointer; z-index: 10; transition: color 0.2s; background: rgba(255,255,255,0.8); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; line-height: 1; }
     .close-modal:hover { color: var(--accent); }
     
     .modal-gallery-pane { width: 50%; position: relative; background-color: #f8f9fa; display: flex; flex-direction: column; }
-    .modal-slider-main { width: 100%; flex-grow: 1; min-height: 500px; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 20px; }
-    .modal-slider-main img { width: 100%; max-height: 460px; object-fit: contain; }
+    .modal-slider-main { width: 100%; flex-grow: 1; min-height: 400px; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 20px; }
+    .modal-slider-main img { width: 100%; max-height: 400px; object-fit: contain; }
     
     .modal-slider-thumbnails { display: flex; gap: 10px; padding: 15px; background-color: #fff; overflow-x: auto; border-top: 1px solid var(--border-color); }
-    .thumb-img { width: 70px; height: 70px; object-fit: cover; border: 2px solid transparent; border-radius: 6px; cursor: pointer; opacity: 0.6; transition: all 0.2s; }
+    .thumb-img { width: 60px; height: 60px; object-fit: cover; border: 2px solid transparent; border-radius: 6px; cursor: pointer; opacity: 0.6; transition: all 0.2s; flex-shrink: 0; }
     .thumb-img.active, .thumb-img:hover { opacity: 1; border-color: var(--accent); }
     
-    .modal-specs-pane { width: 50%; padding: 50px 40px; display: flex; flex-direction: column; }
+    .modal-specs-pane { width: 50%; padding: 40px; display: flex; flex-direction: column; word-wrap: break-word; }
     .modal-specs-pane.full-width { width: 100%; padding: 0; }
     .modal-specs-pane .category-tag { font-size: 9pt; margin-bottom: 5px; display: block; }
-    .modal-specs-pane h2 { font-size: 22pt; color: var(--primary-dark); font-weight: 700; margin-bottom: 10px; padding-right: 20px; line-height: 1.2; }
-    .modal-specs-pane .modal-price { font-size: 20pt; font-weight: 700; color: var(--accent); margin-bottom: 25px; display: block; }
+    .modal-specs-pane h2 { font-size: 20pt; color: var(--primary-dark); font-weight: 700; margin-bottom: 10px; padding-right: 30px; line-height: 1.2; }
+    .modal-specs-pane .modal-price { font-size: 18pt; font-weight: 700; color: var(--accent); margin-bottom: 20px; display: block; }
     
     .desc-content { font-size: 10.5pt; color: var(--text-muted); line-height: 1.8; margin-bottom: 30px; }
     .desc-content p { margin-bottom: 15px; }
@@ -182,18 +232,21 @@
     .modal-btn { display: block; width: 100%; text-align: center; padding: 16px; border-radius: 30px; font-weight: 600; text-transform: uppercase; margin-top: auto; letter-spacing: 1px; font-size: 10pt; transition: all 0.3s; }
     
     @media(max-width: 900px) { 
+      .modal { padding: 10px; }
+      .modal-content { margin: 10px auto; }
       .modal-content:not(.modal-content-simples) { flex-direction: column; } 
       .modal-gallery-pane, .modal-specs-pane:not(.full-width) { width: 100%; } 
-      .modal-slider-main { min-height: 350px; }
+      .modal-slider-main { min-height: 300px; }
       .modal-specs-pane { padding: 30px 20px; }
+      .modal-content-simples { padding: 30px 20px; }
     }
 
     /* FOOTER */
-    .footer-main { background-color: var(--primary-dark); padding: 60px 0 30px 0; color: #fff; }
-    .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 50px; margin-bottom: 40px; }
-    .footer-col h4 { color: var(--accent); text-transform: uppercase; font-size: 12pt; font-weight: 600; margin-bottom: 25px; }
+    .footer-main { background-color: var(--primary-dark); padding: 60px 0 30px 0; color: #fff; overflow: hidden; }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; width: 100%; }
+    .footer-col h4 { color: var(--accent); text-transform: uppercase; font-size: 12pt; font-weight: 600; margin-bottom: 25px; line-height: 1.3;}
     .footer-col ul li { margin-bottom: 15px; }
-    .footer-col ul li a { font-size: 10pt; color: #d0d0d0; display: flex; align-items: center; gap: 10px; }
+    .footer-col ul li a { font-size: 10pt; color: #d0d0d0; display: flex; align-items: center; gap: 10px; word-wrap: break-word;}
     .footer-col ul li a:hover { color: #fff; }
     .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; }
     .social-links { margin-bottom: 20px; }
@@ -251,13 +304,28 @@
         <button class="filter-btn" onclick="filtrarCategoria('pulseiras infantis')">Pulseiras Infantis</button>
       </div>
 
-      <p id="aviso-encomenda" style="display: none; text-align: center; color: var(--accent); font-weight: 600; margin-bottom: 30px; font-size: 10pt;">
+      <p id="aviso-encomenda" style="display: none; text-align: center; color: var(--accent); font-weight: 600; margin-bottom: 30px; font-size: 10pt; padding: 0 10px;">
         * Peças Infantis produzidas exclusivamente sob encomenda para garantir o ajuste perfeito.
       </p>
 
       <div id="grid-produtos" class="grid-instruments">
         <p class="loading" style="text-align: center; width: 100%;">Carregando peças exclusivas...</p>
       </div>
+    </div>
+  </section>
+
+  <!-- BANNER DIVISOR: VÍDEO ZODÍACO -->
+  <section class="video-divider">
+    <!-- Vídeo rodando em loop no Desktop -->
+    <video autoplay loop muted playsinline class="desktop-video">
+        <source src="imagens/uploads/zodiaco.mp4" type="video/mp4">
+    </video>
+    <!-- Imagem Estática no Mobile para poupar dados -->
+    <img src="imagens/uploads/zodiaco.jpg" alt="Pedras do Zodíaco" class="mobile-image">
+    
+    <div class="video-overlay">
+        <h2>Personalize seu produto com as pedras dos signos</h2>
+        <p>Qualquer produto da CmAcessórios18 pode ser personalizado com as Pedras dos Signos.</p>
     </div>
   </section>
 
@@ -285,40 +353,64 @@
       
       <div class="zodiac-grid">
         <div class="zodiac-card" onclick="abrirModalSigno('Áries')">
-            <i class="fa-solid fa-fire"></i><span>Áries</span>
+            <i class="fa-solid fa-fire"></i>
+            <span>Áries</span>
+            <small>Clique para saber mais</small>
         </div>
         <div class="zodiac-card" onclick="abrirModalSigno('Touro')">
-            <i class="fa-solid fa-seedling"></i><span>Touro</span>
+            <i class="fa-solid fa-seedling"></i>
+            <span>Touro</span>
+            <small>Clique para saber mais</small>
         </div>
         <div class="zodiac-card" onclick="abrirModalSigno('Gêmeos')">
-            <i class="fa-solid fa-wind"></i><span>Gêmeos</span>
+            <i class="fa-solid fa-wind"></i>
+            <span>Gêmeos</span>
+            <small>Clique para saber mais</small>
         </div>
         <div class="zodiac-card" onclick="abrirModalSigno('Câncer')">
-            <i class="fa-solid fa-water"></i><span>Câncer</span>
+            <i class="fa-solid fa-water"></i>
+            <span>Câncer</span>
+            <small>Clique para saber mais</small>
         </div>
         <div class="zodiac-card" onclick="abrirModalSigno('Leão')">
-            <i class="fa-solid fa-sun"></i><span>Leão</span>
+            <i class="fa-solid fa-sun"></i>
+            <span>Leão</span>
+            <small>Clique para saber mais</small>
         </div>
         <div class="zodiac-card" onclick="abrirModalSigno('Virgem')">
-            <i class="fa-solid fa-leaf"></i><span>Virgem</span>
+            <i class="fa-solid fa-leaf"></i>
+            <span>Virgem</span>
+            <small>Clique para saber mais</small>
         </div>
         <div class="zodiac-card" onclick="abrirModalSigno('Libra')">
-            <i class="fa-solid fa-scale-balanced"></i><span>Libra</span>
+            <i class="fa-solid fa-scale-balanced"></i>
+            <span>Libra</span>
+            <small>Clique para saber mais</small>
         </div>
         <div class="zodiac-card" onclick="abrirModalSigno('Escorpião')">
-            <i class="fa-solid fa-droplet"></i><span>Escorpião</span>
+            <i class="fa-solid fa-droplet"></i>
+            <span>Escorpião</span>
+            <small>Clique para saber mais</small>
         </div>
         <div class="zodiac-card" onclick="abrirModalSigno('Sagitário')">
-            <i class="fa-solid fa-fire-flame-curved"></i><span>Sagitário</span>
+            <i class="fa-solid fa-fire-flame-curved"></i>
+            <span>Sagitário</span>
+            <small>Clique para saber mais</small>
         </div>
         <div class="zodiac-card" onclick="abrirModalSigno('Capricórnio')">
-            <i class="fa-solid fa-mountain"></i><span>Capricórnio</span>
+            <i class="fa-solid fa-mountain"></i>
+            <span>Capricórnio</span>
+            <small>Clique para saber mais</small>
         </div>
         <div class="zodiac-card" onclick="abrirModalSigno('Aquário')">
-            <i class="fa-solid fa-water"></i><span>Aquário</span>
+            <i class="fa-solid fa-water"></i>
+            <span>Aquário</span>
+            <small>Clique para saber mais</small>
         </div>
         <div class="zodiac-card" onclick="abrirModalSigno('Peixes')">
-            <i class="fa-solid fa-fish"></i><span>Peixes</span>
+            <i class="fa-solid fa-fish"></i>
+            <span>Peixes</span>
+            <small>Clique para saber mais</small>
         </div>
       </div>
     </div>
@@ -612,11 +704,9 @@
           });
       }
 
-      // Mensagem personalizada para o card de "Personalize o Seu" com a nova estrutura "Categoria:" e "Produto:"
       const textoPersonalizado = "Olá, estou no site e tenho interesse nesta peça: Categoria: Personalizados Produto: Peça Personalizada";
       const linkWaPersonalizado = `https://wa.me/5511994863166?text=${encodeURIComponent(textoPersonalizado)}`;
 
-      // Card Fixo de Personalização
       const personalizeCard = document.createElement('div');
       personalizeCard.className = 'card-instrumento personalize-card';
       personalizeCard.innerHTML = `
@@ -670,7 +760,6 @@
 
       document.getElementById('modal-tabela-specs').innerHTML = p.body || "<p>Chame no WhatsApp para alinhar os detalhes de ajuste desta peça.</p>";
       
-      // Nova estrutura de mensagem WhatsApp
       const textoWaProduto = `Olá, estou no site e tenho interesse nesta peça: Categoria: ${categoriaFormatada} Produto: ${tituloFormatado}`;
       document.getElementById('modal-btn-wa').href = `https://wa.me/5511994863166?text=${encodeURIComponent(textoWaProduto)}`;
       
@@ -686,7 +775,6 @@
         document.getElementById('signo-pedras').innerText = dadosSigno.pedras;
         document.getElementById('signo-desc').innerText = dadosSigno.desc;
         
-        // Nova estrutura de mensagem WhatsApp para os Signos
         const textoWaSigno = `Olá, estou no site e tenho interesse nesta peça: Categoria: Coleção Zodíaco Produto: Pulseira do Signo de ${signo}`;
         document.getElementById('modal-signo-wa').href = `https://wa.me/5511994863166?text=${encodeURIComponent(textoWaSigno)}`;
         
