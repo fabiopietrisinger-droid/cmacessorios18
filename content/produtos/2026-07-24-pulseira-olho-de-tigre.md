@@ -8,4 +8,4 @@ galeria:
   - foto: /imagens/uploads/Screenshot_2026-07-26-02-34-38-150_com.photoroom.app-edit.jpg
   - foto: /imagens/uploads/Screenshot_2026-07-26-02-30-52-504_com.larus.wolf-edit-1.jpg
 ---
-Pulsrieras em pedras naturais olho de tigre com hematita 
+Pulseiras em pedras naturais olho de tigre com hematita 
