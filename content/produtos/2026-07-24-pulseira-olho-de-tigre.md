@@ -1,7 +1,7 @@
 ---
 title: "Pulseira em Pedra Olho de Tigre "
 categoria: Pulseiras
-valor: 89,99
+valor: 69,99
 image: /imagens/uploads/Screenshot_2026-07-25-20-09-37-238_com.larus.wolf-edit.jpg
 galeria:
   - foto: /imagens/uploads/Screenshot_2026-07-26-02-31-18-841_com.larus.wolf-edit-1.jpg
