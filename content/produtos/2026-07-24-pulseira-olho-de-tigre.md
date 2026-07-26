@@ -3,5 +3,9 @@ title: "Pulseira em Pedra Olho de Tigre "
 categoria: Pulseiras
 valor: 89,99
 image: /imagens/uploads/Screenshot_2026-07-25-20-09-37-238_com.larus.wolf-edit.jpg
+galeria:
+  - foto: /imagens/uploads/Screenshot_2026-07-26-02-31-18-841_com.larus.wolf-edit-1.jpg
+  - foto: /imagens/uploads/Screenshot_2026-07-26-02-34-38-150_com.photoroom.app-edit.jpg
+  - foto: /imagens/uploads/Screenshot_2026-07-26-02-30-52-504_com.larus.wolf-edit-1.jpg
 ---
-Pulsriera em pedras olho de tigre verde com hematita e pingente coroa da marca Cmacessórios18
+Pulsrieras em pedras naturais olho de tigre com hematita 
