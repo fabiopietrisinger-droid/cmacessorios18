@@ -1,13 +1,13 @@
 ---
-title: "Japamalas em pedras naturais "
-categoria: Japamala
-valor: 199,99
-image: /imagens/uploads/Screenshot_2026-07-27-18-32-04-339_com.photoroom.app-edit.jpg
+title: "colares Decorativos com pedras naturais "
+categoria: Colares Decorativos
+valor: 299,99
+image: /imagens/uploads/Screenshot_2026-07-27-19-04-58-860_photo.manager.private.photogallery-edit.jpg
 galeria:
-  - foto: /imagens/uploads/Screenshot_2026-07-27-18-28-15-810_com.photoroom.app-edit.jpg
-  - foto: /imagens/uploads/Screenshot_2026-07-27-18-33-57-975_com.photoroom.app-edit-1.jpg
-  - foto: /imagens/uploads/Screenshot_2026-07-27-18-32-04-339_com.photoroom.app-edit-1.jpg
+  - {}
+  - {}
+  - {}
 ---
-Japamala em pedras naturais Cmacessorios18.
+Colares Decorativos em pedras naturais Cmacessorios18.
 
 Personalize o seu com a pedra da sua preferência.
