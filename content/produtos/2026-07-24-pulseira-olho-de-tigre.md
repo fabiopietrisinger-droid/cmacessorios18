@@ -1,5 +1,5 @@
 ---
-title: "Pulseiras em Pedras Olho de Tigre com hematita "
+title: "Pulseiras exclusivas e sob medida. "
 categoria: Pulseiras
 valor: 69,99
 image: /imagens/uploads/Screenshot_2026-07-25-20-09-37-238_com.larus.wolf-edit.jpg
@@ -10,4 +10,4 @@ galeria:
   - foto: /imagens/uploads/IMG_20260725_202012-1.jpg
   - foto: /imagens/uploads/Screenshot_2026-07-25-20-01-36-393_com.instagram.android-edit.jpg
 ---
-Pulseiras em pedras vulcânica com hematita 
+Aqui na " cmacessorios18 " você escolhe a pedra e personaliza sua pulseira sob medida e com exclusividade. 
