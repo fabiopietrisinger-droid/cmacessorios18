@@ -1,5 +1,5 @@
 ---
-title: "Pulseira em Pedra Olho de Tigre "
+title: "Pulseiras em Pedras Olho de Tigre com hematita "
 categoria: Pulseiras
 valor: 69,99
 image: /imagens/uploads/Screenshot_2026-07-25-20-09-37-238_com.larus.wolf-edit.jpg
