@@ -1,10 +1,9 @@
 ---
-title: Braceletes com cristais multfacetado e pedras naturais de cinco voltas
+title: Braceletes com cristais multfacetados e pedras naturais de cinco voltas
 categoria: Braceletes
 valor: 199,99
 image: /imagens/uploads/IMG_20260728_003829-1.jpg
 galeria:
-  - foto: /imagens/uploads/Screenshot_2026-07-28-00-40-32-717_com.photoroom.app-edit-1.jpg
   - foto: /imagens/uploads/Screenshot_2026-07-28-00-37-38-614_com.larus.wolf-edit.jpg
   - foto: /imagens/uploads/Screenshot_2026-07-28-00-37-09-867_com.larus.wolf-edit.jpg
   - foto: /imagens/uploads/Screenshot_2026-07-28-00-48-11-931_com.larus.wolf-edit.jpg
