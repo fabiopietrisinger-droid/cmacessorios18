@@ -804,7 +804,7 @@
 
       document.getElementById('modal-tabela-specs').innerHTML = p.body || "<p>Chame no WhatsApp para alinhar os detalhes de ajuste desta peça.</p>";
       
-      const textoWaProduto = `Olá, estou no site e tenho interesse nesta peça: Categoria: ${categoriaFormatada} Produto: ${tituloFormatado}`;
+      const textoWaProduto = `Olá, estou no site e tenho interesse nesta peça: Categoria: ${categoriaFormatada} Produto: ${tituloFormatado} \n\nLink da foto: ${imgPrincipal}`;
       document.getElementById('modal-btn-wa').href = `https://wa.me/5511994863166?text=${encodeURIComponent(textoWaProduto)}`;
       
       document.getElementById('modal-detalhes').style.display = 'flex';
