@@ -9,4 +9,6 @@ galeria:
   - foto: /imagens/uploads/Screenshot_2026-07-28-00-04-10-262_com.larus.wolf-edit.jpg
   - foto: /imagens/uploads/Screenshot_2026-07-28-00-04-23-725_com.larus.wolf-edit.jpg
 ---
-Pulseiras em Âmbar báltico feitas somente sob encomenda 
+Somente sob encomenda.
+
+Pulseiras em Âmbar báltico feitas sob medida para proteção do bebê.
