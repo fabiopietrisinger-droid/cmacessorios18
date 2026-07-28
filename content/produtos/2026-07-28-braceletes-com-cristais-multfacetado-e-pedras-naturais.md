@@ -1,0 +1,10 @@
+---
+title: "Braceletes com cristais multfacetado e pedras naturais "
+categoria: Braceletes
+valor: 169,99
+image: /imagens/uploads/IMG_20260728_003829-1.jpg
+galeria:
+  - foto: /imagens/uploads/Screenshot_2026-07-28-00-40-32-717_com.photoroom.app-edit-1.jpg
+  - foto: /imagens/uploads/Screenshot_2026-07-28-00-37-38-614_com.larus.wolf-edit.jpg
+  - foto: /imagens/uploads/Screenshot_2026-07-28-00-37-09-867_com.larus.wolf-edit.jpg
+---
