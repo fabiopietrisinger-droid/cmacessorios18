@@ -804,10 +804,12 @@
 
       document.getElementById('modal-tabela-specs').innerHTML = p.body || "<p>Chame no WhatsApp para alinhar os detalhes de ajuste desta peça.</p>";
       
-      let linkAbsolutoFoto = imgPrincipal;
-      if (!linkAbsolutoFoto.startsWith('http')) {
-          const caminhoCerto = linkAbsolutoFoto.startsWith('/') ? linkAbsolutoFoto.substring(1) : linkAbsolutoFoto;
-          linkAbsolutoFoto = `https://www.cmacessorios18.com.br/${caminhoCerto}`;
+      let linkAbsolutoFoto = String(imgPrincipal).trim();
+      if (linkAbsolutoFoto.includes('imagens/uploads')) {
+          const caminhoLimpo = linkAbsolutoFoto.substring(linkAbsolutoFoto.indexOf('imagens/uploads'));
+          linkAbsolutoFoto = `https://www.cmacessorios18.com.br/${caminhoLimpo}`;
+      } else if (!linkAbsolutoFoto.startsWith('http')) {
+          linkAbsolutoFoto = `https://www.cmacessorios18.com.br/${linkAbsolutoFoto.replace(/^[\.\/]+/, '')}`;
       }
       
       const textoWaProduto = `Olá, estou no site e tenho interesse nesta peça: Categoria: ${categoriaFormatada} Produto: ${tituloFormatado} \n\nLink da foto: ${linkAbsolutoFoto}`;
