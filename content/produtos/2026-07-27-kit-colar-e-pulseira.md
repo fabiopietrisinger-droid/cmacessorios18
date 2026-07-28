@@ -8,4 +8,4 @@ galeria:
   - foto: /imagens/uploads/Screenshot_2026-07-23-20-38-00-418_com.larus.wolf-edit.jpg
   - foto: /imagens/uploads/Screenshot_2026-07-27-23-36-42-363_com.miui.gallery-edit.jpg
 ---
-Kit de pulseira e colar em couro legítimo com pedras naturais. Personalize o seu pedra da sua preferência.
+Kit de pulseira e colar em couro legítimo com pedras naturais. Personalize o seu com a pedra da sua preferência.
