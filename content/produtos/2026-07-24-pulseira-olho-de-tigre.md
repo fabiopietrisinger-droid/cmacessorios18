@@ -10,4 +10,4 @@ galeria:
   - foto: /imagens/uploads/IMG_20260725_202012-1.jpg
   - foto: /imagens/uploads/Screenshot_2026-07-25-20-01-36-393_com.instagram.android-edit.jpg
 ---
-Aqui na " cmacessorios18 " você escolhe a pedra e personaliza sua pulseira sob medida com exclusividade. 
+Aqui na " cmacessorios18 " você escolhe a pedra e personaliza sua pulseira sob medida com exclusividade.
