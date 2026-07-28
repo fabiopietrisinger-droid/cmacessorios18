@@ -1,5 +1,5 @@
 ---
-title: "Pulseiras com pedras naturais e sob medida. "
+title: "Pulseiras com pedras naturais sob medida. "
 categoria: Pulseiras
 valor: 69,99
 image: /imagens/uploads/Screenshot_2026-07-25-20-09-37-238_com.larus.wolf-edit.jpg
@@ -10,4 +10,4 @@ galeria:
   - foto: /imagens/uploads/IMG_20260725_202012-1.jpg
   - foto: /imagens/uploads/Screenshot_2026-07-25-20-01-36-393_com.instagram.android-edit.jpg
 ---
-Aqui na " cmacessorios18 " você escolhe a pedra e personaliza sua pulseira sob medida e com exclusividade. 
+Aqui na " cmacessorios18 " você escolhe a pedra e personaliza sua pulseira sob medida com exclusividade. 
