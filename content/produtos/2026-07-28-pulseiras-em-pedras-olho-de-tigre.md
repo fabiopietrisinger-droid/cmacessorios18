@@ -6,5 +6,5 @@ image: /imagens/uploads/Screenshot_2026-07-25-20-09-37-238_com.larus.wolf-edit.j
 galeria:
   - foto: /imagens/uploads/Screenshot_2026-07-26-02-34-38-150_com.photoroom.app-edit.jpg
   - foto: /imagens/uploads/Screenshot_2026-07-26-02-30-52-504_com.larus.wolf-edit-1.jpg
-  - foto: /imagens/uploads/Screenshot_2026-07-26-02-31-18-841_com.larus.wolf-edit.jpg
+  - {}
 ---
