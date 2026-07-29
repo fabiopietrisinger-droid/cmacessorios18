@@ -6,5 +6,6 @@ image: /imagens/uploads/Screenshot_2026-07-29-13-36-03-255_com.photoroom.app-edi
 galeria:
   - foto: /imagens/uploads/Screenshot_2026-07-29-13-39-50-660_com.android.chrome-edit-1.jpg
   - foto: /imagens/uploads/JASPE COM AGATA VERDE.jpg
+  - foto: /imagens/uploads/Screenshot_2026-07-29-13-50-32-532_photo.manager.private.photogallery-edit.jpg
 ---
 Pulseiras em quartzo de várias cores
