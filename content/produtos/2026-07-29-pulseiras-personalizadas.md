@@ -1,7 +1,7 @@
 ---
 title: "Pulseiras personalizadas "
 categoria: Pulseiras
-valor: 120,00
+valor: 99,99
 image: /imagens/uploads/Screenshot_2026-07-29-13-49-48-562_photo.manager.private.photogallery-edit-2.jpg
 galeria:
   - {}
