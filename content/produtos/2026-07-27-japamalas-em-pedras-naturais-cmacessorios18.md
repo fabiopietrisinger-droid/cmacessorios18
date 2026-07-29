@@ -1,5 +1,5 @@
 ---
-title: Japamalas em Pedras naturais Cmacessorios18
+title: Japamala em Pedras Naturais Cmacessorios18
 categoria: Japamala
 valor: 199,99
 image: /imagens/uploads/Screenshot_2026-07-27-18-28-15-810_com.photoroom.app-edit-4.jpg
