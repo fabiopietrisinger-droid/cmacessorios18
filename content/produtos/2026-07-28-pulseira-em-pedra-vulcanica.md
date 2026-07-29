@@ -9,4 +9,4 @@ galeria:
   - foto: /imagens/uploads/Screenshot_2026-07-29-16-26-46-287_com.larus.wolf-edit.jpg
   - foto: /imagens/uploads/Screenshot_2026-07-29-16-27-26-405_com.larus.wolf-edit.jpg
 ---
-Pulseiras em Pedra vulcânica com pingente da sua preferência.
+Pulseiras em Pedra vulcânica com hematita no fio de silicone.
