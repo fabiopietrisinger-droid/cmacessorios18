@@ -1,5 +1,5 @@
 ---
-title: Pulseiras em pedras vulcânica
+title: Pulseiras em pedra vulcânica
 categoria: Pulseiras
 valor: 69,99
 image: /imagens/uploads/Screenshot_2026-07-25-20-01-36-393_com.instagram.android-edit.jpg
