@@ -1,5 +1,5 @@
 ---
-title: Pulseira em Pedra Vulcânica com Hematita Dourada e Pingente de Tigre
+title: Pulseira em Pedras Vulcânica com Hematita Dourada e Pingente de Tigre
 valor: 69,99
 image: /imagens/uploads/Screenshot_2026-07-29-16-26-46-287_com.larus.wolf-edit-1.jpg
 ---
