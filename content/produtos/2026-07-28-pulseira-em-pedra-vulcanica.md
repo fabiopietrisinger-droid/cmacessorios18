@@ -13,10 +13,11 @@ Estilo, elegância e significado em uma única peça!
 
 A pedra vulcânica é reconhecida por representar **força, equilíbrio e proteção**, além de combinar perfeitamente com qualquer ocasião.
 
-Acabamento de alta qualidade
+*Acabamento de alta qualidade
 
- Confortável para o uso diário  
- Presente ideal para quem valoriza estilo e personalidade
+ *Confortável para o uso diário
+
+ *Presente ideal para quem valoriza estilo e personalidade
 
 **Garanta a sua antes que acabe!**
 
