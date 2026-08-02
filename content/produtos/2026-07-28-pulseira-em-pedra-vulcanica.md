@@ -1,5 +1,5 @@
 ---
-title: Pulseiras em pedra vulcânica
+title: Pulseiras em pedra vulcânica no fio de silicone
 categoria: Pulseiras
 valor: 69,99
 image: /imagens/uploads/Screenshot_2026-07-25-20-01-36-393_com.instagram.android-edit.jpg
