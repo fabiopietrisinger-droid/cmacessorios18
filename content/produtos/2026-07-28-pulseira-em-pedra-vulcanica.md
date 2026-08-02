@@ -1,24 +1,9 @@
 ---
-title: Pulseiras em pedra vulcânica no fio de silicone
+title: Pulseiras em pedra vulcânica com hematita dourada no fio de silicone
 categoria: Pulseiras
 valor: 69,99
-image: /imagens/uploads/Screenshot_2026-07-25-20-01-36-393_com.instagram.android-edit.jpg
-galeria:
-  - foto: /imagens/uploads/Screenshot_2026-07-29-16-27-01-771_com.larus.wolf-edit.jpg
-  - foto: /imagens/uploads/Screenshot_2026-07-29-16-27-14-231_com.larus.wolf-edit.jpg
-  - foto: /imagens/uploads/Screenshot_2026-07-29-16-26-46-287_com.larus.wolf-edit.jpg
-  - foto: /imagens/uploads/Screenshot_2026-07-29-16-27-26-405_com.larus.wolf-edit.jpg
+image: /imagens/uploads/Screenshot_2026-07-29-16-27-01-771_com.larus.wolf-edit.jpg
 ---
-Estilo, elegância e significado em uma única peça!
+**Pulseira de Pedra Vulcânica com Hematita Dourada e Pingente de Peso**
 
-A pedra vulcânica é reconhecida por representar **força, equilíbrio e proteção**, além de combinar perfeitamente com qualquer ocasião.
-
-*Acabamento de alta qualidade
-
- *Confortável para o uso diário
-
- *Presente ideal para quem valoriza estilo e personalidade
-
-**Garanta a sua antes que acabe!**
-
-📲 Entre em contato agora mesmo e faça seu pedido. Aproveite essa oportunidade para renovar seu visual ou presentear alguém especial!
+Mais do que um acessório, esta pulseira representa força, equilíbrio e determinação. As contas de pedra vulcânica remetem à resistência e à renovação, enquanto a hematita dourada acrescenta um toque de sofisticação e simboliza proteção e foco. O pingente de peso completa o design, representando disciplina, perseverança e a busca constante pela evolução. Ideal para quem treina, aprecia acessórios com significado ou deseja um visual moderno e marcante.
