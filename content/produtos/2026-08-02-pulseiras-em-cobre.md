@@ -1,13 +1,13 @@
 ---
-title: Braceletes em cobre
-categoria: Braceletes
+title: Pulseiras em cobre
+categoria: Pulseiras
 valor: 59,99
 image: /imagens/uploads/Screenshot_2026-08-02-18-50-02-795_com.photoroom.app-edit-1.jpg
 galeria:
   - foto: /imagens/uploads/Screenshot_2026-08-02-18-52-09-361_com.photoroom.app-edit-1.jpg
   - foto: /imagens/uploads/IMG_20260802_193832.jpg
 ---
-**Bracelete de Cobre: Beleza, Tradição e Estilo**
+**Pulseiras de Cobre: Beleza, Tradição e Estilo**
 
 A pulseira de cobre é um acessório que une elegância e tradição. Utilizada há séculos por diferentes culturas, ela se destaca por sua coloração quente e seu visual versátil, combinando com diversos estilos e ocasiões.
 
