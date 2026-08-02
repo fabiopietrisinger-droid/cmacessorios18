@@ -4,6 +4,9 @@ title: Pulseira em pedra vulcânica com hematita dourada e pingente caveira no
 categoria: Pulseiras
 valor: 69,99
 image: /imagens/uploads/Screenshot_2026-07-29-16-27-14-231_com.larus.wolf-edit.jpg
+galeria:
+  - foto: /imagens/uploads/IMG_20260802_195220.jpg
+  - foto: /imagens/uploads/Screenshot_2026-08-02-19-50-37-730_com.instagram.android-edit.jpg
 ---
 Destaque seu estilo com uma pulseira que combina elegância, personalidade e simbolismo.
 
