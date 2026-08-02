@@ -4,8 +4,8 @@ categoria: Pulseiras
 valor: 69,99
 image: /imagens/uploads/Screenshot_2026-08-02-19-56-02-914_com.instagram.android-edit.jpg
 galeria:
+  - foto: /imagens/uploads/Screenshot_2026-08-02-20-04-16-619_com.photoroom.app-edit-2.jpg
   - foto: /imagens/uploads/IMG_20260802_195929-1.jpg
-  - foto: /imagens/uploads/Screenshot_2026-08-02-20-04-16-619_com.photoroom.app-edit-1.jpg
 ---
 ✨ **Cada pedra conta uma história. Cada pulseira é única.** ✨
 
