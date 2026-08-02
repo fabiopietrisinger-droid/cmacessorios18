@@ -1,10 +1,11 @@
 ---
-title: Pulseiras em cobre
-categoria: Pulseiras
+title: Braceletes em cobre
+categoria: Braceletes
 valor: 59,99
 image: /imagens/uploads/Screenshot_2026-08-02-18-52-09-361_com.photoroom.app-edit.jpg
 galeria:
   - foto: /imagens/uploads/Screenshot_2026-08-02-18-50-02-795_com.photoroom.app-edit.jpg
+  - foto: /imagens/uploads/IMG_20260802_193832.jpg
 ---
 **Pulseira de Cobre: Beleza, Tradição e Estilo**
 
