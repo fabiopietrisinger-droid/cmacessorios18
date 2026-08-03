@@ -10,6 +10,13 @@ galeria:
   - foto: /imagens/uploads/Screenshot_2026-07-26-02-31-18-841_com.larus.wolf-edit-1.jpg
   - foto: /imagens/uploads/Screenshot_2026-07-29-18-09-50-856_com.photoroom.app-edit-1.jpg
 ---
-Na CmAcessorios18 você personaliza sua pulseira nas pedras de sua preferência em corrente nos banhos prata, dourado e grafite.
+✨ **Transforme sua ideia em uma joia exclusiva!** ✨
 
-Para ver as pedras, consulte um dos nossos colaboradores.
+Na **CmAcessorios18**, você cria uma pulseira que é a sua cara! Escolha as pedras naturais que mais representam sua essência e personalize cada detalhe.
+
+Disponível em correntes no banho **prata, dourado ou grafite**, nossas pulseiras unem beleza, qualidade e significado em uma peça feita especialmente para você.
+
+💎 Exclusiva. Elegante. Personalizada.
+
+📲 Fale conosco e monte sua pulseira do jeitinho que sempre sonhou. Afinal, ninguém merece usar uma peça igual à de todo mundo
+
