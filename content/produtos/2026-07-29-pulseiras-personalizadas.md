@@ -1,7 +1,7 @@
 ---
 title: Pulseiras personalizadas em elos de correntes⛓️
 categoria: Pulseiras
-valor: 99,99
+valor: 89,99
 image: /imagens/uploads/Screenshot_2026-07-29-13-49-48-562_photo.manager.private.photogallery-edit-2.jpg
 galeria:
   - foto: /imagens/uploads/Screenshot_2026-08-02-23-10-30-096_com.photoroom.app-edit.jpg
