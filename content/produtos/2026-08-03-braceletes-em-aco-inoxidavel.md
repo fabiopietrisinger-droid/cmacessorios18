@@ -6,6 +6,8 @@ image: /imagens/uploads/Screenshot_2026-08-03-20-35-38-739_com.photoroom.app-edi
 galeria:
   - foto: /imagens/uploads/Screenshot_2026-08-03-20-40-00-348_com.photoroom.app-edit.jpg
   - foto: /imagens/uploads/Screenshot_2026-08-03-20-37-57-041_com.photoroom.app-edit.jpg
+  - foto: /imagens/uploads/Screenshot_2026-08-04-21-42-40-961_com.larus.wolf-edit.jpg
+  - foto: /imagens/uploads/Screenshot_2026-08-04-21-42-17-561_com.larus.wolf-edit.jpg
 ---
 Os braceletes masculinos de aço inoxidável são acessórios que combinam elegância, resistência e versatilidade. Eles se tornaram muito populares porque oferecem um visual sofisticado sem exigir muitos cuidados.
 
