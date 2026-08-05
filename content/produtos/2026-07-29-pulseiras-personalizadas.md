@@ -12,6 +12,7 @@ galeria:
   - foto: /imagens/uploads/Screenshot_2026-08-04-22-46-11-595_com.larus.wolf-edit.jpg
   - foto: /imagens/uploads/Screenshot_2026-08-04-22-53-14-842_com.instagram.android-edit.jpg
   - foto: /imagens/uploads/Screenshot_2026-08-04-21-42-55-280_com.larus.wolf-edit.jpg
+  - foto: /imagens/uploads/Screenshot_2026-08-02-19-02-08-713_com.photoroom.app-edit.jpg
 ---
 ✨ **Transforme sua ideia em uma joia exclusiva!** ✨
 
