@@ -1,5 +1,5 @@
 ---
-title: Japamala de 108 contas em Pedras naturais Cmacessorios18.
+title: Japamala de 108 contas em Pedras naturais CmAcessorios18.
 categoria: Japamala
 valor: 199,99
 image: /imagens/uploads/Screenshot_2026-07-27-18-33-57-975_com.photoroom.app-edit-1.jpg
