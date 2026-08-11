@@ -1,5 +1,5 @@
 ---
-title: Bracelete em cristal natural multfacetado.
+title: "Bracelete em cristal natural multfacetado vermelho de cinco voltas "
 categoria: Braceletes
 valor: 199,99
 image: /imagens/uploads/IMG_20260728_003829-1.jpg
