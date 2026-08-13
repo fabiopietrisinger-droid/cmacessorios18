@@ -6,7 +6,7 @@ image: /imagens/uploads/Screenshot_2026-08-12-20-25-34-969_com.larus.wolf-edit-1
 galeria:
   - foto: /imagens/uploads/Screenshot_2026-08-12-21-20-43-950_com.instagram.android-edit.jpg
 ---
-### ❤️ Pulseira de Pedra Jaspe Terra 
+### ❤️ Pulseira de Pedra Jaspe Terra
 
 No simbolismo das pedras naturais, o jaspe é associado principalmente a **força, estabilidade, equilíbrio, proteção e conexão com a terra**. O jaspe vermelho, em especial, é tradicionalmente relacionado à **coragem, determinação, vitalidade e enraizamento**.
 
