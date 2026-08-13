@@ -1,5 +1,6 @@
 ---
 title: Pulseira em Pedra Ágata Tibetana com Quartzo Verde e acabamento em Prata 925.
+categoria: Pulseiras
 valor: 299,99
 image: /imagens/uploads/Screenshot_2026-08-13-02-36-46-797_com.instagram.android-edit.jpg
 ---
