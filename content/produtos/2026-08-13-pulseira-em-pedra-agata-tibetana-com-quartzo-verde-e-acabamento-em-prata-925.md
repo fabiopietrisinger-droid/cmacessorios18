@@ -3,6 +3,8 @@ title: Pulseira em Pedra Ágata Tibetana com Quartzo Verde e acabamento em Prata
 categoria: Pulseiras
 valor: 299,99
 image: /imagens/uploads/Screenshot_2026-08-13-02-36-46-797_com.instagram.android-edit.jpg
+galeria:
+  - foto: /imagens/uploads/Screenshot_2026-08-13-10-29-27-877_com.instagram.android-edit.jpg
 ---
 A **ágata tibetana** é uma variedade de ágata muito valorizada por suas características naturais e pelo simbolismo ligado à cultura tibetana
 
