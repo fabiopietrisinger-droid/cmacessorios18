@@ -3,7 +3,7 @@ title: Pulseira em Pedra Ametista com Cabeça de Buda Cravejada de Zircônia e
   Acabamento em Prata 925.
 categoria: Pulseiras
 valor: 349,99
-image: /imagens/uploads/Screenshot_2026-08-13-00-06-21-726_com.photoroom.app-edit.jpg
+image: /imagens/uploads/IMG_20260813_104410.jpg
 ---
 💜 A **ametista** é uma das pedras naturais mais conhecidas e apreciadas, principalmente pela sua linda coloração que vai do lilás suave ao roxo intenso.
 
