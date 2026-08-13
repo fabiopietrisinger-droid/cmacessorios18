@@ -1,5 +1,6 @@
 ---
-title: Pulseira em Pedra Ametista com Prata 925
+title: Pulseira em Pedra Ametista com Cabeça de Buda Cravejada de Zircônia e
+  Acabamento em Prata 925.
 categoria: Pulseiras
 valor: 349,99
 image: /imagens/uploads/Screenshot_2026-08-13-00-06-21-726_com.photoroom.app-edit.jpg
