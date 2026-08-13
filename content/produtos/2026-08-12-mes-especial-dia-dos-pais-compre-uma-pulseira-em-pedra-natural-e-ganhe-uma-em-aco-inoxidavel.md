@@ -1,6 +1,6 @@
 ---
-title: Mês especial dia dos Pais, compre uma pulseira em pedra natural e ganhe
-  uma em aço inoxidável.
+title: Mês especial dia dos Pais, compre a pulseira em pedra natural e ganhe uma
+  em aço inoxidável.
 categoria: Pulseiras
 valor: 89,99
 image: /imagens/uploads/Screenshot_2026-08-11-09-53-55-106_com.instagram.android-edit.jpg
