@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <!-- TÍTULO E DESCRIÇÃO SEO -->
+  <title>CMAcessórios18 | Trazendo a natureza até você.</title>
+  <meta name="description" content="Pulseiras com pedras naturais personalizadas Colares personalizados, Braceletes personalizados, Japamala, Pedras dos Signos com nome.">
+
+  <!-- FAVICON (ÍCONE DO NAVEGADOR) -->
+  <link rel="icon" href="imagens/uploads/logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="imagens/uploads/logo.png">
+
+  <!-- OPEN GRAPH / METADADOS PARA WHATSAPP, FACEBOOK, INSTAGRAM -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cmacessorios18.com.br/">
+  <meta property="og:title" content="CMAcessórios18 | Trazendo a natureza até você.">
+  <meta property="og:description" content="Pulseiras com pedras naturais personalizadas Colares personalizados, Braceletes personalizados, Japamala, Pedras dos Signos com nome.">
+  <meta property="og:image" content="https://cmacessorios18.com.br/imagens/uploads/logo.png">
+
+  <!-- TWITTER CARDS -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://cmacessorios18.com.br/">
+  <meta property="twitter:title" content="CMAcessórios18 | Trazendo a natureza até você.">
+  <meta property="twitter:description" content="Pulseiras com pedras naturais personalizadas Colares personalizados, Braceletes personalizados, Japamala, Pedras dos Signos com nome.">
+  <meta property="twitter:image" content="https://cmacessorios18.com.br/imagens/uploads/logo.png">
+  
+  <!-- Tipografias -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Bibliotecas CMS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <style>
+    /* UX/UI DESIGN SYSTEM */
+    :root {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8f9fa;
+      --bg-card: #ffffff;
+      --accent: #77c1d8;
+      --primary-dark: #222d43;
+      --wa-green: #25D366; 
+      --wa-green-hover: #20b858;
+      --text-main: #333333;
+      --text-muted: #666666;
+      --border-color: #eaeaea;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { max-width: 100vw; overflow-x: hidden; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background-color: var(--bg-primary); color: var(--text-main); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
+    ul { list-style: none; }
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* NAVBAR */
+    .header-main { background-color: rgba(255, 255, 255, 0.98); border-bottom: 1px solid var(--border-color); position: fixed; top: 0; width: 100%; z-index: 1000; padding: 10px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .header-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; width: 100%; }
+    .logo img { max-height: 91px; display: block; width: auto; transition: all 0.3s ease; }
+    .menu-toggle { display: none; font-size: 24px; color: var(--primary-dark); cursor: pointer; }
+    
+    .nav-links { display: flex; align-items: center; gap: 20px; }
+    .nav-links a { font-size: 10pt; text-transform: uppercase; letter-spacing: 1px; color: var(--text-main); font-weight: 500; }
+    .nav-links a:hover { color: var(--accent); }
+    
+    .btn-whatsapp { background-color: var(--wa-green) !important; color: #fff !important; border-color: var(--wa-green) !important; }
+    .btn-whatsapp:hover { background-color: var(--wa-green-hover) !important; border-color: var(--wa-green-hover) !important; }
+    .nav-contact { padding: 10px 24px; border-radius: 30px; font-weight: 600; }
+
+    @media screen and (max-width: 992px) {
+      .logo img { max-height: 65px; }
+      .menu-toggle { display: block; }
+      .nav-links { position: fixed; top: 85px; left: -100%; width: 100%; height: calc(100vh - 85px); background-color: var(--bg-primary); flex-direction: column; align-items: center; justify-content: flex-start; padding-top: 40px; transition: 0.3s; z-index: 999; overflow-y: auto; }
+      .nav-links.active { left: 0; }
+      .nav-links a { font-size: 14pt; margin-bottom: 25px; }
+    }
+
+    /* HERO */
+    .hero-slider { 
+      height: 85vh; 
+      min-height: 650px; 
+      background-color: var(--primary-dark); 
+      background-image: linear-gradient(rgba(34, 45, 67, 0.4), rgba(34, 45, 67, 0.7)), url('imagens/uploads/banner01.jpg');
+      background-size: cover; 
+      background-position: center; 
+      display: flex; 
+      align-items: center; 
+      justify-content: flex-start; 
+      text-align: left; 
+      padding-top: 180px; 
+    }
+    .hero-content { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .hero-content h1 { font-family: 'Playfair Display', serif; font-size: 34pt; color: #fff; font-weight: 600; text-shadow: 0 4px 15px rgba(0,0,0,0.5); line-height: 1.3; max-width: 650px; }
+
+    @media screen and (max-width: 600px) {
+      .hero-slider { height: 70vh; min-height: 500px; padding-top: 120px; justify-content: center; text-align: left; }
+      .hero-content h1 { font-size: 26pt; }
+    }
+
+    /* SEÇÕES */
+    .catalog-section, .info-section { padding: 80px 0; }
+    .catalog-section { background-color: var(--bg-secondary); }
+    .section-title { font-size: 26pt; color: var(--primary-dark); text-align: center; font-weight: 700; margin-bottom: 30px; line-height: 1.2; }
+    .section-title::after { content: ''; display: block; width: 80px; height: 3px; background-color: var(--accent); margin: 15px auto 0 auto; }
+
+    /* FILTROS E GRID DE PRODUTOS */
+    .filter-wrapper { text-align: center; margin-bottom: 50px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .filter-btn { background: #fff; border: 1px solid var(--border-color); color: var(--text-muted); padding: 10px 20px; cursor: pointer; border-radius: 30px; font-size: 9pt; text-transform: uppercase; font-weight: 600; transition: all 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+    .filter-btn:hover, .filter-btn.active { border-color: var(--primary-dark); color: #fff; background-color: var(--primary-dark); }
+    
+    .grid-instruments { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
+    .card-instrumento { background-color: var(--bg-card); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border: 1px solid transparent; width: 100%; }
+    .card-instrumento:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: var(--accent); }
+    
+    .personalize-card { background-color: var(--primary-dark); color: #fff; text-align: center; justify-content: center; padding: 40px 20px; border: none; }
+    .personalize-card h3 { color: #fff !important; font-size: 18pt; margin-bottom: 15px; }
+    .personalize-card p { font-size: 10pt; margin-bottom: 25px; color: #d0d0d0; }
+    
+    .img-wrapper { position: relative; width: 100%; height: 300px; background-color: #f0f0f0; cursor: pointer; }
+    .img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+    
+    .card-info { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; align-items: center; text-align: center; }
+    .category-tag { font-size: 8pt; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 10px; letter-spacing: 1px; }
+    .card-info h3 { font-size: 14pt; color: var(--primary-dark); margin-bottom: 10px; font-weight: 600; cursor: pointer; line-height: 1.3; }
+    .card-info .price { font-size: 16pt; font-weight: 700; color: var(--primary-dark); margin-bottom: 15px; }
+    
+    .btn-action { display: inline-block; padding: 10px 20px; border: 2px solid var(--primary-dark); border-radius: 30px; color: var(--primary-dark); font-weight: 600; font-size: 9pt; text-transform: uppercase; transition: all 0.3s; cursor: pointer; }
+    .card-instrumento:hover .btn-action:not(.btn-whatsapp) { background-color: var(--primary-dark); color: #fff; }
+
+    @media screen and (max-width: 600px) {
+      .grid-instruments { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .img-wrapper { height: 180px; }
+      .card-info { padding: 15px 10px; }
+      .card-info h3 { font-size: 11pt; margin-bottom: 5px; }
+      .card-info .price { font-size: 12pt; margin-bottom: 10px; }
+      .btn-action { padding: 8px 10px; font-size: 8pt; }
+      .section-title { font-size: 20pt; }
+    }
+
+    /* BANNER DIVISOR */
+    .video-divider { position: relative; width: 100%; height: 400px; padding: 60px 40px; overflow: hidden; display: flex; align-items: center; justify-content: center; background-color: var(--primary-dark); }
+    .video-divider video.desktop-video, .video-divider img.mobile-image { position: absolute; top: 50%; left: 50%; width: 100%; height: 100%; object-fit: cover; transform: translate(-50%, -50%); z-index: 1; opacity: 0.4; }
+    .video-divider .mobile-image { display: none; }
+    .video-overlay { position: relative; z-index: 2; text-align: center; color: #fff; max-width: 900px; width: 100%; }
+    .video-overlay h2 { font-size: 28pt; font-weight: 700; margin-bottom: 15px; text-shadow: 0 4px 15px rgba(0,0,0,0.8); line-height: 1.2; }
+    .video-overlay p { font-size: 12pt; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+
+    @media screen and (max-width: 768px) {
+      .video-divider { height: auto; min-height: 350px; padding: 50px 20px; }
+      .video-divider video.desktop-video { display: none; }
+      .video-divider .mobile-image { display: block; }
+      .video-overlay h2 { font-size: 18pt; margin-bottom: 15px; }
+      .video-overlay p { font-size: 10pt; }
+    }
+
+    /* SIGNOS GRID */
+    .zodiac-intro-box { max-width: 900px; margin: 0 auto 40px auto; text-align: center; color: var(--text-muted); font-size: 11pt; line-height: 1.8; }
+    .zodiac-intro-box p { margin-bottom: 15px; }
+    .zodiac-intro-box ul { list-style-type: disc; margin: 15px auto; text-align: left; display: inline-block; padding-left: 20px; color: var(--text-muted); font-size: 10.5pt; }
+    .zodiac-intro-box ul li { margin-bottom: 8px; }
+
+    .zodiac-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px; margin-top: 40px; }
+    .zodiac-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px 10px; text-align: center; cursor: pointer; transition: all 0.3s; display: flex; flex-direction: column; align-items: center; }
+    .zodiac-card:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+    .zodiac-card i { font-size: 30px; color: var(--primary-dark); margin-bottom: 15px; display: block; }
+    .zodiac-card span { font-weight: 600; color: var(--text-main); font-size: 11pt; text-transform: uppercase; }
+    .zodiac-card small { display: block; font-size: 7.5pt; color: var(--accent); margin-top: 8px; font-weight: 600; text-transform: none; transition: color 0.3s; }
+    .zodiac-card:hover small { color: var(--primary-dark); }
+
+    @media screen and (max-width: 600px) {
+      .zodiac-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    }
+
+    /* COMO COMPRAR STEPS */
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; margin-top: 50px; }
+    .step-item { text-align: center; padding: 20px 10px; }
+    .step-icon { width: 60px; height: 60px; background-color: var(--accent); color: #fff; font-size: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; }
+    .step-item h4 { font-size: 14pt; color: var(--primary-dark); margin-bottom: 10px; line-height: 1.3;}
+    .step-item p { font-size: 10pt; color: var(--text-muted); }
+
+    /* SOBRE */
+    .split-info-card { display: flex; border-radius: 12px; overflow: hidden; margin-bottom: 60px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); background-color: var(--bg-card); border: 1px solid var(--border-color); width: 100%; }
+    .split-info-content { flex: 1.2; padding: 60px; display: flex; flex-direction: column; justify-content: center; }
+    .split-info-content h3 { font-size: 22pt; color: var(--primary-dark); margin-bottom: 15px; font-weight: 700; line-height: 1.2;}
+    .split-info-content h4 { font-size: 12pt; color: var(--accent); margin-bottom: 25px; font-weight: 600; text-transform: uppercase; }
+    .split-info-content p { font-size: 10.5pt; line-height: 1.8; color: var(--text-muted); margin-bottom: 15px; }
+    .split-info-image { flex: 1; background-size: cover; background-position: top center; min-height: 400px; }
+    
+    @media (max-width: 900px) {
+      .split-info-card { flex-direction: column; }
+      .split-info-content { padding: 40px 20px; text-align: left; }
+      .split-info-image { min-height: 250px; }
+    }
+
+    /* MODAIS COMUNS E CUSTOMIZAÇÕES */
+    .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow-y: auto; background-color: rgba(34, 45, 67, 0.95); padding: 20px; align-items: flex-start; justify-content: center; -webkit-overflow-scrolling: touch; }
+    .modal-content { margin: 30px auto; background-color: var(--bg-card); border-radius: 12px; width: 100%; max-width: 1000px; display: flex; flex-direction: row; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.4); overflow: hidden; }
+    .modal-content-simples { max-width: 600px; flex-direction: column; padding: 40px; }
+    .close-modal { position: absolute; top: 10px; right: 15px; color: var(--text-main); font-size: 30px; font-weight: 400; cursor: pointer; z-index: 10; transition: color 0.2s; background: rgba(255,255,255,0.8); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; line-height: 1; }
+    .close-modal:hover { color: var(--accent); }
+    
+    .modal-gallery-pane { width: 50%; position: relative; background-color: #f8f9fa; display: flex; flex-direction: column; }
+    .modal-slider-main { width: 100%; flex-grow: 1; min-height: 400px; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 20px; }
+    .modal-slider-main img { width: 100%; max-height: 400px; object-fit: contain; }
+    
+    .modal-slider-thumbnails { display: flex; gap: 10px; padding: 15px; background-color: #fff; overflow-x: auto; border-top: 1px solid var(--border-color); }
+    .thumb-img { width: 60px; height: 60px; object-fit: cover; border: 2px solid transparent; border-radius: 6px; cursor: pointer; opacity: 0.6; transition: all 0.2s; flex-shrink: 0; }
+    .thumb-img.active, .thumb-img:hover { opacity: 1; border-color: var(--accent); }
+    
+    /* ESTILOS EXTRAS PARA LEGENDAS NO MODAL ZODÍACO */
+    .thumb-wrapper { display: flex; flex-direction: column; align-items: center; width: 70px; flex-shrink: 0; cursor: pointer; }
+    .thumb-wrapper img { width: 60px; height: 60px; object-fit: cover; border: 2px solid transparent; border-radius: 6px; opacity: 0.6; transition: all 0.2s; }
+    .thumb-wrapper.active img, .thumb-wrapper:hover img { opacity: 1; border-color: var(--accent); }
+    .thumb-caption { font-size: 7pt; color: var(--text-muted); text-align: center; margin-top: 5px; line-height: 1.1; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+
+    .modal-specs-pane { width: 50%; padding: 40px; display: flex; flex-direction: column; word-wrap: break-word; }
+    .modal-specs-pane.full-width { width: 100%; padding: 0; }
+    .modal-specs-pane .category-tag { font-size: 9pt; margin-bottom: 5px; display: block; }
+    .modal-specs-pane h2 { font-size: 20pt; color: var(--primary-dark); font-weight: 700; margin-bottom: 10px; padding-right: 30px; line-height: 1.2; }
+    .modal-specs-pane .modal-price { font-size: 18pt; font-weight: 700; color: var(--accent); margin-bottom: 20px; display: block; }
+    
+    .desc-content { font-size: 10.5pt; color: var(--text-muted); line-height: 1.8; margin-bottom: 30px; }
+    .desc-content p { margin-bottom: 15px; }
+    
+    .modal-btn { display: block; width: 100%; text-align: center; padding: 16px; border-radius: 30px; font-weight: 600; text-transform: uppercase; margin-top: auto; letter-spacing: 1px; font-size: 10pt; transition: all 0.3s; }
+    
+    @media(max-width: 900px) { 
+      .modal { padding: 10px; }
+      .modal-content { margin: 10px auto; }
+      .modal-content:not(.modal-content-simples) { flex-direction: column; } 
+      .modal-gallery-pane, .modal-specs-pane:not(.full-width) { width: 100%; } 
+      .modal-slider-main { min-height: 300px; }
+      .modal-specs-pane { padding: 30px 20px; }
+      .modal-content-simples { padding: 30px 20px; }
+    }
+
+    /* FOOTER */
+    .footer-main { background-color: var(--primary-dark); padding: 60px 0 30px 0; color: #fff; overflow: hidden; }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; width: 100%; }
+    .footer-col h4 { color: var(--accent); text-transform: uppercase; font-size: 12pt; font-weight: 600; margin-bottom: 25px; line-height: 1.3;}
+    .footer-col ul li { margin-bottom: 15px; }
+    .footer-col ul li a { font-size: 10pt; color: #d0d0d0; display: flex; align-items: center; gap: 10px; word-wrap: break-word;}
+    .footer-col ul li a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; }
+    .social-links { margin-bottom: 20px; }
+    .social-links a { display: inline-block; margin: 0 10px; font-size: 20pt; color: #d0d0d0; transition: color 0.3s; }
+    .social-links a:hover { color: var(--accent); }
+    .footer-bottom p { font-size: 9pt; color: #a0a0a0; margin-bottom: 5px; }
+
+    @media(max-width: 768px) {
+        .footer-grid { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+        .footer-col ul li a { justify-content: center; }
+    }
+
+    .wpp-float { position: fixed; bottom: 30px; right: 30px; background-color: var(--wa-green); color: #fff; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); z-index: 1500; transition: all 0.3s ease; }
+    .wpp-float:hover { transform: scale(1.1); color: #fff; background-color: var(--wa-green-hover); }
+  </style>
+</head>
+<body>
+
+  <header class="header-main">
+    <div class="header-container">
+      <div class="logo">
+        <a href="#hero" aria-label="Página Inicial">
+            <img src="imagens/uploads/logo.png" alt="CMAcessórios18">
+        </a>
+      </div>
+      <div class="menu-toggle" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
+      <nav class="nav-links" id="nav-menu">
+        <a href="#hero" onclick="closeMenu()">Home</a>
+        <a href="#loja" onclick="closeMenu()">Catálogo</a>
+        <a href="#signos" onclick="closeMenu()">Signos</a>
+        <a href="#como-comprar" onclick="closeMenu()">Envios e Prazos</a>
+        <a href="https://wa.me/5511994863166?text=Ol%C3%A1%2C%20estou%20no%20site%20e%20gostaria%20de%20falar%20sobre%20os%20produtos%20da%20CMAcess%C3%B3rios18." target="_blank" class="nav-contact btn-whatsapp">Falar no WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="hero" class="hero-slider">
+    <div class="hero-content">
+      <h1>A CMAcessórios18 traz a natureza para perto de você</h1>
+    </div>
+  </section>
+
+  <section id="loja" class="catalog-section">
+    <div class="container">
+      <h2 class="section-title">Nosso Catálogo</h2>
+      <p style="text-align: center; margin-bottom: 30px; color: var(--text-muted);">Confira nossas peças e faça seu pedido sob medida.</p>
+      
+      <div class="filter-wrapper">
+        <button class="filter-btn active" onclick="filtrarCategoria('todas')">Todos</button>
+        <button class="filter-btn" onclick="filtrarCategoria('braceletes')">Braceletes</button>
+        <button class="filter-btn" onclick="filtrarCategoria('colares')">Colares</button>
+        <button class="filter-btn" onclick="filtrarCategoria('colares decorativos')">Colares Decorativos</button>
+        <button class="filter-btn" onclick="filtrarCategoria('japamala')">Japamala</button>
+        <button class="filter-btn" onclick="filtrarCategoria('pulseiras')">Pulseiras</button>
+        <button class="filter-btn" onclick="filtrarCategoria('pulseiras infantis')">Pulseiras Infantis</button>
+      </div>
+
+      <p id="aviso-encomenda" style="display: none; text-align: center; color: var(--accent); font-weight: 600; margin-bottom: 30px; font-size: 10pt; padding: 0 10px;">
+        * Peças Infantis produzidas exclusivamente sob encomenda para garantir o ajuste perfeito.
+      </p>
+
+      <div id="grid-produtos" class="grid-instruments">
+        <p class="loading" style="text-align: center; width: 100%;">Carregando peças exclusivas...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BAN DIVISOR DE ALTO IMPACTO: VÍDEO ZODÍACO -->
+  <section class="video-divider">
+    <!-- Vídeo rodando em loop no Desktop -->
+    <video autoplay loop muted playsinline class="desktop-video">
+        <source src="imagens/uploads/zodiaco.mp4" type="video/mp4">
+    </video>
+    <!-- Imagem Estática no Mobile para poupar dados -->
+    <img src="imagens/uploads/zodiaco.jpg" alt="Pedras do Zodíaco" class="mobile-image">
+    
+    <div class="video-overlay">
+        <h2>Personalize seu produto com as pedras dos signos</h2>
+        <p>Qualquer produto da CMAcessórios18 pode ser personalizado com as Pedras dos Signos.</p>
+    </div>
+  </section>
+
+  <!-- SEÇÃO: ZODÍACO E PEDRAS -->
+  <section id="signos" class="catalog-section" style="background-color: var(--bg-primary);">
+    <div class="container">
+      <h2 class="section-title">Zodíaco & Pedras</h2>
+      
+      <div class="zodiac-intro-box">
+          <p>Na CMAcessórios18, você encontra uma coleção especial de pulseiras dos signos com pedras naturais, criadas para unir beleza, estilo e o simbolismo da astrologia. Cada pulseira é inspirada nas características de um dos 12 signos do zodíaco e confeccionada com pedras naturais cuidadosamente selecionadas.</p>
+          <p>As pedras são conhecidas por seus significados e energias, tornando cada peça uma opção especial para quem busca um acessório com personalidade ou um presente cheio de significado.</p>
+          <p>Nossa coleção reúne modelos para todos os signos, com acabamentos modernos e materiais de qualidade, ideais para usar no dia a dia ou em ocasiões especiais.</p>
+          
+          <p style="margin-top: 25px;"><strong style="color: var(--primary-dark);">Por que escolher uma pulseira do seu signo?</strong></p>
+          <ul>
+              <li>Pedras naturais selecionadas.</li>
+              <li>Design elegante e versátil.</li>
+              <li>Inspirada nas características de cada signo.</li>
+              <li>Excelente opção para presentear.</li>
+              <li>Combina estilo e simbolismo em um único acessório.</li>
+          </ul>
+          
+          <p style="margin-top: 15px;">Encontre a pulseira que representa o seu signo e escolha uma peça que combine com a sua personalidade. Na CMAcessórios18, cada acessório é pensado para valorizar seu estilo com charme e autenticidade.</p>
+      </div>
+      
+      <div class="zodiac-grid">
+        <div class="zodiac-card" onclick="abrirModalSigno('Áries')">
+            <i class="fa-solid fa-fire"></i>
+            <span>Áries</span>
+            <small>Clique para saber mais</small>
+        </div>
+        <div class="zodiac-card" onclick="abrirModalSigno('Touro')">
+            <i class="fa-solid fa-seedling"></i>
+            <span>Touro</span>
+            <small>Clique para saber mais</small>
+        </div>
+        <div class="zodiac-card" onclick="abrirModalSigno('Gêmeos')">
+            <i class="fa-solid fa-wind"></i>
+            <span>Gêmeos</span>
+            <small>Clique para saber mais</small>
+        </div>
+        <div class="zodiac-card" onclick="abrirModalSigno('Câncer')">
+            <i class="fa-solid fa-water"></i>
+            <span>Câncer</span>
+            <small>Clique para saber mais</small>
+        </div>
+        <div class="zodiac-card" onclick="abrirModalSigno('Leão')">
+            <i class="fa-solid fa-sun"></i>
+            <span>Leão</span>
+            <small>Clique para saber mais</small>
+        </div>
+        <div class="zodiac-card" onclick="abrirModalSigno('Virgem')">
+            <i class="fa-solid fa-leaf"></i>
+            <span>Virgem</span>
+            <small>Clique para saber mais</small>
+        </div>
+        <div class="zodiac-card" onclick="abrirModalSigno('Libra')">
+            <i class="fa-solid fa-scale-balanced"></i>
+            <span>Libra</span>
+            <small>Clique para saber mais</small>
+        </div>
+        <div class="zodiac-card" onclick="abrirModalSigno('Escorpião')">
+            <i class="fa-solid fa-droplet"></i>
+            <span>Escorpião</span>
+            <small>Clique para saber mais</small>
+        </div>
+        <div class="zodiac-card" onclick="abrirModalSigno('Sagitário')">
+            <i class="fa-solid fa-fire-flame-curved"></i>
+            <span>Sagitário</span>
+            <small>Clique para saber mais</small>
+        </div>
+        <div class="zodiac-card" onclick="abrirModalSigno('Capricórnio')">
+            <i class="fa-solid fa-mountain"></i>
+            <span>Capricórnio</span>
+            <small>Clique para saber mais</small>
+        </div>
+        <div class="zodiac-card" onclick="abrirModalSigno('Aquário')">
+            <i class="fa-solid fa-water"></i>
+            <span>Aquário</span>
+            <small>Clique para saber mais</small>
+        </div>
+        <div class="zodiac-card" onclick="abrirModalSigno('Peixes')">
+            <i class="fa-solid fa-fish"></i>
+            <span>Peixes</span>
+            <small>Clique para saber mais</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO: COMO COMPRAR & ENVIOS -->
+  <section id="como-comprar" class="info-section">
+    <div class="container">
+        <h2 class="section-title">Como Comprar</h2>
+        
+        <div class="steps-grid">
+            <div class="step-item">
+                <div class="step-icon"><i class="fa-regular fa-image"></i></div>
+                <h4>1. O Catálogo</h4>
+                <p>Navegue pelas peças de referência para se inspirar. Todos os modelos podem ser ajustados ou usados como base para a sua criação exclusiva.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                <h4>2. Contato Direto</h4>
+                <p>Clique no botão da peça desejada para falar diretamente com o Cesar. Ajustaremos as pedras, fios e o tamanho ideal para você.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-icon"><i class="fa-regular fa-credit-card"></i></div>
+                <h4>3. Pagamento Seguro</h4>
+                <p>Aceitamos Pix e Cartão de Crédito. As diretrizes e os links de pagamento serão encaminhados no seu atendimento após a definição da peça.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-icon"><i class="fa-solid fa-box-open"></i></div>
+                <h4>4. Prazos e Envio</h4>
+                <p>O prazo de produção será alinhado no momento do pedido. Suas peças serão enviadas de forma segura em nossas exclusivas caixas de acrílico com rosca.</p>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO INSTITUCIONAL / NOSSA HISTÓRIA -->
+  <section id="sobre" class="info-section" style="background-color: var(--bg-primary);">
+    <div class="container">
+      <div class="split-info-card">
+        <div class="split-info-content">
+          <h3>Como Nasceu a CMAcessórios18</h3>
+          <h4>Nossa História</h4>
+          <p>Tudo começou de uma forma simples, sem um plano de negócios ou a intenção de criar uma empresa. Eu queria apenas produzir alguns acessórios masculinos para uso próprio, especialmente pulseiras feitas com pedras naturais. Sempre gostei de peças com personalidade e exclusividade, então decidi criar algo que refletisse meu próprio estilo.</p>
+          <p>Quando comecei a usar as pulseiras, elas chamavam a atenção por onde eu passava. Meus amigos e conhecidos perguntavam onde eu havia comprado aquelas peças, elogiando o design e o diferencial que elas tinham.</p>
+          <p>A resposta sempre surpreendia: "Fui eu quem fez."</p>
+          <p>A partir desse momento, as pessoas começaram a pedir que eu confeccionasse pulseiras para elas também. O que antes era apenas um hobby e uma necessidade pessoal começou a despertar o interesse de cada vez mais pessoas. Foi assim, de maneira espontânea, que nasceu a CMAcessórios18. A empresa surgiu não de uma estratégia de mercado, mas da paixão por criar acessórios exclusivos e da confiança das primeiras pessoas que acreditaram no meu trabalho.</p>
+
+          <h4 style="margin-top: 30px;">O Processo Criativo das Peças</h4>
+          <p>Meu processo criativo acontece, na maioria das vezes, durante a madrugada. É nesse momento de silêncio que encontro inspiração. Sento no meu ateliê e as ideias começam a surgir naturalmente.</p>
+          <p>Primeiro, imagino como será a peça. Em seguida, escolho as pedras naturais, as cores e as combinações que melhor traduzem aquela inspiração. Aos poucos, a criação vai ganhando forma, e cada detalhe é pensado com carinho, buscando equilíbrio, beleza e harmonia.</p>
+          <p>Quando inicio a montagem, sinto que minhas mãos apenas dão forma ao que Deus colocou em meu coração. A cada peça finalizada, sou surpreendido por uma criação única, mais linda que a outra. Acredito que esse dom é um presente de Deus, e cada acessório carrega um pouco dessa inspiração, da dedicação e do amor com que foi feito.</p>
+          <p>Por isso, cada peça é exclusiva. Ela nasce de um momento especial, guiado pela criatividade, pela sensibilidade e pela certeza de que Deus conduz minhas mãos em cada criação.</p>
+        </div>
+        <div class="split-info-image" style="background-image: url('imagens/uploads/cesar.jpg');"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL DO PRODUTO -->
+  <div id="modal-detalhes" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="fecharModal('modal-detalhes')">×</span>
+      <div class="modal-gallery-pane">
+        <div class="modal-slider-main">
+          <img id="modal-imagem-principal" src="" alt="Imagem Principal">
+        </div>
+        <div id="modal-thumbnails" class="modal-slider-thumbnails"></div>
+      </div>
+      <div class="modal-specs-pane">
+        <span class="category-tag" id="modal-categoria">Categoria</span>
+        <h2 id="modal-nome">Nome do Produto</h2>
+        <span class="modal-price" id="modal-valor">R$ 0,00</span>
+        <div class="desc-content" id="modal-tabela-specs"></div>
+        <a id="modal-btn-wa" href="#" target="_blank" class="modal-btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Falar sobre esta peça</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DE SIGNOS -->
+  <div id="modal-signo" class="modal">
+    <div class="modal-content" id="modal-content-signo">
+      <span class="close-modal" onclick="fecharModal('modal-signo')">×</span>
+      
+      <!-- PAINEL DE FOTOS DO SIGNO (Controlado via JS se existirem fotos no painel) -->
+      <div class="modal-gallery-pane" id="signo-gallery-pane" style="display: none;">
+        <p style="text-align: center; padding: 25px 20px 0 20px; font-weight: 600; color: var(--primary-dark); font-size: 11pt;">Confira os tipos de pedra na galeria abaixo</p>
+        <div class="modal-slider-main" style="min-height: 350px;">
+          <img id="signo-imagem-principal" src="" alt="Imagem da Pedra">
+        </div>
+        <p id="signo-imagem-legenda" style="text-align: center; font-size: 10.5pt; font-weight: 500; color: var(--text-main); margin: 0 15px 15px 15px;"></p>
+        <div id="signo-thumbnails" class="modal-slider-thumbnails" style="align-items: flex-start; justify-content: center; border-top: 1px solid var(--border-color);"></div>
+      </div>
+
+      <!-- PAINEL DE INFORMAÇÕES DO SIGNO -->
+      <div class="modal-specs-pane full-width" id="signo-specs-pane">
+        <span class="category-tag">Coleção Zodíaco</span>
+        <h2 id="signo-nome" style="margin-bottom: 25px;">Signo</h2>
+        <div class="desc-content">
+            <p><strong style="color: var(--primary-dark);">Pedras Naturais:</strong> <span id="signo-pedras"></span></p>
+            <p id="signo-desc"></p>
+        </div>
+        <a id="modal-signo-wa" href="#" target="_blank" class="modal-btn btn-whatsapp" style="margin-top: 20px;"><i class="fa-brands fa-whatsapp"></i> Encomendar peça de <span id="btn-signo-text">Signo</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RODAPÉ -->
+  <footer class="footer-main">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#loja" onclick="filtrarCategoria('todas')">Catálogo Geral</a></li>
+          <li><a href="#signos">Pulseiras dos Signos</a></li>
+          <li><a href="#como-comprar">Como Comprar</a></li>
+          <li><a href="#sobre">Nossa História</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categorias</h4>
+        <ul>
+          <li><a href="#loja" onclick="filtrarCategoria('braceletes')">Braceletes</a></li>
+          <li><a href="#loja" onclick="filtrarCategoria('colares')">Colares</a></li>
+          <li><a href="#loja" onclick="filtrarCategoria('colares decorativos')">Colares Decorativos</a></li>
+          <li><a href="#loja" onclick="filtrarCategoria('japamala')">Japamala</a></li>
+          <li><a href="#loja" onclick="filtrarCategoria('pulseiras infantis')">Pulseiras Infantis</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contato Direto</h4>
+        <ul class="contact-list">
+          <li><a href="https://wa.me/5511994863166?text=Ol%C3%A1%2C%20estou%20no%20site%20e%20gostaria%20de%20falar%20sobre%20os%20produtos%20da%20CMAcess%C3%B3rios18." target="_blank"><i class="fa-brands fa-whatsapp"></i> (11) 99486-3166</a></li>
+          <li><a href="https://www.instagram.com/cmacessorios18" target="_blank"><i class="fa-brands fa-instagram"></i> Acompanhe no Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="social-links">
+        <a href="https://www.instagram.com/cmacessorios18" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+      <p>© 2026 CMAcessórios18. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5511994863166?text=Ol%C3%A1%2C%20estou%20no%20site%20e%20gostaria%20de%20falar%20sobre%20os%20produtos%20da%20CMAcess%C3%B3rios18." target="_blank" class="wpp-float"><i class="fa-brands fa-whatsapp"></i></a>
+
+  <!-- SCRIPT -->
+  <script>
+    const GITHUB_USER = 'fabiopietrisinger-droid';
+    const GITHUB_REPO = 'cmacessorios18';
+    
+    let todosOsProdutos = [];
+    let galeriasSignos = {};
+
+    const signosData = {
+      "Áries": {
+        pedras: "Jaspe Vermelho, Cornalina e Hematita.",
+        desc: "A pulseira de Áries foi inspirada na força, coragem e determinação deste signo. As pedras naturais tradicionalmente associadas aos arianos representam iniciativa, vitalidade e confiança. Um acessório marcante para quem gosta de agir, liderar e enfrentar novos desafios com entusiasmo."
+      },
+      "Touro": {
+        pedras: "Quartzo Rosa, Esmeralda e Jade.",
+        desc: "A pulseira de Touro combina elegância e delicadeza. As pedras tradicionalmente ligadas a este signo simbolizam equilíbrio, prosperidade e amor. É uma peça ideal para quem aprecia conforto, estabilidade e beleza em cada detalhe."
+      },
+      "Gêmeos": {
+        pedras: "Citrino, Ágata e Olho de Tigre.",
+        desc: "Criada para representar a curiosidade e a versatilidade dos geminianos, esta pulseira reúne pedras associadas à criatividade, comunicação e confiança. Um acessório leve e moderno para acompanhar o dinamismo do dia a dia."
+      },
+      "Câncer": {
+        pedras: "Pedra da Lua, Quartzo Branco e Quartzo Rosa.",
+        desc: "A pulseira de Câncer destaca a sensibilidade e a intuição. As pedras naturais escolhidas são tradicionalmente relacionadas ao acolhimento, serenidade e equilíbrio emocional, criando um acessório delicado e cheio de significado."
+      },
+      "Leão": {
+        pedras: "Olho de Tigre, Citrino e Pirita.",
+        desc: "Inspirada no brilho e na personalidade marcante dos leoninos, esta pulseira reúne pedras tradicionalmente associadas à confiança, prosperidade e determinação. Uma peça elegante para quem gosta de se destacar."
+      },
+      "Virgem": {
+        pedras: "Amazonita, Jade e Fluorita.",
+        desc: "A pulseira de Virgem representa organização, equilíbrio e sabedoria. As pedras naturais associadas a este signo simbolizam clareza, serenidade e foco, resultando em um acessório sofisticado e versátil."
+      },
+      "Libra": {
+        pedras: "Quartzo Rosa, Lápis-Lazúli e Amazonita.",
+        desc: "Desenvolvida para representar a busca pela harmonia, a pulseira de Libra reúne pedras tradicionalmente relacionadas ao equilíbrio, à beleza e à comunicação. Um acessório elegante para qualquer ocasião."
+      },
+      "Escorpião": {
+        pedras: "Obsidiana Negra, Granada e Ametista.",
+        desc: "A pulseira de Escorpião reflete intensidade, transformação e determinação. As pedras naturais tradicionalmente associadas a este signo simbolizam proteção, coragem e renovação, criando uma peça cheia de personalidade."
+      },
+      "Sagitário": {
+        pedras: "Sodalita, Ametista e Turquesa.",
+        desc: "Para os aventureiros do zodíaco, esta pulseira reúne pedras associadas à liberdade, sabedoria e otimismo. Um acessório perfeito para quem está sempre em busca de novas experiências."
+      },
+      "Capricórnio": {
+        pedras: "Ônix, Hematita e Quartzo Fumê.",
+        desc: "A pulseira de Capricórnio representa disciplina, responsabilidade e perseverança. As pedras tradicionalmente ligadas a este signo simbolizam estabilidade, foco e determinação, em um design clássico e elegante."
+      },
+      "Aquário": {
+        pedras: "Ametista, Água-Marinha e Fluorita.",
+        desc: "Criada para pessoas criativas e inovadoras, a pulseira de Aquário reúne pedras associadas à inspiração, à clareza e à originalidade. Uma peça moderna para quem gosta de expressar sua personalidade."
+      },
+      "Peixes": {
+        pedras: "Ametista, Água-Marinha e Pedra da Lua.",
+        desc: "A pulseira de Peixes representa sensibilidade, imaginação e espiritualidade. As pedras naturais tradicionalmente associadas a este signo simbolizam serenidade, intuição e criatividade, tornando esta peça delicada e especial."
+      }
+    };
+
+    function urlSemCache(urlBase) {
+      if (!urlBase) return '';
+      return urlBase + (urlBase.includes('?') ? '&' : '?') + 't=' + new Date().getTime();
+    }
+
+    function toggleMenu() { document.getElementById("nav-menu").classList.toggle("active"); }
+    function closeMenu() { document.getElementById("nav-menu").classList.remove("active"); }
+
+    function extrairDadosMarkdown(rawText) {
+      const content = rawText.trim();
+      if (content.startsWith('---')) {
+        const endIdx = content.indexOf('\n---', 3);
+        if (endIdx !== -1) {
+          const yamlBlock = content.substring(3, endIdx);
+          const mdBody = content.substring(endIdx + 4).trim();
+          try {
+            const data = jsyaml.load(yamlBlock) || {};
+            data.body = marked.parse(mdBody);
+            return data;
+          } catch (err) {
+            console.error("Erro ao converter o YAML:", err);
+            return null;
+          }
+        }
+      }
+      return null;
+    }
+
+    async function inicializarSite() {
+      // 1. Busca os Produtos do CMS
+      try {
+        const resLista = await fetch(urlSemCache(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/content/produtos`));
+        if(resLista.ok) {
+          const arquivos = await resLista.json();
+          const grid = document.getElementById('grid-produtos');
+          grid.innerHTML = ''; 
+          
+          for (const arquivo of arquivos) {
+            if (arquivo.name.endsWith('.md') && arquivo.download_url) {
+              try {
+                const resItem = await fetch(urlSemCache(arquivo.download_url));
+                const txtProd = await resItem.text();
+                const produto = extrairDadosMarkdown(txtProd);
+                if (produto && produto.title) {
+                  todosOsProdutos.push(produto);
+                }
+              } catch (e) {
+                console.error(`Erro ao baixar arquivo ${arquivo.name}.`);
+              }
+            }
+          }
+          renderizarProdutos(todosOsProdutos);
+        } else {
+          document.getElementById('grid-produtos').innerHTML = '<p class="loading" style="grid-column: 1/-1; text-align:center;">O catálogo aparecerá aqui em breve.</p>';
+        }
+      } catch (error) {
+        console.error("Erro na conexão com o repositório.", error);
+      }
+
+      // 2. Busca as Fotos da Coleção Zodíaco
+      try {
+        const resZodiaco = await fetch(urlSemCache(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/content/zodiaco.json`));
+        if(resZodiaco.ok) {
+            const dataZodiacoRaw = await resZodiaco.json();
+            galeriasSignos = JSON.parse(decodeURIComponent(escape(atob(dataZodiacoRaw.content))));
+        }
+      } catch (error) {
+        console.warn("Nenhuma foto da coleção Zodíaco cadastrada ainda.");
+      }
+    }
+
+    function renderizarProdutos(lista) {
+      const grid = document.getElementById('grid-produtos');
+      if(!grid) return;
+      grid.innerHTML = '';
+
+      if(lista.length === 0) {
+        grid.innerHTML = '<p class="loading" style="grid-column: 1/-1; text-align: center;">Nenhum produto nesta categoria.</p>';
+      } else {
+          lista.forEach((produto) => {
+            const originalIdx = todosOsProdutos.indexOf(produto);
+            const imgSrc = produto.image || 'https://placehold.co/600x600/f0f0f0/222d43?text=Sem+Foto';
+            const valorFormatado = produto.valor ? `R$ ${produto.valor}` : 'Consulte';
+            const catText = produto.categoria || 'Geral';
+
+            const card = document.createElement('div');
+            card.className = 'card-instrumento';
+            card.innerHTML = `
+              <div class="img-wrapper" onclick="abrirModal(${originalIdx})">
+                <img src="${imgSrc}" alt="${produto.title || 'Produto'}">
+              </div>
+              <div class="card-info">
+                <span class="category-tag">${catText}</span>
+                <h3 onclick="abrirModal(${originalIdx})">${produto.title || 'Peça Exclusiva'}</h3>
+                <span class="price">${valorFormatado}</span>
+                <a href="javascript:void(0)" onclick="abrirModal(${originalIdx})" class="btn-action">Ver Detalhes</a>
+              </div>
+            `;
+            grid.appendChild(card);
+          });
+      }
+
+      const textoPersonalizado = "Olá, estou no site e tenho interesse nesta peça: Categoria: Personalizados Produto: Peça Personalizada";
+      const linkWaPersonalizado = `https://wa.me/5511994863166?text=${encodeURIComponent(textoPersonalizado)}`;
+
+      const personalizeCard = document.createElement('div');
+      personalizeCard.className = 'card-instrumento personalize-card';
+      personalizeCard.innerHTML = `
+        <i class="fa-solid fa-wand-magic-sparkles" style="font-size: 30px; margin-bottom: 15px;"></i>
+        <h3>Personalize o Seu</h3>
+        <p>Gostou do nosso estilo mas tem uma ideia única? Crie uma peça totalmente sob medida, escolhendo suas próprias pedras, nylons ou cordões com a ajuda da nossa equipe.</p>
+        <a href="${linkWaPersonalizado}" target="_blank" class="btn-action btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Montar Peça Exclusiva</a>
+      `;
+      grid.appendChild(personalizeCard);
+    }
+
+    function filtrarCategoria(categoria) {
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.innerText.toLowerCase() === categoria.toLowerCase() || (categoria === 'todas' && btn.innerText.toLowerCase() === 'todos'));
+      });
+      
+      const aviso = document.getElementById('aviso-encomenda');
+      if (categoria.toLowerCase() === 'pulseiras infantis') {
+          aviso.style.display = 'block';
+      } else {
+          aviso.style.display = 'none';
+      }
+
+      renderizarProdutos(categoria === 'todas' ? todosOsProdutos : todosOsProdutos.filter(p => p.categoria && p.categoria.toLowerCase() === categoria.toLowerCase()));
+    }
+
+    function transformarLinkAbsoluto(caminho) {
+        if(!caminho) return '';
+        let url = String(caminho).trim();
+        let lowerUrl = url.toLowerCase();
+        
+        if (lowerUrl.includes('imagens')) {
+            let matchIndex = lowerUrl.indexOf('imagens');
+            let pathFinal = url.substring(matchIndex);
+            return 'https://www.cmacessorios18.com.br/' + pathFinal;
+        } else if (!url.startsWith('http')) {
+            return 'https://www.cmacessorios18.com.br/' + url.replace(/^[\.\/]+/, '');
+        }
+        return url;
+    }
+
+    function abrirModal(index) {
+      const p = todosOsProdutos[index];
+      const categoriaFormatada = p.categoria || 'Geral';
+      const tituloFormatado = p.title || 'Peça Exclusiva';
+      
+      document.getElementById('modal-nome').innerText = tituloFormatado;
+      document.getElementById('modal-categoria').innerText = categoriaFormatada;
+      document.getElementById('modal-valor').innerText = p.valor ? `R$ ${p.valor}` : 'Preço a combinar';
+      
+      const imgPrincipal = p.image || 'https://placehold.co/600x600/f0f0f0/222d43?text=Sem+Foto';
+      document.getElementById('modal-imagem-principal').src = imgPrincipal;
+      
+      const thumbsContainer = document.getElementById('modal-thumbnails');
+      thumbsContainer.innerHTML = '';
+      
+      let listaFotos = [imgPrincipal];
+      
+      if(p.galeria && p.galeria.length > 0) {
+        p.galeria.forEach((imgObj) => {
+          const urlImg = typeof imgObj === 'string' ? imgObj : imgObj.foto; 
+          if(urlImg && !listaFotos.includes(urlImg)) {
+              listaFotos.push(urlImg);
+          }
+        });
+      }
+
+      if(listaFotos.length > 1) {
+          listaFotos.forEach((url, fIdx) => {
+            const thumb = document.createElement('img');
+            thumb.src = url;
+            thumb.className = `thumb-img ${fIdx === 0 ? 'active' : ''}`;
+            thumb.onclick = () => alternarFotoNova(url, fIdx);
+            thumbsContainer.appendChild(thumb);
+          });
+      }
+
+      document.getElementById('modal-tabela-specs').innerHTML = p.body || "<p>Chame no WhatsApp para alinhar os detalhes de ajuste desta peça.</p>";
+      
+      const linkAbsolutoFoto = transformarLinkAbsoluto(imgPrincipal);
+      const textoWaProduto = `Olá, estou no site e tenho interesse nesta peça: Categoria: ${categoriaFormatada} Produto: ${tituloFormatado} \n\nLink da foto: ${linkAbsolutoFoto}`;
+      document.getElementById('modal-btn-wa').href = `https://wa.me/5511994863166?text=${encodeURIComponent(textoWaProduto)}`;
+      
+      document.getElementById('modal-detalhes').style.display = 'flex';
+      document.body.style.overflow = 'hidden'; 
+    }
+
+    function alternarFotoNova(urlImg, fIdx) {
+      if(urlImg) document.getElementById('modal-imagem-principal').src = urlImg;
+      document.querySelectorAll('#modal-detalhes .thumb-img').forEach((th, i) => th.classList.toggle('active', i === fIdx));
+    }
+
+    // NOVA FUNÇÃO: Alternar fotos da galeria do Zodíaco
+    function alternarFotoSigno(urlImg, legenda, fIdx) {
+      if(urlImg) {
+          document.getElementById('signo-imagem-principal').src = urlImg;
+          document.getElementById('signo-imagem-legenda').innerText = legenda || '';
+          document.querySelectorAll('#modal-signo .thumb-wrapper').forEach((th, i) => th.classList.toggle('active', i === fIdx));
+      }
+    }
+
+    function abrirModalSigno(signo) {
+        const dadosSigno = signosData[signo] || { pedras: "Pedras não especificadas.", desc: "Descrição não encontrada." };
+        
+        document.getElementById('signo-nome').innerText = signo;
+        document.getElementById('btn-signo-text').innerText = signo;
+        document.getElementById('signo-pedras').innerText = dadosSigno.pedras;
+        document.getElementById('signo-desc').innerText = dadosSigno.desc;
+        
+        // Puxa as fotos da API, limitando a no máximo 6
+        const fotosSigno = (galeriasSignos[signo] || []).slice(0, 6);
+        const modalContentSigno = document.getElementById('modal-content-signo');
+        const galleryPane = document.getElementById('signo-gallery-pane');
+        const specsPane = document.getElementById('signo-specs-pane');
+
+        let linkAbsolutoFotoRef = '';
+
+        if(fotosSigno.length > 0) {
+            // Expande o modal para exibir a galeria
+            modalContentSigno.classList.remove('modal-content-simples');
+            specsPane.classList.remove('full-width');
+            galleryPane.style.display = 'flex';
+
+            const thumbsContainer = document.getElementById('signo-thumbnails');
+            thumbsContainer.innerHTML = '';
+
+            // Prepara a primeira imagem
+            document.getElementById('signo-imagem-principal').src = fotosSigno[0].foto;
+            document.getElementById('signo-imagem-legenda').innerText = fotosSigno[0].legenda || '';
+            linkAbsolutoFotoRef = transformarLinkAbsoluto(fotosSigno[0].foto);
+
+            // Gera as miniaturas
+            fotosSigno.forEach((item, fIdx) => {
+                const urlImg = typeof item.foto === 'string' ? item.foto : '';
+                const legenda = item.legenda || '';
+
+                if(urlImg) {
+                    const thumbDiv = document.createElement('div');
+                    thumbDiv.className = `thumb-wrapper ${fIdx === 0 ? 'active' : ''}`;
+                    thumbDiv.onclick = () => alternarFotoSigno(urlImg, legenda, fIdx);
+                    thumbDiv.innerHTML = `
+                        <img src="${urlImg}" alt="${legenda}">
+                        <span class="thumb-caption" title="${legenda}">${legenda}</span>
+                    `;
+                    thumbsContainer.appendChild(thumbDiv);
+                }
+            });
+        } else {
+            // Se não houver fotos, o modal fica compacto
+            modalContentSigno.classList.add('modal-content-simples');
+            specsPane.classList.add('full-width');
+            galleryPane.style.display = 'none';
+        }
+
+        let textoWaSigno = `Olá, estou no site e tenho interesse nesta peça: Categoria: Coleção Zodíaco Produto: Pulseira do Signo de ${signo}`;
+        if(linkAbsolutoFotoRef) {
+            textoWaSigno += ` \n\nLink da foto de referência: ${linkAbsolutoFotoRef}`;
+        }
+
+        document.getElementById('modal-signo-wa').href = `https://wa.me/5511994863166?text=${encodeURIComponent(textoWaSigno)}`;
+        
+        document.getElementById('modal-signo').style.display = 'flex';
+        document.body.style.overflow = 'hidden'; 
+    }
+
+    function fecharModal(modalId) { 
+      document.getElementById(modalId).style.display = 'none'; 
+      document.body.style.overflow = 'auto'; 
+    }
+    
+    window.onclick = e => { 
+        if(e.target == document.getElementById('modal-detalhes')) fecharModal('modal-detalhes'); 
+        if(e.target == document.getElementById('modal-signo')) fecharModal('modal-signo'); 
+    }
+    
+    document.addEventListener('DOMContentLoaded', inicializarSite);
+  </script>
+</body>
+</html>
