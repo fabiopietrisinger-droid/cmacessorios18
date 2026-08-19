@@ -1,7 +1,8 @@
 {
   "Áries": [
     {
-      "foto": "/imagens/uploads/cesar.jpg"
+      "foto": "/imagens/uploads/cesar.jpg",
+      "legenda": "ametista"
     }
   ]
 }
