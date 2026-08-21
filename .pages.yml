@@ -172,3 +172,27 @@ content:
           - name: "legenda"
             label: "Nome da Pedra (Legenda)"
             type: "string"
+
+  - name: "depoimentos"
+    label: "Depoimentos de Clientes"
+    type: "file"
+    path: "content/depoimentos.json"
+    format: "json"
+    fields:
+      - name: "lista_depoimentos"
+        label: "Lista de Depoimentos"
+        type: "object"
+        list: true
+        fields:
+          - name: "nome"
+            label: "Nome do Cliente"
+            type: "string"
+          - name: "data"
+            label: "Data (Ex: Agosto de 2026)"
+            type: "string"
+          - name: "foto"
+            label: "Miniatura da Foto"
+            type: "image"
+          - name: "texto"
+            label: "Texto do Depoimento"
+            type: "text"
