@@ -426,7 +426,7 @@
             <div class="step-item">
                 <div class="step-icon"><i class="fa-brands fa-whatsapp"></i></div>
                 <h4>2. Contato Direto</h4>
-                <p>Clique no botão da peça desejada para falar diretamente com o Cesar. Ajustaremos as pedras, fios e o tamanho ideal para você.</p>
+                <p>Clique no botão da peça desejada para falar diretamente com nossa equipe. Ajustaremos as pedras, fios e o tamanho ideal para você.</p>
             </div>
             <div class="step-item">
                 <div class="step-icon"><i class="fa-regular fa-credit-card"></i></div>
@@ -442,7 +442,6 @@
     </div>
   </section>
 
-  <!-- NOVA SEÇÃO: DEPOIMENTOS CARROSSEL -->
   <section id="depoimentos" class="testimonials-section">
     <div class="container">
       <h2 class="section-title">O que dizem nossos clientes</h2>
@@ -656,12 +655,10 @@
     }
 
     // OTIMIZADOR DE IMAGENS CDN (Weserv)
-    // Puxa a imagem do GitHub Raw e a transforma em WebP super leve na largura desejada
     function transformarLinkCDN(caminho, largura) {
         if (!caminho) return '';
         let url = String(caminho).trim();
         
-        // Ignora placeholders
         if (url.startsWith('http') && !url.includes('cmacessorios18') && !url.includes('githubusercontent')) {
             return url; 
         }
@@ -673,14 +670,10 @@
             caminhoLimpo = url.replace(/^[\.\/]+/, '');
         }
 
-        // Caminho infalível usando o Raw do GitHub (Garante que o CDN sempre vai achar a imagem)
         const urlGitHubRaw = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/main/${caminhoLimpo}`;
-        
-        // Passa pelo CDN que faz o "emagrecimento" da imagem
         return `https://wsrv.nl/?url=${encodeURIComponent(urlGitHubRaw)}&w=${largura}&output=webp&q=80`;
     }
 
-    // Mantém a função antiga SOMENTE para o link limpo do WhatsApp
     function transformarLinkAbsoluto(caminho) {
         if(!caminho) return '';
         let url = String(caminho).trim();
@@ -765,7 +758,6 @@
       } else {
           lista.forEach((produto) => {
             const originalIdx = todosOsProdutos.indexOf(produto);
-            // Usamos o CDN para carregar os cards super rápido (Tamanho máx 400px)
             const imgSrc = produto.image ? transformarLinkCDN(produto.image, 400) : 'https://placehold.co/600x600/f0f0f0/222d43?text=Sem+Foto';
             const valorFormatado = produto.valor ? `R$ ${produto.valor}` : 'Consulte';
             const catText = produto.categoria || 'Geral';
@@ -812,7 +804,6 @@
         }
 
         lista.forEach(dep => {
-            // CDN processando a fotinha do depoimento para ultra-leveza (150px)
             const img = dep.foto ? transformarLinkCDN(dep.foto, 150) : 'https://placehold.co/100x100/f0f0f0/222d43?text=Cliente';
             const card = document.createElement('div');
             card.className = 'testimonial-card';
@@ -860,7 +851,6 @@
       document.getElementById('modal-valor').innerText = p.valor ? `R$ ${p.valor}` : 'Preço a combinar';
       
       const imgPrincipal = p.image || 'https://placehold.co/600x600/f0f0f0/222d43?text=Sem+Foto';
-      // CDN para a foto grande do modal
       document.getElementById('modal-imagem-principal').src = transformarLinkCDN(imgPrincipal, 800);
       
       const thumbsContainer = document.getElementById('modal-thumbnails');
@@ -880,7 +870,6 @@
       if(listaFotos.length > 1) {
           listaFotos.forEach((url, fIdx) => {
             const thumb = document.createElement('img');
-            // CDN para as miniaturas
             thumb.src = transformarLinkCDN(url, 150);
             thumb.className = `thumb-img ${fIdx === 0 ? 'active' : ''}`;
             thumb.onclick = () => alternarFotoNova(url, fIdx);
@@ -890,7 +879,6 @@
 
       document.getElementById('modal-tabela-specs').innerHTML = p.body || "<p>Chame no WhatsApp para alinhar os detalhes de ajuste desta peça.</p>";
       
-      // WhatsApp exige o link final puro
       const linkWhatsAppRef = transformarLinkAbsoluto(imgPrincipal);
       const textoWaProduto = `Olá, estou no site e tenho interesse nesta peça: Categoria: ${categoriaFormatada} Produto: ${tituloFormatado} \n\nLink da foto: ${linkWhatsAppRef}`;
       document.getElementById('modal-btn-wa').href = `https://wa.me/5511994863166?text=${encodeURIComponent(textoWaProduto)}`;
@@ -920,7 +908,6 @@
         document.getElementById('signo-pedras').innerText = dadosSigno.pedras;
         document.getElementById('signo-desc').innerText = dadosSigno.desc;
         
-        // Puxa as fotos limitadas a 6
         const fotosSigno = (galeriasSignos[signo] || []).slice(0, 6);
         const modalContentSigno = document.getElementById('modal-content-signo');
         const galleryPane = document.getElementById('signo-gallery-pane');
@@ -939,7 +926,6 @@
             document.getElementById('signo-imagem-principal').src = transformarLinkCDN(fotosSigno[0].foto, 800);
             document.getElementById('signo-imagem-legenda').innerText = fotosSigno[0].legenda || '';
             
-            // Link limpo para o Whatsapp
             linkWaRef = transformarLinkAbsoluto(fotosSigno[0].foto);
 
             fotosSigno.forEach((item, fIdx) => {
