@@ -1,8 +1,35 @@
 {
   "Áries": [
     {
-      "foto": "/imagens/uploads/cesar.jpg",
-      "legenda": "ametista"
+      "legenda": "Ágata de Fogo 21 de Março a 20 Abril"
+    },
+    {
+      "foto": "/imagens/uploads/Screenshot_2026-09-06-14-49-43-764_com.larus.wolf-edit.jpg",
+      "legenda": "Quartzo Rosa 20 de Abril a 20 Maio "
+    }
+  ],
+  "Touro": [
+    {
+      "foto": "/imagens/uploads/Screenshot_2026-09-06-14-49-43-764_com.larus.wolf-edit-1.jpg",
+      "legenda": "Quartzo Rosa 20 de Março a 20 Maia"
+    }
+  ],
+  "Gêmeos": [
+    {
+      "foto": "/imagens/uploads/Screenshot_2026-09-06-14-51-13-738_com.larus.wolf-edit.jpg",
+      "legenda": "Ágata Roxa 21 de Maio a 20 de Junho"
+    }
+  ],
+  "Câncer": [
+    {
+      "foto": "/imagens/uploads/Screenshot_2026-09-06-14-50-03-983_com.larus.wolf-edit.jpg",
+      "legenda": "Citrino 21 de Junho a 22 de Julho "
+    }
+  ],
+  "Leão": [
+    {
+      "foto": "/imagens/uploads/Screenshot_2026-09-06-14-50-30-155_com.larus.wolf-edit.jpg",
+      "legenda": "Olhe de Tigre 22 de Julho a 22 Agosto"
     }
   ]
 }
