@@ -8,7 +8,7 @@
   "Touro": [
     {
       "foto": "/imagens/uploads/Screenshot_2026-09-06-14-49-43-764_com.larus.wolf-edit-1.jpg",
-      "legenda": "Quartzo Rosa 20 de Março a 20 Maia"
+      "legenda": "Quartzo Rosa 20 de Abril a 20 Maio"
     }
   ],
   "Gêmeos": [
@@ -33,6 +33,44 @@
     {
       "foto": "/imagens/uploads/Screenshot_2026-09-06-14-50-49-676_com.larus.wolf-edit.jpg",
       "legenda": "Amazonita 23 de Agosto a 22 de Setembro "
+    }
+  ],
+  "Libra": [
+    {
+      "foto": "/imagens/uploads/Screenshot_2026-09-06-14-47-19-040_com.larus.wolf-edit.jpg",
+      "legenda": "Quartzo Verde 23 de Setembro a 22 de Outubro "
+    }
+  ],
+  "Escorpião": [
+    {
+      "foto": "/imagens/uploads/Screenshot_2026-09-06-14-46-48-365_com.larus.wolf-edit.jpg",
+      "legenda": "Granada 23 Outubro a 21 Novembro "
+    }
+  ],
+  "Sagitário": [
+    {
+      "foto": "/imagens/uploads/Screenshot_2026-09-06-14-46-26-693_com.larus.wolf-edit.jpg",
+      "legenda": "Pedra das Estrelas 22 de Novembro a 21 Dezembro "
+    }
+  ],
+  "Capricórnio": [
+    {
+      "foto": "/imagens/uploads/Screenshot_2026-09-06-14-46-07-743_com.larus.wolf-edit.jpg",
+      "legenda": "Ônix 22 de Dezembro a 20 de Janeiro "
+    }
+  ],
+  "Aquário": [
+    {
+      "foto": "/imagens/uploads/Screenshot_2026-09-06-14-44-51-907_com.larus.wolf-edit-2.jpg",
+      "legenda": "Sodalita 20 de Janeiro a 18 de Fevereiro "
+    },
+    {},
+    {}
+  ],
+  "Peixes": [
+    {
+      "foto": "/imagens/uploads/Screenshot_2026-09-06-14-45-19-081_com.larus.wolf-edit.jpg",
+      "legenda": "Ametista 19 de Fevereiro a 20 de Março "
     }
   ]
 }
