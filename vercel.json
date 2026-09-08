@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "cmacessorios18.vercel.app"
+        }
+      ],
+      "destination": "https://www.cmacessorios18.com.br/$1",
+      "permanent": true
+    }
+  ]
+}
